@@ -9,9 +9,12 @@ public class PlayerStatConfig : EntityStatConfig
     [Range(1, 5)] public float maximalJumpForce;
     [Min(0.0f)] public float jumpAcceleration;
     [Min(0.0f)] public float jumpdeceleration;
-
     public LayerMask jumpableLayer;
     public bool canWallJump = false;
+
+    [Header("Interaction")]
+    public LayerMask interactibleLayer;
+    public float interactionRange;
 
     public override void OnValidate()
     {

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EntityStatConfig : ScriptableObject
 {
     [Header("Movement")]
+    public Vector3 movementDirection = Vector2.right;
+    public LayerMask groundLayer;
     public float moveSpeedDefaultValue;
     [Min(0.0f)] public float minMoveSpeed;
     public float maxMoveSpeed;

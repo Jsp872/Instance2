@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ef6682faf520046b7482e4eb4cd858, type: 3}
   m_Name: PlayerStatConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatConfig
-  moveSpeedDefaultValue: 0.55
-  minMoveSpeed: 0.55
+  movementDirection: {x: 1, y: 0, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  moveSpeedDefaultValue: 1
+  minMoveSpeed: 0.1
   maxMoveSpeed: 2.5
   accelerationValue: 0.31
   decelerationValue: 0.31
@@ -25,4 +29,8 @@ MonoBehaviour:
   jumpableLayer:
     serializedVersion: 2
     m_Bits: 384
-  canWallJump: 0
+  canWallJump: 1
+  interactibleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  interactionRange: 0
