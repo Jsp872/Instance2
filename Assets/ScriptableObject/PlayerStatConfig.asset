@@ -17,14 +17,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   moveSpeedDefaultValue: 1
-  minMoveSpeed: 0.1
-  maxMoveSpeed: 2.5
-  accelerationValue: 0.31
-  decelerationValue: 0.31
-  initialJumpForce: 0.75
-  minimalJumpForce: 0.75
-  maximalJumpForce: 1.25
-  jumpAcceleration: 0.31
+  minMoveSpeed: 0
+  maxMoveSpeed: 5
+  accelerationValue: 0.5
+  decelerationValue: 0.5
+  decelerationDistance: 7.5
+  gravityValue: 9.81
+  initialJumpForce: 2.5
+  minimalJumpForce: 2.5
+  maximalJumpForce: 5
+  jumpAcceleration: 15
   jumpdeceleration: 0.31
   jumpableLayer:
     serializedVersion: 2

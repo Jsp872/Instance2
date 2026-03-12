@@ -1,27 +1,55 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private EntityStatConfig playerConfig;
+    [SerializeField] private PlayerStatConfig playerConfig;
 
-    [Header("Player Controller Component")]
-    [SerializeField] private PlayerComponent movementComponent;
-    [SerializeField] private PlayerComponent jumpComponent;
-    [SerializeField] private PlayerComponent interactionComponent;
+    private JumpComponent jumpComponent;
+    private AutoMoveComponent autoMoveComponent;
+    private SendNoteComponent sendNoteComponent;
+    private Rigidbody2D rb;
+
+
+    #region SEND_NOTE_DEBUG
+    private void OnEnable()
+    {
+        EventBus.Subscribe<SendNoteCallback>(NoteReceived);
+    }
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<SendNoteCallback>(NoteReceived);
+    }
+
+    private void NoteReceived(SendNoteCallback callback)
+    {
+        print($"note received : \n" +
+            $"type -> {callback.note} \n" +
+            $"count -> {callback.noteSendCount} \n" +
+            $"holdDuration -> {callback.holdDuration}.");
+    }
+    #endregion
 
     private void Awake()
     {
-        InitComponents(movementComponent, jumpComponent, interactionComponent);
+        rb = GetComponent<Rigidbody2D>();
+
+        jumpComponent = GetComponent<JumpComponent>();
+        sendNoteComponent = GetComponent<SendNoteComponent>();
+        autoMoveComponent = GetComponent<AutoMoveComponent>();
+
+        jumpComponent.Initialize(playerConfig, rb);
+        autoMoveComponent.Initialize(playerConfig, rb);
+        sendNoteComponent.Initialize(playerConfig, rb);
     }
-    private void InitComponents(params PlayerComponent[] components)
+
+    private void FixedUpdate()
     {
-        foreach (var component in components)
-        {
-            if (component != null)
-            {
-                print($"initialize component : {component}");
-                component.Initialize(playerConfig);
-            }
-        }
+        Vector3 velocity = Vector3.zero;
+        autoMoveComponent.OnUpdated(ref velocity, Time.fixedDeltaTime);
+        jumpComponent.OnUpdated(ref velocity, Time.fixedDeltaTime);
+        //sendNoteComponent.OnUpdated(ref velocity, Time.fixedDeltaTime);
+
+        transform.position += velocity * Time.fixedDeltaTime;
     }
 }

@@ -90,8 +90,6 @@ GameObject:
   - component: {fileID: 9019418293533791898}
   - component: {fileID: 6728697844285494341}
   - component: {fileID: 8897418187128262474}
-  - component: {fileID: 4882066734011954981}
-  - component: {fileID: 4428102081882112099}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -199,35 +197,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   playerConfig: {fileID: 11400000, guid: b7fcdb5e2dd12f142aef34965b01ac2f, type: 2}
-  movementComponent: {fileID: 4882066734011954981}
-  jumpComponent: {fileID: 4428102081882112099}
-  interactionComponent: {fileID: 0}
---- !u!114 &4882066734011954981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488989145149911528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1f2be977aa1e347af7ac677b0a45c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeplacementComponent
-  isInputEnable: 0
---- !u!114 &4428102081882112099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488989145149911528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26c96a5ec6f26c34aaaae586e3f75b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JumpComponent
-  isInputEnable: 0
-  isGrounded: 0
-  playerFeetPosition: {fileID: 3126434319301912805}
-  groundDetectionRadius: 0.15

@@ -1,14 +1,16 @@
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
-
-public class PlayerComponent : MonoBehaviour
+public abstract class PlayerComponent : MonoBehaviour
 {
-    protected EntityStatConfig playerConfig;
-    public virtual void Initialize(EntityStatConfig playerConfig)
+    protected PlayerStatConfig playerConfig;
+    protected Rigidbody2D rb;
+    public virtual void Initialize(PlayerStatConfig config, Rigidbody2D rb)
     {
-        this.playerConfig = playerConfig;   
+        playerConfig = config;
+        this.rb = rb;
     }
-    public bool isInputEnable = false;
+    public virtual void OnUpdated(ref Vector3 velocity, float fixedDeltaTime) { }
     public virtual void OnActionStarted() { }
-    public virtual void OnActionFinished() { }
+    public virtual void OnActionCanceled() { }
 }
