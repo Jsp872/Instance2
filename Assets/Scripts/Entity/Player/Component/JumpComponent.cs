@@ -99,4 +99,13 @@ public class JumpComponent : PlayerComponent
         yield return new WaitForSeconds(configCopy.holdJumpStartTime);
         holdJump = true;
     }
+
+    public void OnValidate()
+    {
+    //    movementConfig.moveSpeedDefaultValue =
+    //        Mathf.Clamp(movementConfig.moveSpeedDefaultValue, movementConfig.minMoveSpeed, movementConfig.maxMoveSpeed);
+
+        configCopy.initialJumpForce =
+            Mathf.Clamp(configCopy.initialJumpForce, configCopy.minimalJumpForce, configCopy.maximalJumpForce);
+    }
 }
