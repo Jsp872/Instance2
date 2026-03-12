@@ -12,27 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ef6682faf520046b7482e4eb4cd858, type: 3}
   m_Name: PlayerStatConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatConfig
-  movementDirection: {x: 1, y: 0, z: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  moveSpeedDefaultValue: 1
-  minMoveSpeed: 0
-  maxMoveSpeed: 5
-  accelerationValue: 0.5
-  decelerationValue: 0.5
-  decelerationDistance: 7.5
-  gravityValue: 9.81
-  initialJumpForce: 2.5
-  minimalJumpForce: 2.5
-  maximalJumpForce: 5
-  jumpAcceleration: 15
-  jumpdeceleration: 0.31
-  jumpableLayer:
-    serializedVersion: 2
-    m_Bits: 384
-  canWallJump: 1
-  interactibleLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  interactionRange: 0
+  movementConfig:
+    movementDirection: {x: 1, y: 0, z: 0}
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 128
+    moveSpeedDefaultValue: 0.25
+    minMoveSpeed: 0
+    maxMoveSpeed: 5
+    accelerationValue: 1.25
+    decelerationValue: 0.35
+    decelerationDistance: 15
+    gravityValue: 9.81
+  jumpConfig:
+    initialJumpForce: 2
+    minimalJumpForce: 2
+    maximalJumpForce: 5
+    jumpAcceleration: 1.25
+    holdJumpStartTime: 0.125
+    checkIsGroundedRadius: 0.25
+    jumpableLayer:
+      serializedVersion: 2
+      m_Bits: 128
+    canWallJump: 0
+  interactionConfig:
+    interactibleLayer:
+      serializedVersion: 2
+      m_Bits: 0
+    interactionRange: 0

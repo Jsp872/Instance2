@@ -1,12 +1,12 @@
 using UnityEngine;
 
 
-public class EntityStatConfig : ScriptableObject
+[System.Serializable]
+public struct MovementConfig : Config
 {
-    [Space(10)]
     [Header("Movement")]
     [Tooltip("Direction du perso dans la scene, par default -> droite")]
-    public Vector3 movementDirection = Vector2.right;
+    public Vector3 movementDirection;
 
     [Tooltip("Layer du sol, utiliser pour les collisions et le saut")]
     public LayerMask groundLayer;
@@ -27,10 +27,11 @@ public class EntityStatConfig : ScriptableObject
     [Tooltip("determine a quelle distance d'un obstacle il va commencé a descelerer")]
     public float decelerationDistance;
 
-    public float gravityValue = 9.81f;
-
-    public virtual void OnValidate()
-    {
-        moveSpeedDefaultValue = Mathf.Clamp(moveSpeedDefaultValue, minMoveSpeed, maxMoveSpeed);
-    }
+    public float gravityValue;
 }
+
+//    public virtual void OnValidate()
+//    {
+//        moveSpeedDefaultValue = Mathf.Clamp(moveSpeedDefaultValue, minMoveSpeed, maxMoveSpeed);
+//    }
+//}

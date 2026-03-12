@@ -4,20 +4,20 @@ using UnityEngine.InputSystem;
 
 public class JumpComponent : PlayerComponent
 {
+    [Header("DEBUG")]
+    [SerializeField] private JumpConfig configCopy;
+
+
     [SerializeField] private Transform playerFeet;
 
     private float additionalForce;
     private bool holdJump = false;
     private Coroutine holdJumpRoutine;
-    private float accel;
-
-    [SerializeField, Tooltip("Set this var on SO config")] private float holdJumpStartTime = 0.025f;
-    [SerializeField, Tooltip("Set this var on SO config")] private float checkIsGroundedRadius = 0.25f;
 
     public override void Initialize(PlayerStatConfig config, Rigidbody2D rb)
     {
         base.Initialize(config, rb);
-        accel = playerConfig.jumpAcceleration;
+        configCopy = playerConfig.jumpConfig;
     }
 
 
@@ -44,11 +44,11 @@ public class JumpComponent : PlayerComponent
         if (!holdJump) return;
 
 
-        additionalForce += fixedDeltaTime * accel;
+        additionalForce += fixedDeltaTime * configCopy.jumpAcceleration;
         additionalForce = Mathf.Clamp(
             additionalForce,
             0f,
-            playerConfig.maximalJumpForce - playerConfig.initialJumpForce
+            configCopy.maximalJumpForce - configCopy.initialJumpForce
         );
 
     }
@@ -71,9 +71,9 @@ public class JumpComponent : PlayerComponent
         if (!IsGrounded()) return;
 
         float force = Mathf.Clamp(
-            playerConfig.initialJumpForce + additionalForce,
-            playerConfig.minimalJumpForce,
-            playerConfig.maximalJumpForce
+            configCopy.initialJumpForce + additionalForce,
+            configCopy.minimalJumpForce,
+            configCopy.maximalJumpForce
         );
 
         rb.AddForce(new Vector2(0f, force), ForceMode2D.Impulse);
@@ -85,10 +85,10 @@ public class JumpComponent : PlayerComponent
         bool isGrounded = Physics2D.Raycast(
             playerFeet.position,
             Vector2.down,
-            checkIsGroundedRadius,
-            playerConfig.groundLayer | playerConfig.jumpableLayer
+            configCopy.checkIsGroundedRadius,
+            configCopy.jumpableLayer
         );
-        Debug.DrawLine(playerFeet.position, playerFeet.position + Vector3.down * checkIsGroundedRadius, Color.red);
+        Debug.DrawLine(playerFeet.position, playerFeet.position + Vector3.down * configCopy.checkIsGroundedRadius, Color.red);
 
 
         return isGrounded;
@@ -96,7 +96,7 @@ public class JumpComponent : PlayerComponent
 
     private IEnumerator WaitForHoldJump()
     {
-        yield return new WaitForSeconds(holdJumpStartTime);
+        yield return new WaitForSeconds(configCopy.holdJumpStartTime);
         holdJump = true;
     }
 }

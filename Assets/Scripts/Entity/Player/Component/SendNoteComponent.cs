@@ -1,10 +1,9 @@
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 public class SendNoteComponent : PlayerComponent
 {
+
+
     // je vais refacto tout ça pour l'instant au moins ça marche
     private NoteID currentNote;
     public void OnSendDO(InputAction.CallbackContext ctx)

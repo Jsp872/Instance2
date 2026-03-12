@@ -344,7 +344,7 @@ Transform:
   m_GameObject: {fileID: 231379259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.6, y: 0.4, z: 0}
+  m_LocalPosition: {x: 22.7, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 4.95, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -738,14 +738,14 @@ PrefabInstance:
       insertIndex: 5
       addedObject: {fileID: 1824278847}
     - targetCorrespondingSourceObject: {fileID: 8488989145149911528, guid: 2bb397de606724249bb941f122f4b812, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1824278849}
+    - targetCorrespondingSourceObject: {fileID: 8488989145149911528, guid: 2bb397de606724249bb941f122f4b812, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1824278843}
     - targetCorrespondingSourceObject: {fileID: 8488989145149911528, guid: 2bb397de606724249bb941f122f4b812, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1824278839}
-    - targetCorrespondingSourceObject: {fileID: 8488989145149911528, guid: 2bb397de606724249bb941f122f4b812, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1824278849}
   m_SourcePrefab: {fileID: 100100000, guid: 2bb397de606724249bb941f122f4b812, type: 3}
 --- !u!1 &1326392416
 GameObject:
@@ -1112,6 +1112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102570f654c66e245b21f7896e266852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoMoveComponent
+  configCopy:
+    movementDirection: {x: 0, y: 0, z: 0}
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 0
+    moveSpeedDefaultValue: 0
+    minMoveSpeed: 0
+    maxMoveSpeed: 0
+    accelerationValue: 0
+    decelerationValue: 0
+    decelerationDistance: 0
+    gravityValue: 0
 --- !u!114 &1824278848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d8c8df5def5d549a543d621fe3dcdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpComponent
+  configCopy:
+    initialJumpForce: 0
+    minimalJumpForce: 0
+    maximalJumpForce: 0
+    jumpAcceleration: 0
+    jumpdeceleration: 0
+    jumpableLayer:
+      serializedVersion: 2
+      m_Bits: 0
+    canWallJump: 0
   playerFeet: {fileID: 1638064953}
   holdJumpStartTime: 0.025
   checkIsGroundedRadius: 0.25

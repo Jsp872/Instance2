@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class AutoMoveComponent : PlayerComponent
 {
+    [Header("DEBUG")]
+    [SerializeField] private MovementConfig configCopy;
+
     private float currentSpeed;
     private bool isDecelerating;
     private float obstacleDistance;
@@ -9,13 +12,14 @@ public class AutoMoveComponent : PlayerComponent
     public override void Initialize(PlayerStatConfig config, Rigidbody2D rb)
     {
         base.Initialize(config, rb);
-        currentSpeed = config.moveSpeedDefaultValue;
+        configCopy = config.movementConfig;
+        currentSpeed = configCopy.moveSpeedDefaultValue;
     }
 
     public override void OnUpdated(ref Vector3 velocity, float fixedDeltaTime)
     {
         UpdateSpeed(fixedDeltaTime);
-        velocity = playerConfig.movementDirection.normalized * currentSpeed;
+        velocity = configCopy.movementDirection.normalized * currentSpeed;
     }
 
     private void UpdateSpeed(float fixedDeltaTime)
@@ -24,30 +28,30 @@ public class AutoMoveComponent : PlayerComponent
 
         if (isDecelerating)
         {
-            float proximityRatio = Mathf.Clamp01(obstacleDistance / playerConfig.decelerationDistance);
+            float proximityRatio = Mathf.Clamp01(obstacleDistance / configCopy.decelerationDistance);
 
-            float decelerationMultiplier = Mathf.Lerp(playerConfig.maxMoveSpeed, playerConfig.decelerationValue, proximityRatio);
+            float decelerationMultiplier = Mathf.Lerp(configCopy.maxMoveSpeed, configCopy.decelerationValue, proximityRatio);
 
             currentSpeed -= decelerationMultiplier * fixedDeltaTime;
-            currentSpeed = Mathf.Max(currentSpeed, playerConfig.minMoveSpeed);
+            currentSpeed = Mathf.Max(currentSpeed, configCopy.minMoveSpeed);
         }
         else
         {
-            currentSpeed += playerConfig.accelerationValue * fixedDeltaTime;
-            currentSpeed = Mathf.Min(currentSpeed, playerConfig.maxMoveSpeed);
+            currentSpeed += configCopy.accelerationValue * fixedDeltaTime;
+            currentSpeed = Mathf.Min(currentSpeed, configCopy.maxMoveSpeed);
         }
     }
 
     private bool IsObstacleAhead()
     {
-        Vector3 dir = playerConfig.movementDirection.normalized;
-        Debug.DrawLine(transform.position, transform.position + playerConfig.decelerationDistance * dir, Color.green);
+        Vector3 dir = configCopy.movementDirection.normalized;
+        Debug.DrawLine(transform.position, transform.position + configCopy.decelerationDistance * dir, Color.green);
 
         RaycastHit2D hit = Physics2D.Raycast(
             transform.position,
             dir,
-            playerConfig.decelerationDistance,
-            playerConfig.groundLayer
+            configCopy.decelerationDistance,
+            configCopy.groundLayer
         );
 
         if (hit.transform != null)
