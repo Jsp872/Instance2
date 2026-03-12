@@ -63,4 +63,13 @@ public class AutoMoveComponent : PlayerComponent
 
         return hit.collider != null;
     }
+
+    public void OnValidate()
+    {
+        configCopy.moveSpeedDefaultValue =
+            Mathf.Clamp(configCopy.moveSpeedDefaultValue, configCopy.minMoveSpeed, configCopy.maxMoveSpeed);
+
+        //jumpConfig.initialJumpForce =
+        //    Mathf.Clamp(jumpConfig.initialJumpForce, jumpConfig.minimalJumpForce, jumpConfig.maximalJumpForce);
+    }
 }

@@ -34,22 +34,31 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        jumpComponent = GetComponent<JumpComponent>();
-        sendNoteComponent = GetComponent<SendNoteComponent>();
-        autoMoveComponent = GetComponent<AutoMoveComponent>();
-
-        jumpComponent.Initialize(playerConfig, rb);
-        autoMoveComponent.Initialize(playerConfig, rb);
-        sendNoteComponent.Initialize(playerConfig, rb);
+        SetAndInitComponent(out jumpComponent);
+        SetAndInitComponent(out autoMoveComponent);
+        SetAndInitComponent(out sendNoteComponent);
     }
 
     private void FixedUpdate()
     {
-        Vector3 velocity = Vector3.zero;
-        autoMoveComponent.OnUpdated(ref velocity, Time.fixedDeltaTime);
-        jumpComponent.OnUpdated(ref velocity, Time.fixedDeltaTime);
-        //sendNoteComponent.OnUpdated(ref velocity, Time.fixedDeltaTime);
-
+        Vector3 velocity = UpdateComponent(autoMoveComponent, jumpComponent);
         transform.position += velocity * Time.fixedDeltaTime;
     }
+    private void SetAndInitComponent<T>(out T component) where T : PlayerComponent
+    {
+        if (TryGetComponent(out component))
+        {
+            component.Initialize(playerConfig, rb);
+        }
+    }
+    private Vector3 UpdateComponent(params PlayerComponent[] components)
+    {
+        Vector3 velocity = Vector2.zero;
+        foreach (var component in components)
+        {
+            component.OnUpdated(ref velocity, Time.fixedDeltaTime);
+        }
+        return velocity;
+    }
+
 }
