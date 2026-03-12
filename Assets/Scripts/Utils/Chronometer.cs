@@ -31,11 +31,15 @@ public class Chronometer : MonoBehaviour
     private void UpdateTimerUI()
     {
         int seconds = (int)timeLeft;
-        int milliseconds=0;
         if (timeLeft <= timeWhenTimerTypeChange)
         {
-            milliseconds = Mathf.FloorToInt((timeLeft * 100) % 100);
+            int milliseconds = Mathf.FloorToInt((timeLeft * 100) % 100);
+            timerText.text = $"{seconds}.{milliseconds:00}";
         }
-        timerText.text = $"{seconds:00}.{milliseconds:00}";
+        else
+        {
+            timerText.text = $"{seconds}";
+        }
+
     }
 }
