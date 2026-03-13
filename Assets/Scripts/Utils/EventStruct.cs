@@ -1,12 +1,13 @@
-public struct SendNoteCallback
+[System.Serializable]
+public struct NoteContext
 {
     public NoteID note;
-    public int noteSendCount;
     public float holdDuration;
-    public SendNoteCallback(NoteID note, int noteSendCount, float holdDuration)
+    public int noteSendCount;
+    public NoteContext(NoteID note, float holdDuration, int noteSendCount = 1)
     {
         this.note = note;
-        this.noteSendCount = noteSendCount;
         this.holdDuration = holdDuration;
+        this.noteSendCount = noteSendCount;
     }
 }
