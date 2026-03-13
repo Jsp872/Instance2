@@ -19,3 +19,7 @@ public struct NoteEvent
     public InputEnum Note;
 }
 
+[System.Serializable]
+public struct JumpEvent
+{
+}

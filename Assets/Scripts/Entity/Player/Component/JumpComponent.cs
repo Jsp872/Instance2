@@ -70,6 +70,8 @@ public class JumpComponent : PlayerComponent
     {
         if (!IsGrounded()) return;
 
+        EventBus.Publish(new JumpEvent());
+
         float force = Mathf.Clamp(
             configCopy.initialJumpForce + additionalForce,
             configCopy.minimalJumpForce,

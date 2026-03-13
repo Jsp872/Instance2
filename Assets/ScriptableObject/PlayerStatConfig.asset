@@ -25,9 +25,9 @@ MonoBehaviour:
     decelerationDistance: 15
     gravityValue: 9.81
   jumpConfig:
-    initialJumpForce: 2
-    minimalJumpForce: 2
-    maximalJumpForce: 5
+    initialJumpForce: 10
+    minimalJumpForce: 10
+    maximalJumpForce: 10
     jumpAcceleration: 1.25
     holdJumpStartTime: 0.125
     checkIsGroundedRadius: 0.25

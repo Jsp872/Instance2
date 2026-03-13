@@ -56,9 +56,15 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = Vector2.zero;
         foreach (var component in components)
         {
+            if (component == null) continue;
             component.OnUpdated(ref velocity, Time.fixedDeltaTime);
         }
         return velocity;
+    }
+
+    public void Bounce(Vector2 force)
+    {
+        rb.AddForce(force, ForceMode2D.Impulse);
     }
 
 }
