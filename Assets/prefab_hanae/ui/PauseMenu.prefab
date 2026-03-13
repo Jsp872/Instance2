@@ -865,7 +865,7 @@ MonoBehaviour:
         m_MethodName: Open
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1674477388906924302}
+          m_ObjectArgument: {fileID: 4200799181790941550}
           m_ObjectArgumentAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1243,17 +1243,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df32f5497f91ce49be73af6587a839b, type: 3}
---- !u!114 &1674477388906924302 stripped
+--- !u!114 &4200799181790941550 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8553991638290894811, guid: 6df32f5497f91ce49be73af6587a839b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6612743148523460539, guid: 6df32f5497f91ce49be73af6587a839b, type: 3}
   m_PrefabInstance: {fileID: 7028168771617752789}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b304c3f8e9923542bf7c783bf663b2e, type: 3}
+  m_Script: {fileID: 11500000, guid: a97a0bb3f33dd004d8348ea161060515, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_Basic_Functions
+  m_EditorClassIdentifier: Assembly-CSharp::stettingsMenu
 --- !u!224 &8357554096282855566 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1329385876627254875, guid: 6df32f5497f91ce49be73af6587a839b, type: 3}

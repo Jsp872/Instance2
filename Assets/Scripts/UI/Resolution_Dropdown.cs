@@ -8,8 +8,10 @@ public class ResolutionDropDown : MonoBehaviour
 {
     [SerializeField] List<Vector2> resolutions;
     [SerializeField] TMP_Dropdown dropdown;
+    
+    private PlayerPrefsGestionnary playerPrefs;
 
-    private void Awake()
+    private void Start()
     {
         foreach (var res in resolutions)
         {
@@ -19,10 +21,14 @@ public class ResolutionDropDown : MonoBehaviour
                 break;
             }
         }
+        playerPrefs = gameObject.GetComponent<PlayerPrefsGestionnary>();
     }
 
     public void ChangeScreenResolution()
     {
         Screen.SetResolution((int)resolutions[dropdown.value].x, (int)resolutions[dropdown.value].y, Screen.fullScreen);
+
+        playerPrefs.SetPlayerPrefs(0, (int)resolutions[dropdown.value].x);
+        playerPrefs.SetPlayerPrefs(0, (int)resolutions[dropdown.value].y);
     }
 }
