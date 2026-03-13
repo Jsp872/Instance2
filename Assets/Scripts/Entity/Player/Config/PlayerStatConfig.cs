@@ -6,6 +6,7 @@ public class PlayerStatConfig : ScriptableObject
     public MovementConfig movementConfig;
     public JumpConfig jumpConfig;
     public InteractionConfig interactionConfig;
+    public SendNoteConfig sendNoteConfig;
 
     public void OnValidate()
     {

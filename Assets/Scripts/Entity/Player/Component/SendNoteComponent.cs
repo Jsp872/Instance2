@@ -5,22 +5,23 @@ using UnityEngine.InputSystem;
 
 public class SendNoteComponent : PlayerComponent
 {
+    [Header("Config")]
+    [SerializeField] private SendNoteConfig configCopy;
+
     private bool isHold;
     private Coroutine waitForHoldRoutine;
     private Coroutine waitForCombosRoutine;
 
+    [Header("DEBUG_STRUCT")]
     [SerializeField] private NoteContext noteContext;
+    [Space(5.0f)]
     [SerializeField] private NoteContext previous;
 
-    [Tooltip("quand le joueur appuie sur sa touche, attend ce delay avant de commencer a compté le hold de la touche [A METTRE DANS LE SendNoteConfig]")]
-    [SerializeField] float isHoldDelay = 0.125f;
-
-    [Tooltip("si deux touche identique sont jouer dans ce timing alors un combos est jouer [A METTRE DANS LE SendNoteConfig]")]
-    [SerializeField] float combosDelay = 0.125f;
-
-    [Tooltip("hold timer multiplicateur [A METTRE DANS LE SendNoteConfig]")]
-    [SerializeField, Min(0.1f)] float holdTimerMultiplier;
-
+    public override void Initialize(PlayerStatConfig config, Rigidbody2D rb)
+    {
+        base.Initialize(config, rb);
+       this.configCopy = config.sendNoteConfig;
+    }
 
     private readonly Dictionary<string, NoteID> keys = new Dictionary<string, NoteID>()
     {
@@ -98,18 +99,18 @@ public class SendNoteComponent : PlayerComponent
     {
         if (isHold)
         {
-            noteContext.holdDuration += holdTimerMultiplier * Time.deltaTime;
+            noteContext.holdDuration += configCopy.holdTimerMultiplier * Time.deltaTime;
         }
     }
 
     private IEnumerator WaitForUpdateHold()
     {
-        yield return new WaitForSeconds(isHoldDelay);
+        yield return new WaitForSeconds(configCopy.isHoldDelay);
         isHold = true;
     }
     private IEnumerator WaitForSendNoteContext()
     {
-        yield return new WaitForSeconds(combosDelay);
+        yield return new WaitForSeconds(configCopy.combosDelay);
         SendAndReset(noteContext);
         previous = noteContext;
     }
