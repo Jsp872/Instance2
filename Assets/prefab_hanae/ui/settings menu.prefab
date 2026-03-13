@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 2390315121210923359}
   - component: {fileID: 3465840090972727389}
   - component: {fileID: 8036335851666439982}
-  - component: {fileID: 8553991638290894811}
+  - component: {fileID: 6612743148523460539}
   m_Layer: 0
   m_Name: settings menu
   m_TagString: Untagged
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8036335851666439982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8553991638290894811
+--- !u!114 &6612743148523460539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,9 +193,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 76037249898654368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b304c3f8e9923542bf7c783bf663b2e, type: 3}
+  m_Script: {fileID: 11500000, guid: a97a0bb3f33dd004d8348ea161060515, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_Basic_Functions
+  m_EditorClassIdentifier: Assembly-CSharp::stettingsMenu
 --- !u!1 &245470569485183437
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,8 +529,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8553991638290894811}
-        m_TargetAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
+      - m_Target: {fileID: 6612743148523460539}
+        m_TargetAssemblyTypeName: stettingsMenu, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 2
         m_Arguments:
@@ -541,12 +541,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8553991638290894811}
-        m_TargetAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
+      - m_Target: {fileID: 6612743148523460539}
+        m_TargetAssemblyTypeName: stettingsMenu, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 3297843107494393406}
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1415,6 +1415,7 @@ GameObject:
   - component: {fileID: 6991048284995640123}
   - component: {fileID: 2771646577412172069}
   - component: {fileID: 5393190835327586334}
+  - component: {fileID: 7192430366051187600}
   m_Layer: 0
   m_Name: music volume Slider
   m_TagString: Untagged
@@ -1508,6 +1509,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e967f2fb34faa42abb213aeac94b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSliders
+--- !u!114 &7192430366051187600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3481995629162843510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c2f0ef1a80ce4e857083a7d44bdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPrefsGestionnary
+  keys:
+  - Music Volume
 --- !u!1 &3626241835652281320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,6 +1642,7 @@ GameObject:
   - component: {fileID: 585159021206557378}
   - component: {fileID: 3542069662240633492}
   - component: {fileID: 2041423557374817837}
+  - component: {fileID: 1799702020072517848}
   m_Layer: 0
   m_Name: master volume Slider
   m_TagString: Untagged
@@ -1720,6 +1736,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e967f2fb34faa42abb213aeac94b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSliders
+--- !u!114 &1799702020072517848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3950058592282609257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c2f0ef1a80ce4e857083a7d44bdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPrefsGestionnary
+  keys:
+  - Master Volume
 --- !u!1 &4053345663157733817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,12 +1997,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8553991638290894811}
-        m_TargetAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
+      - m_Target: {fileID: 6612743148523460539}
+        m_TargetAssemblyTypeName: stettingsMenu, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8553991638290894811}
+          m_ObjectArgument: {fileID: 6612743148523460539}
           m_ObjectArgumentAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2283,6 +2313,7 @@ GameObject:
   - component: {fileID: 6733659207338322652}
   - component: {fileID: 130887986904189754}
   - component: {fileID: 5766059905786442536}
+  - component: {fileID: 1800140098670727744}
   m_Layer: 0
   m_Name: "r\xE9solution Dropdown"
   m_TagString: Untagged
@@ -2451,6 +2482,21 @@ MonoBehaviour:
   - {x: 1024, y: 768}
   - {x: 640, y: 480}
   dropdown: {fileID: 130887986904189754}
+--- !u!114 &1800140098670727744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579914018398929215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c2f0ef1a80ce4e857083a7d44bdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPrefsGestionnary
+  keys:
+  - Screen Width
+  - Screen Height
 --- !u!1 &5880458886249619137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,7 +2598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SFX Volume
+  m_text: VFX Volume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2711,7 +2757,7 @@ GameObject:
   - component: {fileID: 4763126995748395302}
   - component: {fileID: 3108597572266078103}
   - component: {fileID: 1058828481932685117}
-  - component: {fileID: 3297843107494393406}
+  - component: {fileID: 1409894316303854455}
   m_Layer: 0
   m_Name: audio menu
   m_TagString: Untagged
@@ -2804,7 +2850,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3297843107494393406
+--- !u!114 &1409894316303854455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2813,9 +2859,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6037670943919060719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b304c3f8e9923542bf7c783bf663b2e, type: 3}
+  m_Script: {fileID: 11500000, guid: a97a0bb3f33dd004d8348ea161060515, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_Basic_Functions
+  m_EditorClassIdentifier: Assembly-CSharp::stettingsMenu
 --- !u!1 &6246491858204743267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +2873,7 @@ GameObject:
   - component: {fileID: 8488744853870096804}
   - component: {fileID: 767130257657278750}
   - component: {fileID: 1313616527371269934}
+  - component: {fileID: 4557813420587467163}
   m_Layer: 0
   m_Name: plein ecran toggle
   m_TagString: Untagged
@@ -2927,6 +2974,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93814207f4cef346a261fba8f0928be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FullScreen_Toggle
+--- !u!114 &4557813420587467163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246491858204743267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c2f0ef1a80ce4e857083a7d44bdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPrefsGestionnary
+  keys:
+  - FullScreen
 --- !u!1 &6326445544331287105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,20 +3818,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8553991638290894811}
-        m_TargetAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
+      - m_Target: {fileID: 6612743148523460539}
+        m_TargetAssemblyTypeName: stettingsMenu, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 3297843107494393406}
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8553991638290894811}
-        m_TargetAssemblyTypeName: UI_Basic_Functions, Assembly-CSharp
+      - m_Target: {fileID: 6612743148523460539}
+        m_TargetAssemblyTypeName: stettingsMenu, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 2
         m_Arguments:
@@ -4079,6 +4140,7 @@ GameObject:
   - component: {fileID: 4995456687447787336}
   - component: {fileID: 6277994151509325358}
   - component: {fileID: 3094495162161449384}
+  - component: {fileID: 7930309380861649441}
   m_Layer: 0
   m_Name: SFX volume Slider
   m_TagString: Untagged
@@ -4172,6 +4234,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e967f2fb34faa42abb213aeac94b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSliders
+--- !u!114 &7930309380861649441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392528076517421551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216c2f0ef1a80ce4e857083a7d44bdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPrefsGestionnary
+  keys:
+  - VFX
 --- !u!1 &8458218918170086012
 GameObject:
   m_ObjectHideFlags: 0
