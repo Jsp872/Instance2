@@ -14,14 +14,14 @@ public class PlayerController : MonoBehaviour
     #region SEND_NOTE_DEBUG
     private void OnEnable()
     {
-        EventBus.Subscribe<SendNoteCallback>(NoteReceived);
+        EventBus.Subscribe<NoteContext>(NoteReceived);
     }
     private void OnDisable()
     {
-        EventBus.Unsubscribe<SendNoteCallback>(NoteReceived);
+        EventBus.Unsubscribe<NoteContext>(NoteReceived);
     }
 
-    private void NoteReceived(SendNoteCallback callback)
+    private void NoteReceived(NoteContext callback)
     {
         print($"note received : \n" +
             $"type -> {callback.note} \n" +
