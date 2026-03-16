@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Level_Button : UI_Basic_Functions
+public class LevelBtn : UI_Basic_Functions
 {
     [HideInInspector] public string sceneName;
 
