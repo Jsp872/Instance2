@@ -9,8 +9,10 @@ public class Chronometer : MonoBehaviour
     [SerializeField] private float timeWhenTimerChange = 10f;
     
     [SerializeField] private TMP_Text timerText;
+    public TMP_Text TimerText { get { return timerText; } }
 
     private float timeLeft;
+    public float TimeLeft { get { return timeLeft; } }
 
     private void Start()
     {
