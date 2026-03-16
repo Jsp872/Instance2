@@ -159,3 +159,7 @@ crashlytics-build.properties
 ```
 message.txt
 3 Ko
+Instance2.slnx
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
