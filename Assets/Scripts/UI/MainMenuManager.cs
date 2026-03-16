@@ -4,11 +4,13 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup levelSelectorMenu;
     [SerializeField] private CanvasGroup settingsPanel;
+    [SerializeField] private CanvasGroup creditsPanel;
 
     private void Start()
     {
         levelSelectorMenu.Toggle(false);
         settingsPanel.Toggle(false);
+        creditsPanel.Toggle(false);
     }
 
     public void Play()
@@ -27,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OpenCredits()
     {
+        creditsPanel.Toggle(true);
     }
 
     public void Quit()
