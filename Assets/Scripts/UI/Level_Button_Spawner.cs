@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class Level_Button_Spawner : MonoBehaviour
 {
-    [SerializeField] private Level_Button level_Button;
+    [SerializeField] private LevelBtn levelBtnPrefab;
     [SerializeField] private List<string> levels;
+    [SerializeField] private RectTransform parent;
     
     void Start()
     {
         foreach (var level in levels)
         {
-            Level_Button button = Instantiate(level_Button, transform);
-            button.sceneName = level;
-            button.GetComponentInChildren<TextMeshProUGUI>().text = level;
+            LevelBtn btn = Instantiate(levelBtnPrefab, parent);
+            btn.sceneName = level;
+            btn.GetComponentInChildren<TextMeshProUGUI>().text = level;
+            
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(parent);
     }
+    
+    
 }
