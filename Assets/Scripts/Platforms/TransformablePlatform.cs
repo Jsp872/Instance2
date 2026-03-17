@@ -6,32 +6,32 @@ public class TransformablePlatform : BasePlatform
 
     [Header("Activation Settings")]
     [SerializeField] private TriggerType triggerType;
-    [SerializeField] private InputEnum targetNote;
+    [SerializeField] private NoteID targetNote;
 
     [Header("Initial State")]
     [SerializeField] private bool startActive = true;
 
+    [SerializeField] private Renderer _renderer;
+    
     private bool _isActive;
     private Collider2D _collider;
-    private Renderer _renderer;
 
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
-        _renderer = GetComponent<Renderer>();
         SetState(startActive);
     }
 
     private void OnEnable()
     {
         EventBus.Subscribe<JumpEvent>(OnJump);
-        EventBus.Subscribe<NoteEvent>(OnNote);
+        EventBus.Subscribe<NoteContext>(OnNote);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<JumpEvent>(OnJump);
-        EventBus.Unsubscribe<NoteEvent>(OnNote);
+        EventBus.Unsubscribe<NoteContext>(OnNote);
     }
 
     protected override void OnPlayerEnter(PlayerController player) { }
@@ -41,9 +41,9 @@ public class TransformablePlatform : BasePlatform
         if (triggerType == TriggerType.Jump) ToggleState();
     }
 
-    private void OnNote(NoteEvent evt)
+    private void OnNote(NoteContext evt)
     {
-        if (triggerType == TriggerType.Note && evt.Note == targetNote) ToggleState();
+        if (triggerType == TriggerType.Note && evt.note == targetNote) ToggleState();
     }
 
     private void ToggleState() => SetState(!_isActive);

@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
+    [SerializeField] private float distance;
+    [SerializeField] private float duration;
+    
     private ObstaclePlayerDetector obstaclePlayerDetector;
 
     private void Awake()
@@ -17,7 +20,7 @@ public class Spike : MonoBehaviour
 
     private void OnObstaclePlayerDetectorUnlocked()
     {
-        transform.DOMoveY(transform.position.y - 5f, 0.5f).SetEase(Ease.InQuad);
+        transform.DOMoveY(transform.position.y - distance, duration).SetEase(Ease.InQuad);
     }
 
     private void OnDisable()

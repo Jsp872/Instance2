@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstaclePlayerDetector : MonoBehaviour
 {
-    [SerializeField] private List<InputEnum> sequenceCible;
+    [SerializeField] private List<NoteID> sequenceCible;
     private int indexCourant = 0;
     public event Action unlocked;
 
@@ -14,7 +14,7 @@ public class ObstaclePlayerDetector : MonoBehaviour
     {
         if (!other.TryGetComponent<Player>(out _)) return;
 
-        EventBus.Subscribe<NoteEvent>(CheckInteraction);
+        EventBus.Subscribe<NoteContext>(CheckInteraction);
         PlaySequence();
     }
 
@@ -22,7 +22,7 @@ public class ObstaclePlayerDetector : MonoBehaviour
     {
         if (!other.TryGetComponent<Player>(out _)) return;
 
-        EventBus.Unsubscribe<NoteEvent>(CheckInteraction);
+        EventBus.Unsubscribe<NoteContext>(CheckInteraction);
     }
 
     // ─── Séquence ────────────────────────────────────────────────────────────
@@ -34,20 +34,20 @@ public class ObstaclePlayerDetector : MonoBehaviour
 
     // ─── Callback Event Bus ──────────────────────────────────────────────────
 
-    private void CheckInteraction(NoteEvent evt)
+    private void CheckInteraction(NoteContext evt)
     {
-        if (evt.Note != sequenceCible[indexCourant])
+        if (evt.note != sequenceCible[indexCourant])
         {
             // Mauvaise note : reset et relecture de la séquence
             indexCourant = 0;
             PlaySequence();
-            Debug.Log("Mauvaise note  : " + evt.Note + ", reset de la séquence");
+            Debug.Log("Mauvaise note  : " + evt.note + ", reset de la séquence");
             return;
         }
 
         // Bonne note : avancer dans la séquence
         indexCourant++;
-        Debug.Log("Bonne note : " + evt.Note);
+        Debug.Log("Bonne note : " + evt.note);
 
         if (indexCourant >= sequenceCible.Count)
         {
@@ -59,7 +59,7 @@ public class ObstaclePlayerDetector : MonoBehaviour
 
     private void Unlock()
     {
-        EventBus.Unsubscribe<NoteEvent>(CheckInteraction);
+        EventBus.Unsubscribe<NoteContext>(CheckInteraction);
         unlocked?.Invoke();
         // TODO: Logique de franchissement (désactivation collider, animation, VFX, etc.)
     }

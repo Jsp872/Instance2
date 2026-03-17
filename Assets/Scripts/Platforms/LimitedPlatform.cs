@@ -6,16 +6,15 @@ public class LimitedPlatform : BasePlatform
     [SerializeField] private float disappearDelay = 1f;
     [SerializeField] private float respawnDelay = 3f;
     [SerializeField] private bool autoRespawn;
+    [SerializeField] private Renderer platformRenderer;
 
     private Collider2D platformCollider;
-    private Renderer platformRenderer;
     private Coroutine disappearRoutine;
     private bool isActive = true;
 
     private void Awake()
     {
         platformCollider = GetComponent<Collider2D>();
-        platformRenderer = GetComponent<Renderer>();
     }
 
     protected override void OnPlayerEnter(PlayerController player)
