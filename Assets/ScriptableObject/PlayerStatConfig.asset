@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ef6682faf520046b7482e4eb4cd858, type: 3}
+  m_Script: {fileID: 11500000, guid: c0cdb947b83af18409fc1142b675dc0a, type: 3}
   m_Name: PlayerStatConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatConfig
   movementConfig:
@@ -17,20 +17,20 @@ MonoBehaviour:
     groundLayer:
       serializedVersion: 2
       m_Bits: 128
-    moveSpeedDefaultValue: 0.25
+    moveSpeedDefaultValue: 1
     minMoveSpeed: 0
-    maxMoveSpeed: 5
-    accelerationValue: 1.25
+    maxMoveSpeed: 7
+    accelerationValue: 7
     decelerationValue: 0.35
     decelerationDistance: 15
     gravityValue: 9.81
   jumpConfig:
-    initialJumpForce: 10
-    minimalJumpForce: 10
-    maximalJumpForce: 10
-    jumpAcceleration: 1.25
-    holdJumpStartTime: 0.125
-    checkIsGroundedRadius: 0.25
+    initialJumpForce: 8
+    minimalJumpForce: 8
+    maximalJumpForce: 14
+    jumpAcceleration: 10
+    holdJumpStartTime: 4.5
+    checkIsGroundedRadius: 0.75
     jumpableLayer:
       serializedVersion: 2
       m_Bits: 128
