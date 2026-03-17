@@ -10,11 +10,15 @@ public class PlayerStatConfig : ScriptableObject
 
     public void OnValidate()
     {
-        movementConfig.moveSpeedDefaultValue = 
+        movementConfig.moveSpeedDefaultValue =
             Mathf.Clamp(movementConfig.moveSpeedDefaultValue, movementConfig.minMoveSpeed, movementConfig.maxMoveSpeed);
 
         jumpConfig.initialJumpForce =
             Mathf.Clamp(jumpConfig.initialJumpForce, jumpConfig.minimalJumpForce, jumpConfig.maximalJumpForce);
+
+
+        sendNoteConfig.isHoldDelay =
+            Mathf.Clamp(sendNoteConfig.isHoldDelay, 0, sendNoteConfig.combosDelay);
     }
 
 }

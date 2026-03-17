@@ -71,6 +71,12 @@ public class SendNoteComponent : PlayerComponent
                 if (holdCtx.CanUpdateHold)
                 {
                     holdCtx.holdStarted = true;
+
+                    if (comboRoutine != null)
+                    {
+                        StopCoroutine(comboRoutine);
+                        comboRoutine = null;
+                    }
                 }
             }
             else
@@ -163,23 +169,43 @@ public class SendNoteComponent : PlayerComponent
             return;
 
         List<NoteContext> toSend = new List<NoteContext>();
-
         foreach (var note in noteBuffer)
         {
             if (holdDurations.ContainsKey(note.note))
             {
-                var ctx = holdDurations[note.note];
+                NoteHoldContext holdCtx = holdDurations[note.note];
 
-                if (ctx.holdStarted)
+                if (holdCtx.holdStarted)
+                {
                     continue;
+                }
             }
 
             toSend.Add(note);
         }
 
+        Dictionary<NoteID, NoteContext> grouped = new();
+
         foreach (var note in toSend)
         {
-            EventBus.Publish(note);
+            if (grouped.ContainsKey(note.note))
+            {
+                NoteContext existing = grouped[note.note];
+                existing.noteSendCount += 1;
+
+                existing.holdDuration = Mathf.Max(existing.holdDuration, note.holdDuration);
+
+                grouped[note.note] = existing;
+            }
+            else
+            {
+                grouped[note.note] = new NoteContext(note.note, note.holdDuration, 1);
+            }
+        }
+
+        foreach (var kvp in grouped)
+        {
+            EventBus.Publish(kvp.Value);
         }
 
         noteBuffer.RemoveAll(n => toSend.Contains(n));

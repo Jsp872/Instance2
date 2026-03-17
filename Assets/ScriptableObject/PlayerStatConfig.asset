@@ -42,5 +42,5 @@ MonoBehaviour:
     interactionRange: 0
   sendNoteConfig:
     isHoldDelay: 0.15
-    combosDelay: 0.125
+    combosDelay: 0.15
     holdTimerMultiplier: 1.25
