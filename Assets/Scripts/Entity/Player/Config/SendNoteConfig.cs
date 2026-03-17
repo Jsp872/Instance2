@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public struct SendNoteConfig : Config
 {
     [Tooltip("quand le joueur appuie sur sa touche, attend ce delay avant de commencer a compté le hold de la touche")]

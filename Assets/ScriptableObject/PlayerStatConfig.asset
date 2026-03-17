@@ -40,3 +40,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 0
     interactionRange: 0
+  sendNoteConfig:
+    isHoldDelay: 0.15
+    combosDelay: 0.125
+    holdTimerMultiplier: 1.25
