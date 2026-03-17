@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
 
     private void NoteReceived(NoteContext callback)
     {
-        print($"note received : \n" +
-            $"type -> {callback.note} \n" +
-            $"count -> {callback.noteSendCount} \n" +
+        print($"note received : |--| " +
+            $"type -> {callback.note} |--| " +
+            $"count -> {callback.noteSendCount} |--| " +
             $"holdDuration -> {callback.holdDuration}.");
     }
     #endregion
