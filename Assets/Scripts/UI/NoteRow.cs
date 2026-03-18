@@ -11,14 +11,13 @@ public class NoteRow : MonoBehaviour
 {
     // ─── Inspector ───────────────────────────────────────────────────────────
 
-    [Tooltip("Préfab Note à instancier pour chaque élément de la séquence.")]
-    [SerializeField] private Note notePrefab;
+    [Tooltip("Préfab Note à instancier pour chaque élément de la séquence.")] [SerializeField]
+    private Note notePrefab;
 
     [SerializeField] private GameObject label;
 
-    [Header("Debug")]
-    [Tooltip("Active ou désactive les logs de debug pour cette rangée.")]
-    [SerializeField] private bool debugLog = false;
+    [Header("Debug")] [Tooltip("Active ou désactive les logs de debug pour cette rangée.")] [SerializeField]
+    private bool debugLog = false;
 
     // ─── Privé ───────────────────────────────────────────────────────────────
 
@@ -33,7 +32,9 @@ public class NoteRow : MonoBehaviour
 
         if (notePrefab == null)
         {
-            Debug.LogError($"[NoteRow] 'notePrefab' non assigné sur {gameObject.name}. Assigner un préfab Note dans l'Inspector.", this);
+            Debug.LogError(
+                $"[NoteRow] 'notePrefab' non assigné sur {gameObject.name}. Assigner un préfab Note dans l'Inspector.",
+                this);
         }
         else
         {
@@ -52,13 +53,16 @@ public class NoteRow : MonoBehaviour
     public void InitializeNotes(int count)
     {
         if (debugLog)
-            Debug.Log($"[NoteRow] InitializeNotes({count}) sur '{gameObject.name}' — suppression de {notes.Count} note(s) existante(s).", this);
+            Debug.Log(
+                $"[NoteRow] InitializeNotes({count}) sur '{gameObject.name}' — suppression de {notes.Count} note(s) existante(s).",
+                this);
 
         // Nettoyage des notes existantes
         foreach (Note note in notes)
         {
             Destroy(note.gameObject);
         }
+
         notes.Clear();
 
         // Création des nouvelles notes
@@ -75,7 +79,8 @@ public class NoteRow : MonoBehaviour
         LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
 
         if (debugLog)
-            Debug.Log($"[NoteRow] InitializeNotes terminé → {notes.Count} note(s) active(s) dans '{gameObject.name}'.", this);
+            Debug.Log($"[NoteRow] InitializeNotes terminé → {notes.Count} note(s) active(s) dans '{gameObject.name}'.",
+                this);
     }
 
     // ─── Accès aux notes individuelles ───────────────────────────────────────
@@ -85,7 +90,8 @@ public class NoteRow : MonoBehaviour
     {
         if (index < 0 || index >= notes.Count)
         {
-            Debug.LogWarning($"[NoteRow] GetNote({index}) hors limites (count={notes.Count}) sur '{gameObject.name}'.", this);
+            Debug.LogWarning($"[NoteRow] GetNote({index}) hors limites (count={notes.Count}) sur '{gameObject.name}'.",
+                this);
             return null;
         }
 
@@ -101,6 +107,7 @@ public class NoteRow : MonoBehaviour
         {
             note.Hide();
         }
+
         if (debugLog)
             Debug.Log($"[NoteRow] HideAll() → toutes les notes masquées sur '{gameObject.name}'.", this);
     }
@@ -111,8 +118,20 @@ public class NoteRow : MonoBehaviour
         {
             note.Hide();
         }
+
         label.SetActive(false);
         if (debugLog)
             Debug.Log($"[NoteRow] HideRow() → notes et label masqués sur '{gameObject.name}'.", this);
+    }
+
+    /// <summary>
+    /// Returns the number of notes currently present in the row, with debug logging.
+    /// </summary>
+    public int GetNoteCount()
+    {
+        int count = notes.Count;
+        if (debugLog)
+            Debug.Log($"[NoteRow] GetNoteCount() → {count} note(s) in '{gameObject.name}'.", this);
+        return count;
     }
 }

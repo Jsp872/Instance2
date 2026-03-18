@@ -12,9 +12,8 @@ public class Note : MonoBehaviour
     private Image noteImage;
     private Color noteColor;
 
-    [Header("Debug")]
-    [Tooltip("Active ou désactive les logs de debug pour cette note.")]
-    [SerializeField] private bool debugLog = false;
+    [Header("Debug")] [Tooltip("Active ou désactive les logs de debug pour cette note.")] [SerializeField]
+    private bool debugLog = false;
 
     private void Awake()
     {
@@ -22,7 +21,9 @@ public class Note : MonoBehaviour
 
         if (noteImage == null)
         {
-            Debug.LogError($"[Note] Aucun composant Image trouvé sur {gameObject.name}. Attacher un Image sur ce GameObject.", this);
+            Debug.LogError(
+                $"[Note] Aucun composant Image trouvé sur {gameObject.name}. Attacher un Image sur ce GameObject.",
+                this);
         }
         else
         {
@@ -64,14 +65,16 @@ public class Note : MonoBehaviour
     public void SetColor(Color c)
     {
         noteColor = c;
+        noteImage.color = c;
+        if (debugLog) Debug.Log($"[Note] SetColor({c}) → '{gameObject.name}' couleur définie.", this);
     }
 
     /// <summary>
     /// Anime la note pour la mettre en avant (taille/couleur).
     /// </summary>
-    public void Enable()
+    public void Enable(float factor = 1)
     {
-        noteImage.rectTransform.DOSizeDelta(new Vector2(100, 100), 0.5f).SetEase(Ease.OutBack);
+        noteImage.rectTransform.DOSizeDelta(new Vector2(100 * factor, 100 * factor), 0.5f).SetEase(Ease.OutBack);
         noteImage.DOColor(noteColor, 0.5f).SetEase(Ease.OutQuad);
         if (debugLog)
             Debug.Log($"[Note] Enable() → '{gameObject.name}' animée en avant.", this);
@@ -94,6 +97,7 @@ public class Note : MonoBehaviour
     public void Reset()
     {
         noteImage.rectTransform.DOSizeDelta(new Vector2(50, 50), 0.5f).SetEase(Ease.OutBack);
+        noteImage.DOColor(noteColor, 0.5f).SetEase(Ease.OutQuad);
         if (debugLog)
             Debug.Log($"[Note] Reset() → '{gameObject.name}' taille réinitialisée.", this);
     }
