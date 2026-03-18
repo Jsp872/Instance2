@@ -1,37 +1,25 @@
 using UnityEngine;
-
-
 [System.Serializable]
 public struct MovementConfig : Config
 {
     [Header("Movement")]
-    [Tooltip("Direction du perso dans la scene, par default -> droite")]
     public Vector3 movementDirection;
-
-    [Tooltip("Layer du sol, utiliser pour les collisions et le saut")]
     public LayerMask groundLayer;
-
-    [Tooltip("vitesse initial du perso")]
     public float moveSpeedDefaultValue;
-
-    [Tooltip("vitesse minimum du perso")]
-    [Min(0.0f)] public float minMoveSpeed;
-    [Tooltip("vitesse maximum du perso")]
+    [Min(0)] public float minMoveSpeed;
     public float maxMoveSpeed;
+    public float accelerationSmoothTime;
+    public float decelerationSmoothTime;
 
-    [Tooltip("valeur de d'acceleration appliquer a la vitesse a chaque frame")]
-    [Min(0.0f)] public float accelerationValue;
-    [Tooltip("valeur de deceleration appliquer a la vitesse a chaque frame")]
-    [Min(0.0f)] public float decelerationValue;
+    [Header("Static Obstacle")]
+    public LayerMask staticObstacleLayer;
+    public float staticObstacleDetectionDistance;
+    public float staticObstacleDistanceMinSpeed;
+    public bool stopPlayerOnStaticObstacle;
 
-    [Tooltip("determine a quelle distance d'un obstacle il va commencé a descelerer")]
-    public float decelerationDistance;
-
-    public float gravityValue;
+    [Header("Puzzle Obstacle")]
+    public LayerMask puzzleObstacleLayer;
+    public float puzzleObstacleDetectionDistance;
+    public float puzzleDistanceMinSpeed;
+    public bool stopPlayerOnPuzzleObstacle;
 }
-
-//    public virtual void OnValidate()
-//    {
-//        moveSpeedDefaultValue = Mathf.Clamp(moveSpeedDefaultValue, minMoveSpeed, maxMoveSpeed);
-//    }
-//}
