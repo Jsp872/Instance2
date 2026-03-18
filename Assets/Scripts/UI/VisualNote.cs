@@ -33,9 +33,8 @@ public class VisualNote : MonoBehaviour
 
     private ObstaclePlayerDetector obstaclePlayerDetector;
 
-    [Header("Debug")]
-    [Tooltip("Active ou désactive les logs de debug pour ce VisualNote.")]
-    [SerializeField] private bool debugLog = false;
+    [Header("Debug")] [Tooltip("Active ou désactive les logs de debug pour ce VisualNote.")] [SerializeField]
+    private bool debugLog = false;
 
     // ─── Lifecycle ───────────────────────────────────────────────────────────
 
@@ -46,17 +45,22 @@ public class VisualNote : MonoBehaviour
 
         if (obstaclePlayerDetector == null)
         {
-            Debug.LogError($"[VisualNote] Aucun ObstaclePlayerDetector trouvé dans le parent de '{gameObject.name}'. Vérifier la hiérarchie.", this);
+            Debug.LogError(
+                $"[VisualNote] Aucun ObstaclePlayerDetector trouvé dans le parent de '{gameObject.name}'. Vérifier la hiérarchie.",
+                this);
         }
         else
         {
             if (debugLog)
-                Debug.Log($"[VisualNote] Awake → ObstaclePlayerDetector trouvé : '{obstaclePlayerDetector.gameObject.name}'.", this);
+                Debug.Log(
+                    $"[VisualNote] Awake → ObstaclePlayerDetector trouvé : '{obstaclePlayerDetector.gameObject.name}'.",
+                    this);
         }
 
         if (noteRows == null || noteRows.Count == 0)
         {
-            Debug.LogWarning($"[VisualNote] Aucune NoteRow assignée sur '{gameObject.name}'. Rien ne sera affiché.", this);
+            Debug.LogWarning($"[VisualNote] Aucune NoteRow assignée sur '{gameObject.name}'. Rien ne sera affiché.",
+                this);
         }
         else
         {
@@ -71,7 +75,8 @@ public class VisualNote : MonoBehaviour
 
         int count = obstaclePlayerDetector.sequenceCible.Count;
         if (debugLog)
-            Debug.Log($"[VisualNote] Start → séquence cible de {count} note(s) détectée. Initialisation des NoteRow.", this);
+            Debug.Log($"[VisualNote] Start → séquence cible de {count} note(s) détectée. Initialisation des NoteRow.",
+                this);
 
         // Initialise chaque rangée avec le nombre exact de cases de la séquence
         foreach (NoteRow noteRow in noteRows)
@@ -86,19 +91,27 @@ public class VisualNote : MonoBehaviour
             noteRow.InitializeNotes(count);
             noteRow.HideAll();
             if (debugLog)
-                Debug.Log($"[VisualNote] Start → NoteRow '{noteRow.gameObject.name}' initialisée avec {count} note(s).", this);
+                Debug.Log($"[VisualNote] Start → NoteRow '{noteRow.gameObject.name}' initialisée avec {count} note(s).",
+                    this);
         }
+
 
         for (int i = 0; i < count; i++)
         {
-            NoteRow noteRow = noteRows[(int)obstaclePlayerDetector.sequenceCible[i].note];
-            Note note = noteRow.GetNote(i);
-            note.SetColor(noteColorInRowOrder[i]);
+            int rowIndex = (int)obstaclePlayerDetector.sequenceCible[i].note;
+            Note note = noteRows[rowIndex].GetNote(i);
             track.Add(note);
+            if (debugLog)
+                Debug.Log($"[VisualNote] Start → Note {i} ajoutée à la track : {note.gameObject.name}", this);
+            note.SetColor(noteColorInRowOrder[rowIndex]);
             note.Show();
         }
 
         track[0].Enable();
+        if (track.Count > 1)
+        {
+            track[1].Enable(.75F);
+        }
 
         obstaclePlayerDetector.nextNote += OnNewNote;
         obstaclePlayerDetector.badNote += OnBadNote;
@@ -125,6 +138,11 @@ public class VisualNote : MonoBehaviour
         }
 
         track[0].Enable();
+        if (track.Count > 1)
+        {
+            track[1].Enable(.75F);
+        }
+
         if (debugLog)
             Debug.Log($"[VisualNote] OnBadNote() → toutes les notes réinitialisées, première note réactivée.", this);
     }
@@ -135,8 +153,15 @@ public class VisualNote : MonoBehaviour
         {
             track[obstaclePlayerDetector.indexCourant - 1].Disable();
             track[obstaclePlayerDetector.indexCourant].Enable();
+            if (obstaclePlayerDetector.indexCourant + 1 < track.Count)
+            {
+                track[obstaclePlayerDetector.indexCourant + 1].Enable(.75f);
+            }
+
             if (debugLog)
-                Debug.Log($"[VisualNote] OnNewNote() → note {obstaclePlayerDetector.indexCourant} activée, précédente désactivée.", this);
+                Debug.Log(
+                    $"[VisualNote] OnNewNote() → note {obstaclePlayerDetector.indexCourant} activée, précédente désactivée.",
+                    this);
         }
     }
 }
