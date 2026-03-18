@@ -1,113 +1,100 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class JumpComponent : PlayerComponent
 {
-    [Header("DEBUG")]
-    [SerializeField] private JumpConfig configCopy;
-
-
     [SerializeField] private Transform playerFeet;
+    [SerializeField, Tooltip("Config Cache - changes don't save to SO!")]
+    private JumpConfig config;
 
-    private float additionalForce;
-    private bool holdJump = false;
-    private Coroutine holdJumpRoutine;
+    [Header("______DEBUG_______")]
+    [SerializeField] private float coyoteTimer;
+    [SerializeField] private bool wasGrounded;
+    [SerializeField] private float jumpBufferTimer;
+    [SerializeField] private bool holdingJump;
+    [SerializeField] private float totalForceApplied;
 
-    public override void Initialize(PlayerStatConfig config, Rigidbody2D rb)
+
+    [SerializeField] private float DEBUG_JumpForce;
+
+    private Rigidbody2D rb;
+
+    public override void Initialize(PlayerController controller)
     {
-        base.Initialize(config, rb);
-        configCopy = playerConfig.jumpConfig;
+        base.Initialize(controller);
+        config = controller.GetConfig().jumpConfig;
+        rb = controller.GetRb();
     }
 
-
-    public void OnJump(InputAction.CallbackContext ctx)
+    public override void HandleInput(InputAction.CallbackContext ctx)
     {
-        if (IsGrounded())
+        if (ctx.performed)
         {
-            if (ctx.started) {
-                OnActionStarted();
-            }
-
-            else if (ctx.canceled) {
-                OnActionCanceled();
-            }
+            jumpBufferTimer = config.jumpBufferTime;
+        }
+        else if (ctx.canceled)
+        {
+            holdingJump = false;
         }
     }
-    public override void OnActionStarted()
+
+    public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
-        base.OnActionStarted();
-        holdJumpRoutine = StartCoroutine(WaitForHoldJump());
-    }
-    public override void OnUpdated(ref Vector3 velocity, float fixedDeltaTime)
-    {
-        if (!holdJump) return;
+        bool grounded = IsGrounded();
 
+        if (grounded) coyoteTimer = config.coyoteTime;
+        else if (wasGrounded && !grounded) coyoteTimer = config.coyoteTime;
+        else coyoteTimer -= dt;
+        wasGrounded = grounded;
 
-        additionalForce += fixedDeltaTime * configCopy.jumpAcceleration;
-        additionalForce = Mathf.Clamp(
-            additionalForce,
-            0f,
-            configCopy.maximalJumpForce - configCopy.initialJumpForce
-        );
-
-    }
-    public override void OnActionCanceled()
-    {
-        base.OnActionCanceled();
-        holdJump = false;
-
-        if (holdJumpRoutine != null)
+        if (jumpBufferTimer > 0f)
         {
-            StopCoroutine(holdJumpRoutine);
-            holdJumpRoutine = null;
+            jumpBufferTimer -= dt;
+            if (CanJump())
+            {
+                PerformJump();
+                jumpBufferTimer = 0f;
+            }
         }
 
-        TryJump();
+        if (holdingJump && rb.linearVelocityY > 0f && totalForceApplied < config.maximalJumpForce)
+        {
+            DEBUG_JumpForce = config.holdForcePerSecond * dt;
+            DEBUG_JumpForce = Mathf.Min(DEBUG_JumpForce, config.maximalJumpForce - totalForceApplied);
+            rb.AddForce(Vector2.up * DEBUG_JumpForce, ForceMode2D.Impulse);
+            totalForceApplied += DEBUG_JumpForce;
+        }
+
+        if (rb.linearVelocityY < 0f)
+            rb.gravityScale = config.fallGravityMultiplier;
+        else if (rb.linearVelocityY > 0f && !holdingJump)
+            rb.gravityScale = config.cutJumpGravityMultiplier;
+        else
+            rb.gravityScale = 1f;
     }
 
-    private void TryJump()
-    {
-        if (!IsGrounded()) return;
+    private bool CanJump() => coyoteTimer > 0f;
 
+    private void PerformJump()
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocityX, 0f);
+        playerController.Bounce(new Vector2(0f, config.minimalJumpForce));
+        totalForceApplied = config.minimalJumpForce;
+        holdingJump = true; 
+        coyoteTimer = 0f;
         EventBus.Publish(new JumpEvent());
-
-        float force = Mathf.Clamp(
-            configCopy.initialJumpForce + additionalForce,
-            configCopy.minimalJumpForce,
-            configCopy.maximalJumpForce
-        );
-
-        rb.AddForce(new Vector2(0f, force), ForceMode2D.Impulse);
-        additionalForce = 0f;
     }
 
     private bool IsGrounded()
     {
-        bool isGrounded = Physics2D.Raycast(
+        bool hit = Physics2D.Raycast(
             playerFeet.position,
             Vector2.down,
-            configCopy.checkIsGroundedRadius,
-            configCopy.jumpableLayer
+            config.checkIsGroundedRadius,
+            config.jumpableLayer
         );
-        Debug.DrawLine(playerFeet.position, playerFeet.position + Vector3.down * configCopy.checkIsGroundedRadius, Color.red);
-
-
-        return isGrounded;
-    }
-
-    private IEnumerator WaitForHoldJump()
-    {
-        yield return new WaitForSeconds(configCopy.holdJumpStartTime);
-        holdJump = true;
-    }
-
-    public void OnValidate()
-    {
-    //    movementConfig.moveSpeedDefaultValue =
-    //        Mathf.Clamp(movementConfig.moveSpeedDefaultValue, movementConfig.minMoveSpeed, movementConfig.maxMoveSpeed);
-
-        configCopy.initialJumpForce =
-            Mathf.Clamp(configCopy.initialJumpForce, configCopy.minimalJumpForce, configCopy.maximalJumpForce);
+        Debug.DrawLine(playerFeet.position,
+            playerFeet.position + Vector3.down * config.checkIsGroundedRadius, Color.red);
+        return hit;
     }
 }

@@ -37,28 +37,19 @@ public class SendNoteComponent : PlayerComponent
     [SerializeField] private SendNoteConfig config;
     private Coroutine comboRoutine;
 
-    #region Note ID Getter
-    /// <summary>
-    /// plusieurs choix pour ça : 
-    /// soit par le dico -> si on veux rajouter une note alors on update la struct, le dico, on rajoute la fonction inputCtx 
-    /// soit par une fonction avec un switch (plus ou moin la meme chose)
-    /// soit par un int ID la si on veux rajouter une note faut juste rajouter une fonction InputCtx (mais moins clair)
-    /// </summary>
-    private Dictionary<string, NoteID> keys = new Dictionary<string, NoteID>()
-    {
-        {"H", NoteID.DO },
-        {"J", NoteID.RE },
-        {"K", NoteID.MI },
-        {"L", NoteID.FA },
-    };
-    #endregion
-
     [Header("Hold helper")]
     private List<NoteContext> noteBuffer = new List<NoteContext>();
     private Dictionary<NoteID, NoteHoldContext> holdDurations = new Dictionary<NoteID, NoteHoldContext>();
     private HashSet<NoteID> holdingNotes = new HashSet<NoteID>();
 
-    private void Update()
+
+    public override void Initialize(PlayerController controller)
+    {
+        base.Initialize(controller);
+        this.config = controller.GetConfig().sendNoteConfig;
+    }
+
+    public override void UpdateComponent(ref Vector3 velocity, float fixedDT)
     {
         foreach (NoteID note in holdingNotes.ToArray())
         {
@@ -66,7 +57,7 @@ public class SendNoteComponent : PlayerComponent
 
             if (!holdCtx.holdStarted)
             {
-                holdCtx.startHoldTimer += Time.deltaTime;
+                holdCtx.startHoldTimer += fixedDT;
 
                 if (holdCtx.CanUpdateHold)
                 {
@@ -81,34 +72,24 @@ public class SendNoteComponent : PlayerComponent
             }
             else
             {
-                holdCtx.holdTimer += config.holdTimerMultiplier * Time.deltaTime;
+                holdCtx.holdTimer += config.holdTimerMultiplier * fixedDT;
             }
         }
     }
 
-
-    public override void Initialize(PlayerStatConfig config, Rigidbody2D rb)
+    public override void HandleInput<T>(InputAction.CallbackContext ctx, T param)
     {
-        base.Initialize(config, rb);
-        this.config = config.sendNoteConfig;
-    }
-    public void OnSendDO(InputAction.CallbackContext ctx) => HandleInput(ctx);
-    public void OnSendRE(InputAction.CallbackContext ctx) => HandleInput(ctx);
-    public void OnSendMI(InputAction.CallbackContext ctx) => HandleInput(ctx);
-    public void OnSendFA(InputAction.CallbackContext ctx) => HandleInput(ctx);
-
-    private void HandleInput(InputAction.CallbackContext ctx)
-    {
-        NoteID id = keys[ctx.control.displayName];
-
-        if (ctx.started)
+        if (param is NoteID id)
         {
-            StartNote(id);
-        }
+            if (ctx.started)
+            {
+                StartNote(id);
+            }
 
-        if (ctx.canceled)
-        {
-            ReleaseNote(id);
+            if (ctx.canceled)
+            {
+                ReleaseNote(id);
+            }
         }
     }
     private void StartNote(NoteID id)

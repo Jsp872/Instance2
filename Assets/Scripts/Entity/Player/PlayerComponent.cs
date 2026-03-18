@@ -1,16 +1,21 @@
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class PlayerComponent : MonoBehaviour
 {
-    protected PlayerStatConfig playerConfig;
-    protected Rigidbody2D rb;
-    public virtual void Initialize(PlayerStatConfig config, Rigidbody2D rb)
+    protected PlayerController playerController;
+    public virtual void Initialize(PlayerController playerController)
     {
-        playerConfig = config;
-        this.rb = rb;
+        this.playerController = playerController;
     }
-    public virtual void OnUpdated(ref Vector3 velocity, float fixedDeltaTime) { }
-    public virtual void OnActionStarted() { }
-    public virtual void OnActionCanceled() { }
+
+    public virtual bool CanUpdate() => true;
+    public virtual void UpdateComponent(ref Vector3 velocity, float dT)
+    {
+        if (!CanUpdate())
+            return;
+    }
+
+    public virtual void HandleInput<T>(InputAction.CallbackContext ctx, T param) { }
+    public virtual void HandleInput(InputAction.CallbackContext ctx) { }
 }

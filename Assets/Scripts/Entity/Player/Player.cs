@@ -3,18 +3,14 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class Player : MonoBehaviour
 {
-    private PlayerController controller;
+    [SerializeField] private PlayerStatConfig playerStatConfig;
+    [SerializeField] private PlayerController controller;
     private void Awake()
     {
-        controller = GetComponent<PlayerController>();
-        //controller.InitializeComponent();
+        if (controller == null) {
+            controller = GetComponent<PlayerController>();
+        }
+
+        controller.InitializeComponent(playerStatConfig);
     }
-
-    //private void FixedUpdate()
-    //{
-    //    Vector3 velocity = Vector3.zero;
-    //    controller.UpdateComponent(ref velocity, Time.fixedDeltaTime);
-
-    //    transform.position += velocity;
-    //}
 }

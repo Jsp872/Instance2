@@ -17,24 +17,192 @@ MonoBehaviour:
     groundLayer:
       serializedVersion: 2
       m_Bits: 128
-    moveSpeedDefaultValue: 1
-    minMoveSpeed: 0
+    moveSpeedDefaultValue: 3
+    minMoveSpeed: 1.5
     maxMoveSpeed: 7
-    accelerationValue: 7
-    decelerationValue: 0.35
-    decelerationDistance: 15
-    gravityValue: 9.81
+    accelerationSmoothTime: 0.25
+    accelerationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.0009143
+        outSlope: 2.0009143
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.40338168
+        value: 0.8071322
+        inSlope: 0.71743923
+        outSlope: 0.71743923
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.068598196
+      - serializedVersion: 3
+        time: 1.0022278
+        value: 1
+        inSlope: 0.10590092
+        outSlope: 0.10590092
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08488291
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    decelerationSmoothTime: 0.1
+    decelerationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.4963612
+        value: 0.11387322
+        inSlope: 0.10102182
+        outSlope: 0.10102182
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.17427856
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    staticObstacleLayer:
+      serializedVersion: 2
+      m_Bits: 256
+    staticObstacleDetectionDistance: 15
+    staticObstacleDistanceMinSpeed: 5
+    stopPlayerOnStaticObstacle: 0
+    puzzleObstacleLayer:
+      serializedVersion: 2
+      m_Bits: 512
+    puzzleObstacleDetectionDistance: 15
+    puzzleDistanceMinSpeed: 7.5
+    stopPlayerOnPuzzleObstacle: 1
   jumpConfig:
-    initialJumpForce: 8
-    minimalJumpForce: 8
-    maximalJumpForce: 14
-    jumpAcceleration: 10
-    holdJumpStartTime: 4.5
-    checkIsGroundedRadius: 0.75
+    minimalJumpForce: 3
+    maximalJumpForce: 7
+    holdJumpStartTime: 0
+    holdForcePerSecond: 20
+    checkIsGroundedRadius: 0.12
     jumpableLayer:
       serializedVersion: 2
-      m_Bits: 128
-    canWallJump: 0
+      m_Bits: 384
+    fallGravityMultiplier: 2.5
+    cutJumpGravityMultiplier: 2
+    fallGravityCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    cutJumpGravityCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    holdBoostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.0024108887
+        value: 0.8531494
+        inSlope: 0.044867355
+        outSlope: 0.044867355
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.06330129
+      - serializedVersion: 3
+        time: 0.30267227
+        value: 0.99766177
+        inSlope: -0.13871318
+        outSlope: -0.13871318
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08329174
+      - serializedVersion: 3
+        time: 0.6942573
+        value: 0.50224745
+        inSlope: -0.43725353
+        outSlope: -0.43725353
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.2135266
+      - serializedVersion: 3
+        time: 1.0028076
+        value: -0.0016288757
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    coyoteTime: 0.12
+    jumpBufferTime: 0.15
   interactionConfig:
     interactibleLayer:
       serializedVersion: 2

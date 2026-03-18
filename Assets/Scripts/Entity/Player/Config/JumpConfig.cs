@@ -1,18 +1,19 @@
 using UnityEngine;
-
-
 [System.Serializable]
 public struct JumpConfig : Config
 {
-    [Header("jumpValue")]
-    public float initialJumpForce;
+    [Header("Jump Force")]
     [Min(0)] public float minimalJumpForce;
     [Min(1)] public float maximalJumpForce;
-    [Min(0.0f)] public float jumpAcceleration;
+    public float holdForcePerSecond;
 
-    public float holdJumpStartTime;
+    [Header("Ground Detection")]
     public float checkIsGroundedRadius;
-
     public LayerMask jumpableLayer;
-    public bool canWallJump;
+
+    [Header("Feel")]
+    public float coyoteTime;
+    public float jumpBufferTime;
+    public float fallGravityMultiplier;
+    public float cutJumpGravityMultiplier;
 }

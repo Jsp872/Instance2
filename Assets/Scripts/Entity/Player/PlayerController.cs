@@ -1,15 +1,48 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private PlayerStatConfig playerConfig;
-
-    private JumpComponent jumpComponent;
-    private AutoMoveComponent autoMoveComponent;
-    private SendNoteComponent sendNoteComponent;
+    private PlayerStatConfig playerConfig;
     private Rigidbody2D rb;
 
+    public PlayerStatConfig GetConfig() => playerConfig;
+    public Rigidbody2D GetRb() => rb;
+
+
+    [Header("InputComponent")]
+    private JumpComponent jumpComponent;
+    private SendNoteComponent sendNoteComponent;
+    private PauseComponent pauseComponent;
+
+    [Header("MovementComponent")]
+    private AutoMoveComponent autoMoveComponent;
+
+
+    //PUBLIC API
+    public void InitializeComponent(PlayerStatConfig playerStatConfig)
+    {
+        playerConfig = playerStatConfig;    
+        AddAndInitComponent(out  rb);   
+
+        AddAndInitComponent(out jumpComponent);
+        AddAndInitComponent(out sendNoteComponent);
+        AddAndInitComponent(out pauseComponent);
+
+        AddAndInitComponent(out autoMoveComponent);
+    }
+    public void Bounce(Vector2 force)
+    {
+        rb.AddForce(force, ForceMode2D.Impulse);
+    }
+    private void Update()
+    {
+        Vector3 velocity = Vector3.zero;
+        UpdateComp(ref velocity, Time.deltaTime, autoMoveComponent, jumpComponent);
+        rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocityY);
+    }
 
     #region SEND_NOTE_DEBUG
     private void OnEnable()
@@ -30,41 +63,35 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
+    #region Input Controller
+    public void OnSendDO(InputAction.CallbackContext ctx) => sendNoteComponent.HandleInput(ctx, NoteID.DO);
+    public void OnSendRE(InputAction.CallbackContext ctx) => sendNoteComponent.HandleInput(ctx, NoteID.RE);
+    public void OnSendMI(InputAction.CallbackContext ctx) => sendNoteComponent.HandleInput(ctx, NoteID.MI);
+    public void OnSendFA(InputAction.CallbackContext ctx) => sendNoteComponent.HandleInput(ctx, NoteID.FA);
+    public void OnJump(InputAction.CallbackContext ctx) => jumpComponent.HandleInput(ctx);
 
-        SetAndInitComponent(out jumpComponent);
-        SetAndInitComponent(out autoMoveComponent);
-        SetAndInitComponent(out sendNoteComponent);
-    }
+    public void OnOpenPauseSetting(InputAction.CallbackContext ctx) => pauseComponent.HandleInput(ctx);
 
-    private void FixedUpdate()
+    #endregion
+
+    private void AddAndInitComponent<T>(out T component) where T : Component
     {
-        Vector3 velocity = UpdateComponent(autoMoveComponent, jumpComponent);
-        transform.position += velocity * Time.fixedDeltaTime;
-    }
-    private void SetAndInitComponent<T>(out T component) where T : PlayerComponent
-    {
-        if (TryGetComponent(out component))
+        if (!TryGetComponent(out component))
         {
-            component.Initialize(playerConfig, rb);
+            component = gameObject.AddComponent<T>();
+        }
+
+        if (component is PlayerComponent pComponent)
+        {
+            pComponent.Initialize(this);
         }
     }
-    private Vector3 UpdateComponent(params PlayerComponent[] components)
+
+    private void UpdateComp(ref Vector3 velocity, float fixedDT, params PlayerComponent[] components)
     {
-        Vector3 velocity = Vector2.zero;
-        foreach (var component in components)
+        for (int i = 0; i < components.Length; i++)
         {
-            if (component == null) continue;
-            component.OnUpdated(ref velocity, Time.fixedDeltaTime);
+            components[i].UpdateComponent(ref velocity, fixedDT);
         }
-        return velocity;
     }
-
-    public void Bounce(Vector2 force)
-    {
-        rb.AddForce(force, ForceMode2D.Impulse);
-    }
-
 }
