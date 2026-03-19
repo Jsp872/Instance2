@@ -3,23 +3,18 @@ using UnityEngine;
 public struct MovementConfig : Config
 {
     [Header("Movement")]
-    public Vector3 movementDirection;
-    public LayerMask groundLayer;
-    public float moveSpeedDefaultValue;
-    [Min(0)] public float minMoveSpeed;
+    public Vector3 defaultMovementDir;
+    public float defaultMoveSpeed;
     public float maxMoveSpeed;
     public float accelerationSmoothTime;
-    public float decelerationSmoothTime;
 
-    [Header("Static Obstacle")]
-    public LayerMask staticObstacleLayer;
-    public float staticObstacleDetectionDistance;
-    public float staticObstacleDistanceMinSpeed;
-    public bool stopPlayerOnStaticObstacle;
+    [Header("Detection et Feedback liée aux obstacle")]
+    public float obstacleDetectionDistance;
+    public float playerObstacleRangeSpeed;
+    public float playerDeceleration;
+    [Tooltip("Distance minimale entre le joueur et un obstacle avant la mort (en unités Unity)")]
+    public float playerDeathRange;
 
-    [Header("Puzzle Obstacle")]
-    public LayerMask puzzleObstacleLayer;
-    public float puzzleObstacleDetectionDistance;
-    public float puzzleDistanceMinSpeed;
-    public bool stopPlayerOnPuzzleObstacle;
+    [Header("Obstacle / Wall Layers")]
+    public LayerMask obstacleLayer;
 }

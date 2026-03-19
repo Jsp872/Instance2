@@ -11,76 +11,103 @@ public class JumpComponent : PlayerComponent
     [SerializeField] private float coyoteTimer;
     [SerializeField] private bool wasGrounded;
     [SerializeField] private float jumpBufferTimer;
-    [SerializeField] private bool holdingJump;
-    [SerializeField] private float totalForceApplied;
-
-
-    [SerializeField] private float DEBUG_JumpForce;
+    [SerializeField] private float DEBUG_derivedJumpVelocity;
+    [SerializeField] private float DEBUG_derivedGravity;
 
     private Rigidbody2D rb;
+    private float derivedJumpVelocity;
+    private float derivedGravity;
 
     public override void Initialize(PlayerController controller)
     {
         base.Initialize(controller);
         config = controller.GetConfig().jumpConfig;
         rb = controller.GetRb();
+        ComputeJumpPhysics();
+    }
+
+    private void ComputeJumpPhysics()
+    {
+        derivedJumpVelocity = (2f * config.jumpApexHeight) / config.jumpApexTime;
+        derivedGravity = (2f * config.jumpApexHeight) / (config.jumpApexTime * config.jumpApexTime);
+        rb.gravityScale = derivedGravity / Mathf.Abs(Physics2D.gravity.y);
+
+        DEBUG_derivedJumpVelocity = derivedJumpVelocity;
+        DEBUG_derivedGravity = derivedGravity;
     }
 
     public override void HandleInput(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-        {
             jumpBufferTimer = config.jumpBufferTime;
-        }
-        else if (ctx.canceled)
-        {
-            holdingJump = false;
-        }
     }
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
         bool grounded = IsGrounded();
 
-        if (grounded) coyoteTimer = config.coyoteTime;
-        else if (wasGrounded && !grounded) coyoteTimer = config.coyoteTime;
-        else coyoteTimer -= dt;
+        UpdateCoyoteTime(grounded, dt);
         wasGrounded = grounded;
+        UpdateJumpBuffer(dt);
 
-        if (jumpBufferTimer > 0f)
+        if (config.hasJumpGravityModifiers)
         {
-            jumpBufferTimer -= dt;
-            if (CanJump())
-            {
-                PerformJump();
-                jumpBufferTimer = 0f;
-            }
+            UpdateGravity();
         }
+    }
 
-        if (holdingJump && rb.linearVelocityY > 0f && totalForceApplied < config.maximalJumpForce)
+    private void UpdateCoyoteTime(bool grounded, float dt)
+    {
+        if (grounded)
         {
-            DEBUG_JumpForce = config.holdForcePerSecond * dt;
-            DEBUG_JumpForce = Mathf.Min(DEBUG_JumpForce, config.maximalJumpForce - totalForceApplied);
-            rb.AddForce(Vector2.up * DEBUG_JumpForce, ForceMode2D.Impulse);
-            totalForceApplied += DEBUG_JumpForce;
+            coyoteTimer = config.coyoteTime;
         }
+        else if (wasGrounded && !grounded)
+        {
+            coyoteTimer = config.hasCoyoteTime ? config.coyoteTime : 0f;
+        }
+        else
+        {
+            coyoteTimer -= dt;
+        }
+    }
+
+    private void UpdateJumpBuffer(float dt)
+    {
+        if (jumpBufferTimer <= 0f) return;
+
+        jumpBufferTimer -= dt;
+
+        if (CanJump())
+        {
+            PerformJump();
+            jumpBufferTimer = 0f;
+        }
+    }
+
+    private void UpdateGravity()
+    {
+        float baseGravityScale = derivedGravity / Mathf.Abs(Physics2D.gravity.y);
 
         if (rb.linearVelocityY < 0f)
-            rb.gravityScale = config.fallGravityMultiplier;
-        else if (rb.linearVelocityY > 0f && !holdingJump)
-            rb.gravityScale = config.cutJumpGravityMultiplier;
+        {
+            rb.gravityScale = baseGravityScale * config.fallGravityMultiplier;
+        }
+        else if (rb.linearVelocityY > 0f)
+        {
+            rb.gravityScale = baseGravityScale * config.cutJumpGravityMultiplier;
+        }
         else
-            rb.gravityScale = 1f;
+        {
+            rb.gravityScale = baseGravityScale;
+        }
     }
 
     private bool CanJump() => coyoteTimer > 0f;
 
     private void PerformJump()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocityX, 0f);
-        playerController.Bounce(new Vector2(0f, config.minimalJumpForce));
-        totalForceApplied = config.minimalJumpForce;
-        holdingJump = true; 
+        rb.linearVelocity = new Vector2(rb.linearVelocityX, derivedJumpVelocity);
         coyoteTimer = 0f;
         EventBus.Publish(new JumpEvent());
     }
@@ -93,8 +120,13 @@ public class JumpComponent : PlayerComponent
             config.checkIsGroundedRadius,
             config.jumpableLayer
         );
-        Debug.DrawLine(playerFeet.position,
-            playerFeet.position + Vector3.down * config.checkIsGroundedRadius, Color.red);
+
+        Debug.DrawLine(
+            playerFeet.position,
+            playerFeet.position + Vector3.down * config.checkIsGroundedRadius,
+            Color.red
+        );
+
         return hit;
     }
 }
