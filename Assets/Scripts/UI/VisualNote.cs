@@ -1,167 +1,114 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
 /// <summary>
-/// VisualNote : synchronise l'affichage des rangées de notes (NoteRow) avec la séquence cible d'un obstacle Simon.
-/// 
-/// Utilisation :
-/// 1. Ajouter le prefab VisualNote en tant qu'enfant de l'obstacle, au même niveau qu'un ObstaclePlayerDetector (frère dans la hiérarchie).
-/// 2. Dans l'Inspector, assignez les NoteRow à piloter dans la liste "noteRows".
-/// 3. (Optionnel) Réglez les couleurs dans "noteColorInRowOrder" pour chaque note.
-/// 4. (Optionnel) Placez le RectTransform "layout" si vous souhaitez animer la fermeture.
-/// 5. (Optionnel) Activez "debugLog" pour afficher les logs détaillés en Play Mode.
-/// 6. N'oubliez pas de reset la position du VisualNote si besoin (remettre à zéro dans l'Inspector ou par script).
-/// 
-/// Prérequis :
-/// - L'obstacle parent (ou l'un de ses enfants) doit porter un ObstaclePlayerDetector.
-/// - Les NoteRow doivent être des enfants du VisualNote ou référencées dans la liste.
+/// Gère l'affichage des notes visuelles dans l'UI.
 /// </summary>
 public class VisualNote : MonoBehaviour
 {
-    // ─── Inspector ───────────────────────────────────────────────────────────
-
     [SerializeField] private List<Color> noteColorInRowOrder = new();
     [SerializeField] private RectTransform layout;
+    [SerializeField] private Note notePrefab;
+    [SerializeField] private AutoMoveComponent playerMovement;
 
     [Tooltip("Rangées UI à initialiser avec le nombre de notes de la séquence cible.")] [SerializeField]
-    private List<NoteRow> noteRows;
+    private List<RectTransform> noteRows;
 
-    private List<Note> track = new();
+    private List<Note> notes = new();
 
-    // ─── Privé ───────────────────────────────────────────────────────────────
-
-    private ObstaclePlayerDetector obstaclePlayerDetector;
-
-    [Header("Debug")] [Tooltip("Active ou désactive les logs de debug pour ce VisualNote.")] [SerializeField]
-    private bool debugLog = false;
-
-    // ─── Lifecycle ───────────────────────────────────────────────────────────
+    [Header("Debug")] [SerializeField] private bool debugLogs = false;
+    [SerializeField] private int obstacleCountBeforeHiding;
+    private int obstacleCount;
 
     private void Awake()
     {
-        // Remonte dans la hiérarchie pour trouver l'ObstaclePlayerDetector parent
-        obstaclePlayerDetector = transform.parent.GetComponentInChildren<ObstaclePlayerDetector>();
-
-        if (obstaclePlayerDetector == null)
-        {
-            Debug.LogError(
-                $"[VisualNote] Aucun ObstaclePlayerDetector trouvé dans le parent de '{gameObject.name}'. Vérifier la hiérarchie.",
-                this);
-        }
-        else
-        {
-            if (debugLog)
-                Debug.Log(
-                    $"[VisualNote] Awake → ObstaclePlayerDetector trouvé : '{obstaclePlayerDetector.gameObject.name}'.",
-                    this);
-        }
-
         if (noteRows == null || noteRows.Count == 0)
-        {
-            Debug.LogWarning($"[VisualNote] Aucune NoteRow assignée sur '{gameObject.name}'. Rien ne sera affiché.",
-                this);
-        }
-        else
-        {
-            if (debugLog)
-                Debug.Log($"[VisualNote] Awake → {noteRows.Count} NoteRow(s) assignée(s).", this);
-        }
+            Debug.LogWarning($"[VisualNote] Aucune NoteRow assignée sur '{gameObject.name}'.", this);
     }
 
-    private void Start()
+    private void OnEnable() => EventBus.Subscribe<ObstacleEnteredView>(OnNewObstacle);
+    private void OnDisable() => EventBus.Unsubscribe<ObstacleEnteredView>(OnNewObstacle);
+
+    /// <summary>
+    /// Callback lors de l'entrée d'un nouvel obstacle.
+    /// </summary>
+    private void OnNewObstacle(ObstacleEnteredView e)
     {
-        if (obstaclePlayerDetector == null) return;
-
-        int count = obstaclePlayerDetector.sequenceCible.Count;
-        if (debugLog)
-            Debug.Log($"[VisualNote] Start → séquence cible de {count} note(s) détectée. Initialisation des NoteRow.",
-                this);
-
-        // Initialise chaque rangée avec le nombre exact de cases de la séquence
-        foreach (NoteRow noteRow in noteRows)
+        Obstacle obstacle = e.obstacle;
+        if (obstacle == null) return;
+        if (playerMovement == null)
         {
-            if (noteRow == null)
-            {
-                if (debugLog)
-                    Debug.LogWarning($"[VisualNote] Une NoteRow dans la liste est null — ignorée.", this);
-                continue;
-            }
-
-            noteRow.InitializeNotes(count);
-            noteRow.HideAll();
-            if (debugLog)
-                Debug.Log($"[VisualNote] Start → NoteRow '{noteRow.gameObject.name}' initialisée avec {count} note(s).",
-                    this);
+            Debug.LogWarning($"[VisualNote] playerMovement est null ou détruit.", this);
+            return;
         }
 
-
-        for (int i = 0; i < count; i++)
+        obstacle.goodNote += OnGoodNote;
+        obstacle.badNote += OnBadNote;
+        obstacleCount++;
+        if (obstacleCount >= obstacleCountBeforeHiding + 1)
         {
-            int rowIndex = (int)obstaclePlayerDetector.sequenceCible[i].note;
-            Note note = noteRows[rowIndex].GetNote(i);
-            track.Add(note);
-            if (debugLog)
-                Debug.Log($"[VisualNote] Start → Note {i} ajoutée à la track : {note.gameObject.name}", this);
-            note.SetColor(noteColorInRowOrder[rowIndex]);
-            note.Show();
+            if (debugLogs)
+                Debug.Log($"[VisualNote] Nombre d'obstacles atteint ({obstacleCount}), désactivation du composant.", this);
+            GetComponent<CanvasGroup>().Toggle(false);
         }
 
-        track[0].Enable();
-        if (track.Count > 1)
-        {
-            track[1].Enable(.75F);
-        }
-
-        obstaclePlayerDetector.nextNote += OnNewNote;
-        obstaclePlayerDetector.badNote += OnBadNote;
-        obstaclePlayerDetector.unlocked += OnSequenceUnlocked;
+        StartCoroutine(ProcessNotes(obstacle));
     }
 
-    private void OnSequenceUnlocked()
-    {
-        foreach (NoteRow noteRow in noteRows)
-        {
-            noteRow.HideRow();
-        }
-
-        layout.DOSizeDelta(new Vector2(0, 0), 0.5f).SetEase(Ease.InQuad);
-        if (debugLog)
-            Debug.Log($"[VisualNote] Séquence déverrouillée → animation de fermeture déclenchée.", this);
-    }
-
+    /// <summary>
+    /// Callback lors d'une mauvaise note.
+    /// </summary>
     private void OnBadNote()
     {
-        foreach (Note note in track)
+        if (debugLogs)
+            Debug.Log($"[VisualNote] Note ratée !", this);
+        foreach (Note note in notes)
         {
-            note.Reset();
+            DOTween.Kill(note.GetComponent<RectTransform>());
+            note.SetColor(Color.black);
         }
 
-        track[0].Enable();
-        if (track.Count > 1)
-        {
-            track[1].Enable(.75F);
-        }
-
-        if (debugLog)
-            Debug.Log($"[VisualNote] OnBadNote() → toutes les notes réinitialisées, première note réactivée.", this);
+        notes.Clear();
     }
 
-    private void OnNewNote()
+    /// <summary>
+    /// Callback lors d'une bonne note.
+    /// </summary>
+    private void OnGoodNote(Obstacle obstacle)
     {
-        if (obstaclePlayerDetector.indexCourant > 0 && track.Count > obstaclePlayerDetector.indexCourant)
-        {
-            track[obstaclePlayerDetector.indexCourant - 1].Disable();
-            track[obstaclePlayerDetector.indexCourant].Enable();
-            if (obstaclePlayerDetector.indexCourant + 1 < track.Count)
-            {
-                track[obstaclePlayerDetector.indexCourant + 1].Enable(.75f);
-            }
+        if (debugLogs)
+            Debug.Log($"[VisualNote] Note réussie !", this);
+        notes[0].Disable();
+        notes.RemoveAt(0);
+    }
 
-            if (debugLog)
-                Debug.Log(
-                    $"[VisualNote] OnNewNote() → note {obstaclePlayerDetector.indexCourant} activée, précédente désactivée.",
-                    this);
+    /// <summary>
+    /// Coroutine pour traiter l'affichage des notes.
+    /// </summary>
+    private IEnumerator ProcessNotes(Obstacle obstacle)
+    {
+        for (var i = 0; i < obstacle.sequenceCible.Count; i++)
+        {
+            var note = obstacle.sequenceCible[i];
+            RectTransform row = noteRows[(int)note];
+            Note newNote = Instantiate(notePrefab, row);
+            float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
+            float speed = layout.rect.width / distance * playerMovement.currentSpeed;
+
+            if (debugLogs)
+                Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' → vitesse calculée : {speed:F2}", this);
+
+            newNote.StartMove(speed, layout.rect.width);
+            newNote.SetColor(noteColorInRowOrder[(int)note]);
+            notes.Add(newNote);
+            if (i < obstacle.sequenceCible.Count - 1)
+            {
+                yield return new WaitForSeconds(0.3f);
+            }
         }
+
+        yield return null;
     }
 }

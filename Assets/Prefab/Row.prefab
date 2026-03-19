@@ -76,7 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteRow
   notePrefab: {fileID: 8424686553325647323, guid: 518b8667a174acd4ca1b5c0576da6929, type: 3}
+  longNotePrefab: {fileID: -4710642545730514516, guid: 3de9374b70c841d45b14b10ab312621b, type: 3}
   label: {fileID: 3036497624869286700}
+  debugLog: 0
 --- !u!1 &3036497624869286700
 GameObject:
   m_ObjectHideFlags: 0

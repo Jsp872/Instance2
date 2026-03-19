@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatConfig
   movementConfig:
     defaultMovementDir: {x: 1, y: 0, z: 0}
-    defaultMoveSpeed: 1
-    maxMoveSpeed: 7
+    defaultMoveSpeed: 5
+    maxMoveSpeed: 5
     accelerationSmoothTime: 0.55
     obstacleDetectionDistance: 15
     playerObstacleRangeSpeed: 6

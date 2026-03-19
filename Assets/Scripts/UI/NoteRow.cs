@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class NoteRow : MonoBehaviour
     [SerializeField] private GameObject label;
 
     [Header("Debug")] [Tooltip("Active ou désactive les logs de debug pour cette rangée.")] [SerializeField]
-    private bool debugLog = false;
+    private bool debugLog;
 
     // ─── Privé ───────────────────────────────────────────────────────────────
 

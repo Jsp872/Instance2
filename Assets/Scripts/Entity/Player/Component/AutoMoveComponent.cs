@@ -5,8 +5,10 @@ public class AutoMoveComponent : PlayerComponent
     [SerializeField, Tooltip("Config Cache - changes don't save to SO!")]
     private MovementConfig config;
 
-    [Header("_____DEBUG_____")]
-    [SerializeField] private float currentSpeed;
+    [field: Header("_____DEBUG_____")]
+    [field: SerializeField]
+    public float currentSpeed { get; private set; }
+
     [SerializeField] private bool hasReachedMaxSpeed = false;
     [SerializeField] private bool wasInObstacleRange = false;
     private bool callEventOnce;
@@ -80,7 +82,7 @@ public class AutoMoveComponent : PlayerComponent
     private void OnHitObstacle()
     {
         // Call Death Event
-        Debug.Log("[AutoMove] Hit obstacle — death!");
+        Debug.Log("[AutoMove] Hit obstacle ï¿½ death!");
         EventBus.Publish(new HitObstacleCallback());
     }
 
