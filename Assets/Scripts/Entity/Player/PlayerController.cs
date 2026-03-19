@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private PlayerStatConfig playerConfig;
     private Rigidbody2D rb;
 
-    public LayerMask collisionLayers;
 
     public PlayerStatConfig GetConfig() => playerConfig;
     public Rigidbody2D GetRb() => rb;
@@ -39,6 +38,16 @@ public class PlayerController : MonoBehaviour
         AddAndInitComponent(out autoMoveComponent);
         if (debugLogs)
             Debug.Log("[PlayerController] Composants initialisés.", this);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(collision?.gameObject.name);
+        if (collision.gameObject.layer == playerConfig.spikeLayer)
+        {
+            print("collision avec le skipe");
+            EventBus.Publish(new OnHitObstacleCallback());
+        }
     }
 
     /// <summary>

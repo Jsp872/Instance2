@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Plateforme qui s'élève lors du déverrouillage.
@@ -11,7 +12,7 @@ public class RisingPlatform : Obstacle
     [SerializeField] private float vitesse = 5f;
     [SerializeField] private float hauteur = 4f;
 
-    [Header("Debug")] [SerializeField] private bool debugLogs = false;
+    [Header("Debug")] [SerializeField] private bool _debugLogs = false;
 
     private void OnEnable()  => unlocked += OnUnlock;
     private void OnDisable() => unlocked -= OnUnlock;
@@ -24,7 +25,7 @@ public class RisingPlatform : Obstacle
         float targetY = transform.position.y + hauteur;
         float duration = hauteur / (vitesse * overDrive);
         transform.DOMoveY(targetY, duration).SetEase(Ease.OutQuad);
-        if (debugLogs)
+        if (_debugLogs)
             Debug.Log($"[RisingPlatform] OnUnlock: targetY={targetY}, duration={duration}", this);
     }
 }

@@ -15,7 +15,7 @@ public class AutoMoveComponent : PlayerComponent
     public float currentSpeed { get; private set; }
 
     [SerializeField] private bool hasReachedMaxSpeed = false;
-    [SerializeField] private bool wasInObstacleRange = false;
+    // [SerializeField] private bool wasInObstacleRange = false;
     private bool callEventOnce;
 
     public override void Initialize(PlayerController controller)
@@ -43,7 +43,7 @@ public class AutoMoveComponent : PlayerComponent
                 config.playerObstacleRangeSpeed,
                 config.playerDeceleration * dt
             );
-            wasInObstacleRange = true;
+            // wasInObstacleRange = true;
             hasReachedMaxSpeed = false;
             if (callEventOnce)
             {
@@ -63,7 +63,7 @@ public class AutoMoveComponent : PlayerComponent
                 callEventOnce = true;
             }
 
-            wasInObstacleRange = false;
+            // wasInObstacleRange = false;
         }
 
         velocity = config.defaultMovementDir.normalized * currentSpeed;
@@ -85,7 +85,7 @@ public class AutoMoveComponent : PlayerComponent
     {
         // Call Death Event
         Debug.Log("[AutoMove] Hit obstacle � death!");
-        EventBus.Publish(new HitObstacleCallback());
+        EventBus.Publish(new OnHitObstacleCallback());
     }
 
     public bool IsHitObstacle()
@@ -97,7 +97,7 @@ public class AutoMoveComponent : PlayerComponent
             count: config.obstacleRaycastCount,
             spreadAxis: Vector2.up,
             spread: config.raycastOffset,
-            layerMask: playerController.collisionLayers
+            layerMask: playerStatConfig.collisionLayers
         );
         return hit;
     }
@@ -111,7 +111,7 @@ public class AutoMoveComponent : PlayerComponent
             count: config.obstacleRaycastCount,
             spreadAxis: Vector2.up,
             spread: config.raycastOffset,
-            layerMask: playerController.collisionLayers
+            layerMask: playerStatConfig.collisionLayers
         );
         return hit;
     }

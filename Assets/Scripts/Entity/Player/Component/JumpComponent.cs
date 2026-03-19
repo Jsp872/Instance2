@@ -155,7 +155,7 @@ public class JumpComponent : PlayerComponent
 
     //private void OnJumpCut()
     //{
-    //    // Feedback visuel : saut coupé (ex: particule burst vers le bas)
+    //    // Feedback visuel : saut coupï¿½ (ex: particule burst vers le bas)
     //    Debug.Log("[Jump] Cut");
     //}
 
@@ -185,7 +185,6 @@ public class JumpComponent : PlayerComponent
 
     private bool IsGrounded()
     {
-
         RaycastHit2D hit = MultyRaycastUtils.MultiRaycast(
             origin: playerFeet,
             direction: Vector2.down,
@@ -193,9 +192,8 @@ public class JumpComponent : PlayerComponent
             count: config.groundedRaycastCount,
             spreadAxis: Vector2.right,
             spread: config.raycastOffset,
-            layerMask: playerController.collisionLayers
+            layerMask: playerStatConfig.collisionLayers
         );
-
 
         return hit;
     }

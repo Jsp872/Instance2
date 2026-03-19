@@ -10,4 +10,9 @@ public class PlayerStatConfig : ScriptableObject
     [Header("Player stat")]
     [Min(1)] public int playerLife;
     [Min(0)] public float respawnDelay;
+    
+    
+    [Header("Layers")]
+    public LayerMask collisionLayers;
+    public LayerMask spikeLayer;
 }

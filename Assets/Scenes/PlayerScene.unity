@@ -618,6 +618,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8897418187128262474, guid: 2bb397de606724249bb941f122f4b812, type: 3}
+      propertyPath: spikeLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897418187128262474, guid: 2bb397de606724249bb941f122f4b812, type: 3}
       propertyPath: collisionLayers.m_Bits
       value: 128
       objectReference: {fileID: 0}
@@ -811,7 +815,7 @@ GameObject:
   - component: {fileID: 1993455201}
   - component: {fileID: 1993455200}
   - component: {fileID: 1993455199}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

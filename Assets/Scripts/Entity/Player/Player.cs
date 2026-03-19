@@ -33,18 +33,18 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        EventBus.Subscribe<HitObstacleCallback>(OnHittedWall);
+        EventBus.Subscribe<OnHitObstacleCallback>(OnHittedWall);
         EventBus.Subscribe<MaxSpeedReachCallback>(OnMaxSpeedReach);
         EventBus.Subscribe<LooseMaxSpeedCallback>(OnLooserMaxSpeed);
     }
     private void OnDisable()
     {
-        EventBus.Unsubscribe<HitObstacleCallback>(OnHittedWall);
+        EventBus.Unsubscribe<OnHitObstacleCallback>(OnHittedWall);
         EventBus.Unsubscribe<MaxSpeedReachCallback>(OnMaxSpeedReach);
         EventBus.Unsubscribe<LooseMaxSpeedCallback>(OnLooserMaxSpeed);
     }
 
-    private void OnHittedWall(HitObstacleCallback callback)
+    private void OnHittedWall(OnHitObstacleCallback callback)
     {
         print("PLAYER DEATH");
         playerLife--;

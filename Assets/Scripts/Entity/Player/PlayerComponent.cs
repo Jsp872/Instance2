@@ -4,9 +4,11 @@ using UnityEngine.InputSystem;
 public abstract class PlayerComponent : MonoBehaviour
 {
     protected PlayerController playerController;
+    protected PlayerStatConfig playerStatConfig;
     public virtual void Initialize(PlayerController playerController)
     {
         this.playerController = playerController;
+        this.playerStatConfig = playerController.GetConfig();
     }
 
     public virtual bool CanUpdate() => true;
