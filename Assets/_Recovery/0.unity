@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 231379262}
   - component: {fileID: 231379261}
   - component: {fileID: 231379260}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,50 +346,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 90.2, y: 11.2362, z: 0}
   m_LocalScale: {x: 1, y: 23.90256, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &481633531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 481633533}
-  - component: {fileID: 481633532}
-  m_Layer: 0
-  m_Name: TimerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &481633532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 481633531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1ea899da978494db5c9bfd81697620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Timer
---- !u!4 &481633533
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 481633531}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.4007, y: 0.10585, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -598,17 +554,9 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6728697844285494341, guid: 2bb397de606724249bb941f122f4b812, type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 1263674898}
-    - target: {fileID: 6728697844285494341, guid: 2bb397de606724249bb941f122f4b812, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1233425671}
-    - target: {fileID: 6728697844285494341, guid: 2bb397de606724249bb941f122f4b812, type: 3}
-      propertyPath: respawnDelay
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6728697844285494341, guid: 2bb397de606724249bb941f122f4b812, type: 3}
       propertyPath: FOVvalueToAdd
       value: 1
@@ -616,10 +564,6 @@ PrefabInstance:
     - target: {fileID: 8488989145149911528, guid: 2bb397de606724249bb941f122f4b812, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8897418187128262474, guid: 2bb397de606724249bb941f122f4b812, type: 3}
-      propertyPath: collisionLayers.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -631,37 +575,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6579945138976910910, guid: 2bb397de606724249bb941f122f4b812, type: 3}
   m_PrefabInstance: {fileID: 1005065714}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1263674897
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1263674898}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1263674898
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263674897}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1326392416
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,5 +864,3 @@ SceneRoots:
   - {fileID: 1326392418}
   - {fileID: 1993455201}
   - {fileID: 231379262}
-  - {fileID: 1263674898}
-  - {fileID: 481633533}

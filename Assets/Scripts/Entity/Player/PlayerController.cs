@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     // Permet d'activer/désactiver les logs de debug depuis l'inspecteur.
-    [Header("Debug")] [SerializeField] private bool debugLogs = false;
+    [Header("Debug")][SerializeField] private bool debugLogs = false;
 
     private PlayerStatConfig playerConfig;
     private Rigidbody2D rb;
+
+    public LayerMask collisionLayers;
 
     public PlayerStatConfig GetConfig() => playerConfig;
     public Rigidbody2D GetRb() => rb;
@@ -28,8 +29,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void InitializeComponent(PlayerStatConfig playerStatConfig)
     {
-        playerConfig = playerStatConfig;    
-        AddAndInitComponent(out  rb);   
+        playerConfig = playerStatConfig;
+        AddAndInitComponent(out rb);
 
         AddAndInitComponent(out jumpComponent);
         AddAndInitComponent(out sendNoteComponent);

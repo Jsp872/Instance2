@@ -21,23 +21,19 @@ MonoBehaviour:
     playerObstacleRangeSpeed: 6
     playerDeceleration: 0.75
     playerDeathRange: 0.65
-    obstacleLayer:
-      serializedVersion: 2
-      m_Bits: 256
+    raycastOffset: 0.75
+    obstacleRaycastCount: 3
   jumpConfig:
     jumpApexHeight: 6.5
     jumpApexTime: 1
     coyoteTime: 0.15
     jumpBufferTime: 0.12
-    checkIsGroundedRadius: 0.055
-    jumpableLayer:
-      serializedVersion: 2
-      m_Bits: 128
+    checkIsGroundedRadius: 0.05
+    raycastOffset: 0.75
+    groundedRaycastCount: 3
     fallGravityMultiplier: 3
     cutJumpGravityMultiplier: 2.5
     hasCoyoteTime: 1
     hasJumpGravityModifiers: 1
-  sendNoteConfig:
-    isHoldDelay: 0.15
-    combosDelay: 0.15
-    holdTimerMultiplier: 1.25
+  playerLife: 1
+  respawnDelay: 3
