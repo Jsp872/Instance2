@@ -180,7 +180,7 @@ public class JumpComponent : PlayerComponent
         isFalling = false;
         // Squash landing, dust particles, sfx impact, screen shake
         Debug.Log("[Jump] Landed");
-        EventBus.Publish(new OnjumpFinished());
+        EventBus.Publish(new OnJumpFinished());
     }
 
     private bool IsGrounded()

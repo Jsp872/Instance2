@@ -8,6 +8,6 @@ public struct OnHitObstacleCallback { Transform obstacle; }
 public struct OnJumpStarted { }
 public struct OnApexReached { }
 public struct OnFallStarted { }
-public struct OnjumpFinished { }
+public struct OnJumpFinished { }
 
 
