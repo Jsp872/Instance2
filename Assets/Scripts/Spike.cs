@@ -1,30 +1,26 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+/// <summary>
+/// Plateforme à piques qui descend lors du déverrouillage.
+/// </summary>
+public class Spike : Obstacle
 {
     [SerializeField] private float distance;
     [SerializeField] private float duration;
-    
-    private ObstaclePlayerDetector obstaclePlayerDetector;
 
-    private void Awake()
-    {
-        obstaclePlayerDetector = GetComponentInChildren<ObstaclePlayerDetector>();
-    }
+    [Header("Debug")] [SerializeField] private bool debugLogs = false;
 
-    private void OnEnable()
-    {
-        obstaclePlayerDetector.unlocked += OnObstaclePlayerDetectorUnlocked;
-    }
+    private void OnEnable()  => unlocked += OnUnlocked;
+    private void OnDisable() => unlocked -= OnUnlocked;
 
-    private void OnObstaclePlayerDetectorUnlocked()
+    /// <summary>
+    /// Callback lors du déverrouillage des piques.
+    /// </summary>
+    private void OnUnlocked()
     {
         transform.DOMoveY(transform.position.y - distance, duration).SetEase(Ease.InQuad);
-    }
-
-    private void OnDisable()
-    {
-        obstaclePlayerDetector.unlocked -= OnObstaclePlayerDetectorUnlocked;
+        if (debugLogs)
+            Debug.Log($"[Spike] OnUnlocked: distance={distance}, duration={duration}", this);
     }
 }

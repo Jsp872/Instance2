@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,17 +8,24 @@ using UnityEngine.UI;
 /// Gère uniquement la visibilité de son Image : Hide() la rend transparente,
 /// Show() la rend opaque.
 /// </summary>
+/// <summary>
+/// Représente une note visuelle dans l'UI (élément d'une séquence Simon).
+/// Gère uniquement la visibilité de son Image : Hide() la rend transparente,
+/// Show() la rend opaque.
+/// </summary>
 public class Note : MonoBehaviour
 {
     private Image noteImage;
     private Color noteColor;
+    private RectTransform rectTransform;
 
     [Header("Debug")] [Tooltip("Active ou désactive les logs de debug pour cette note.")] [SerializeField]
-    private bool debugLog = false;
+    private bool debugLogs = false;
 
     private void Awake()
     {
         noteImage = GetComponent<Image>();
+        rectTransform = GetComponent<RectTransform>();
 
         if (noteImage == null)
         {
@@ -27,9 +35,22 @@ public class Note : MonoBehaviour
         }
         else
         {
-            if (debugLog)
+            if (debugLogs)
                 Debug.Log($"[Note] Awake → Image trouvée sur '{gameObject.name}'.", this);
         }
+    }
+
+    /// <summary>
+    /// Démarre le mouvement de la note sur l'axe X.
+    /// </summary>
+    public void StartMove(float speed, float trackSize)
+    {
+        rectTransform.DOAnchorPosX(-trackSize, trackSize / speed).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            Destroy(gameObject);
+            if (debugLogs)
+                Debug.Log($"[Note] StartMove() → '{gameObject.name}' a atteint la fin du track et a été détruite.", this);
+        });
     }
 
     /// <summary>
@@ -43,7 +64,8 @@ public class Note : MonoBehaviour
         Color c = noteImage.color;
         c.a = 0;
         noteImage.color = c;
-        if (debugLog)
+        
+        if (debugLogs)
             Debug.Log($"[Note] Hide() → '{gameObject.name}' masquée.", this);
     }
 
@@ -55,7 +77,7 @@ public class Note : MonoBehaviour
         Color c = noteImage.color;
         c.a = 1;
         noteImage.color = c;
-        if (debugLog)
+        if (debugLogs)
             Debug.Log($"[Note] Show() → '{gameObject.name}' affichée.", this);
     }
 
@@ -66,7 +88,7 @@ public class Note : MonoBehaviour
     {
         noteColor = c;
         noteImage.color = c;
-        if (debugLog) Debug.Log($"[Note] SetColor({c}) → '{gameObject.name}' couleur définie.", this);
+        if (debugLogs) Debug.Log($"[Note] SetColor({c}) → '{gameObject.name}' couleur définie.", this);
     }
 
     /// <summary>
@@ -76,7 +98,7 @@ public class Note : MonoBehaviour
     {
         noteImage.rectTransform.DOSizeDelta(new Vector2(100 * factor, 100 * factor), 0.5f).SetEase(Ease.OutBack);
         noteImage.DOColor(noteColor, 0.5f).SetEase(Ease.OutQuad);
-        if (debugLog)
+        if (debugLogs)
             Debug.Log($"[Note] Enable() → '{gameObject.name}' animée en avant.", this);
     }
 
@@ -87,7 +109,7 @@ public class Note : MonoBehaviour
     {
         noteImage.rectTransform.DOSizeDelta(new Vector2(20, 20), 0.5f).SetEase(Ease.OutBack);
         noteImage.DOColor(Color.gray, 0.5f).SetEase(Ease.OutQuad);
-        if (debugLog)
+        if (debugLogs)
             Debug.Log($"[Note] Disable() → '{gameObject.name}' désactivée visuellement.", this);
     }
 
@@ -98,7 +120,7 @@ public class Note : MonoBehaviour
     {
         noteImage.rectTransform.DOSizeDelta(new Vector2(50, 50), 0.5f).SetEase(Ease.OutBack);
         noteImage.DOColor(noteColor, 0.5f).SetEase(Ease.OutQuad);
-        if (debugLog)
+        if (debugLogs)
             Debug.Log($"[Note] Reset() → '{gameObject.name}' taille réinitialisée.", this);
     }
 }
