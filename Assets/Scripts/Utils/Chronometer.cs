@@ -5,45 +5,21 @@ using UnityEngine.Serialization;
 
 public class Chronometer : MonoBehaviour
 {
-    [SerializeField] private float startingTime = 60f;
-    [SerializeField] private float timeWhenTimerChange = 10f;
-    
     [SerializeField] private TMP_Text timerText;
-    public TMP_Text TimerText { get { return timerText; } }
-
-    private float timeLeft;
-    public float TimeLeft { get { return timeLeft; } }
-
-    private void Start()
-    {
-        timeLeft = startingTime;
-    }
+    private float chronometer;
 
     private void Update()
     {
-        timeLeft -= Time.deltaTime;
-        timeLeft = Mathf.Max(timeLeft, 0);
+        chronometer += Time.deltaTime;
+        chronometer = Mathf.Max(chronometer, 0);
 
         UpdateTimerUI();
-
-        if (timeLeft <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
     }
 
     private void UpdateTimerUI()
     {
-        int seconds = (int)timeLeft;
-        if (timeLeft <= timeWhenTimerChange)
-        {
-            int milliseconds = Mathf.FloorToInt((timeLeft * 100) % 100);
-            timerText.text = $"{seconds}.{milliseconds:00}";
-        }
-        else
-        {
-            timerText.text = $"{seconds}";
-        }
-
+        int seconds = (int)chronometer;
+        int milliseconds = Mathf.FloorToInt((chronometer * 100) % 100);
+        timerText.text = $"{seconds}.{milliseconds:00}";
     }
 }
