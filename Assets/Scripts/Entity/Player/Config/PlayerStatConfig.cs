@@ -6,6 +6,8 @@ public class PlayerStatConfig : ScriptableObject
     public MovementConfig movementConfig;
     [Space(5)]
     public JumpConfig jumpConfig;
-    [Space(5)]
-    public SendNoteConfig sendNoteConfig;
+
+    [Header("Player stat")]
+    [Min(1)] public int playerLife;
+    [Min(0)] public float respawnDelay;
 }

@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class AutoMoveComponent : PlayerComponent
 {
+    //[Header("Detection Zone ")]
+    //[SerializeField] private Transform obstacleDetector;
+    //[SerializeField] private Transform playerDeathDetection;
+
+
     [SerializeField, Tooltip("Config Cache - changes don't save to SO!")]
     private MovementConfig config;
 
@@ -64,21 +69,18 @@ public class AutoMoveComponent : PlayerComponent
         velocity = config.defaultMovementDir.normalized * currentSpeed;
     }
 
-    public struct MaxSpeedReachCallback { }
     private void OnMaxSpeedReach()
     {
         // Call start MaxSpeed feedback, animation or sfx
         Debug.Log("[AutoMove] Max speed reached!");
         EventBus.Publish(new MaxSpeedReachCallback());
     }
-    public struct LooseMaxSpeedCallback { }
     private void OnLooseMaxSpeed()
     {
         //cancel Max Speed rech CTX
         Debug.Log("[AutoMove] Loose Max speed");
         EventBus.Publish(new LooseMaxSpeedCallback());
     }
-    public struct HitObstacleCallback { }
     private void OnHitObstacle()
     {
         // Call Death Event
@@ -88,29 +90,29 @@ public class AutoMoveComponent : PlayerComponent
 
     public bool IsHitObstacle()
     {
-#if UNITY_EDITOR
-        Debug.DrawLine(transform.position, transform.position + config.defaultMovementDir.normalized * config.playerDeathRange, Color.blue);
-#endif
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            config.defaultMovementDir.normalized,
-            config.playerDeathRange,
-            config.obstacleLayer
-            );
-        return hit.collider != null;
+        RaycastHit2D hit = MultyRaycastUtils.MultiRaycast(
+            origin: transform,
+            direction: config.defaultMovementDir.normalized,
+            distance: config.playerDeathRange,
+            count: config.obstacleRaycastCount,
+            spreadAxis: Vector2.up,
+            spread: config.raycastOffset,
+            layerMask: playerController.collisionLayers
+        );
+        return hit;
     }
 
     public bool IsInObstacleRange()
     {
-#if UNITY_EDITOR
-        Vector3 Yoffset = new Vector3(0, 1, 0);
-        Debug.DrawLine(transform.position + Yoffset, transform.position + Yoffset + config.defaultMovementDir.normalized * config.obstacleDetectionDistance, Color.red);
-#endif
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,
-             config.defaultMovementDir.normalized,
-             config.obstacleDetectionDistance,
-             config.obstacleLayer
-             );
-
-        return hit.collider != null;
+        RaycastHit2D hit = MultyRaycastUtils.MultiRaycast(
+            origin: transform,
+            direction: config.defaultMovementDir.normalized,
+            distance: config.obstacleDetectionDistance,
+            count: config.obstacleRaycastCount,
+            spreadAxis: Vector2.up,
+            spread: config.raycastOffset,
+            layerMask: playerController.collisionLayers
+        );
+        return hit;
     }
 }

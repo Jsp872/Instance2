@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public struct JumpConfig : Config
+public struct JumpConfig
 {
     [Header("Jump Arc")]
     [Tooltip("Hauteur maximale atteinte au sommet du saut (en unités Unity)")]
@@ -18,8 +18,9 @@ public struct JumpConfig : Config
     [Header("Ground Detection")]
     [Tooltip("Longueur du raycast vers le bas pour détecter le sol")]
     public float checkIsGroundedRadius;
-    [Tooltip("Layers considérés comme sol sur lesquels le joueur peut sauter")]
-    public LayerMask jumpableLayer;
+    public float raycastOffset;
+    [Tooltip("Nombre de raycasts pour la détection du sol")]
+    public int groundedRaycastCount;
 
     [Header("Gravity Modifiers")]
     [Tooltip("Multiplicateur de gravité appliqué en descente (> 1 = chute plus rapide)")]
