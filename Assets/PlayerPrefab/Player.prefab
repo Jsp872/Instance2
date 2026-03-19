@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 7993387898709474178}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.91, z: -10}
+  m_LocalPosition: {x: 6.85, y: 3.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -283,6 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   playerStatConfig: {fileID: 11400000, guid: b7fcdb5e2dd12f142aef34965b01ac2f, type: 2}
   controller: {fileID: 8897418187128262474}
+  playerCamera: {fileID: 6579945138976910910}
+  FOVvalueToAdd: 0
 --- !u!114 &8897418187128262474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25999eabe2bf9fc45b0b0a884c740fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  debugLogs: 0
 --- !u!114 &145686162153050907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,22 +312,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpComponent
   playerFeet: {fileID: 3126434319301912805}
   config:
-    minimalJumpForce: 0
-    maximalJumpForce: 0
-    holdForcePerSecond: 0
+    jumpApexHeight: 0
+    jumpApexTime: 0
+    coyoteTime: 0
+    jumpBufferTime: 0
     checkIsGroundedRadius: 0
     jumpableLayer:
       serializedVersion: 2
       m_Bits: 0
-    coyoteTime: 0
-    jumpBufferTime: 0
     fallGravityMultiplier: 0
     cutJumpGravityMultiplier: 0
+    hasCoyoteTime: 0
+    hasJumpGravityModifiers: 0
   coyoteTimer: 0
   wasGrounded: 0
   jumpBufferTimer: 0
-  holdingJump: 0
-  totalForceApplied: 0
+  DEBUG_derivedJumpVelocity: 0
+  DEBUG_derivedGravity: 0
 --- !u!114 &6652049408041319812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,17 +341,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102570f654c66e245b21f7896e266852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoMoveComponent
-  moveConfig:
-    movementDirection: {x: 0, y: 0, z: 0}
-    groundLayer:
-      serializedVersion: 2
-      m_Bits: 0
-    moveSpeedDefaultValue: 0
-    minMoveSpeed: 0
+  config:
+    defaultMovementDir: {x: 0, y: 0, z: 0}
+    defaultMoveSpeed: 0
     maxMoveSpeed: 0
     accelerationSmoothTime: 0
-    decelerationSmoothTime: 0
-    decelerationDistance: 0
+    obstacleDetectionDistance: 0
+    playerObstacleRangeSpeed: 0
+    playerDeceleration: 0
+    playerDeathRange: 0
+    obstacleLayer:
+      serializedVersion: 2
+      m_Bits: 0
+  <currentSpeed>k__BackingField: 0
+  hasReachedMaxSpeed: 0
+  wasInObstacleRange: 0
 --- !u!114 &7217884672382082571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,10 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76e77a05ae1d7243aa23eace0b2f466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SendNoteComponent
-  config:
-    isHoldDelay: 0
-    combosDelay: 0
-    holdTimerMultiplier: 0
+  debugLogs: 0
 --- !u!50 &3647767684448582984
 Rigidbody2D:
   serializedVersion: 5

@@ -9,8 +9,6 @@ public class Spike : Obstacle
     [SerializeField] private float distance;
     [SerializeField] private float duration;
 
-    [Header("Debug")] [SerializeField] private bool debugLogs = false;
-
     private void OnEnable()  => unlocked += OnUnlocked;
     private void OnDisable() => unlocked -= OnUnlocked;
 

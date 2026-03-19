@@ -37,10 +37,10 @@ RectTransform:
   - {fileID: 3868191797228496630}
   m_Father: {fileID: 8475337008340599040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 166}
-  m_SizeDelta: {x: 1000, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8633331588020605265
 CanvasRenderer:
@@ -134,17 +134,17 @@ RectTransform:
   m_GameObject: {fileID: 8985812594447622198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.0019582117, z: 0.01}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 168242042833353779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -100, y: -100}
+  m_SizeDelta: {x: 1000, y: 300}
+  m_Pivot: {x: 1, y: 1}
 --- !u!223 &689645429905998921
 Canvas:
   m_ObjectHideFlags: 0
@@ -203,12 +203,15 @@ MonoBehaviour:
   - {r: 0, g: 0.37636375, b: 1, a: 1}
   - {r: 0, g: 1, b: 0.0415318, a: 1}
   layout: {fileID: 168242042833353779}
+  notePrefab: {fileID: 8424686553325647323, guid: 518b8667a174acd4ca1b5c0576da6929, type: 3}
+  playerMovement: {fileID: 0}
   noteRows:
-  - {fileID: 3994219733658578719}
-  - {fileID: 2720701318775683173}
-  - {fileID: 3668831040899268766}
-  - {fileID: 6082376107019797184}
-  debugLog: 1
+  - {fileID: 6244296449057377065}
+  - {fileID: 4902093741676878931}
+  - {fileID: 5993214968439579816}
+  - {fileID: 3868191797228496630}
+  debugLogs: 0
+  obstacleCountBeforeHiding: 5
 --- !u!1001 &4412541540930195239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,7 +321,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2208077441053319080, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
@@ -327,17 +331,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 617816506850273745, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
   m_PrefabInstance: {fileID: 4412541540930195239}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6082376107019797184 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7589849536989859303, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
-  m_PrefabInstance: {fileID: 4412541540930195239}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac9360051bd7724ca38edd00830ec83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NoteRow
 --- !u!1001 &5518405565790696834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -447,21 +440,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2208077441053319080, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
---- !u!114 &2720701318775683173 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7589849536989859303, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
-  m_PrefabInstance: {fileID: 5518405565790696834}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac9360051bd7724ca38edd00830ec83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NoteRow
 --- !u!224 &4902093741676878931 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 617816506850273745, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
@@ -576,21 +559,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2208077441053319080, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
---- !u!114 &3668831040899268766 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7589849536989859303, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
-  m_PrefabInstance: {fileID: 6610934145957481849}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac9360051bd7724ca38edd00830ec83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NoteRow
 --- !u!224 &5993214968439579816 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 617816506850273745, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
@@ -689,21 +662,11 @@ PrefabInstance:
       value: Row
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2208077441053319080, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
---- !u!114 &3994219733658578719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7589849536989859303, guid: 111531c0082b99947b326f376c83ddcc, type: 3}
-  m_PrefabInstance: {fileID: 6789983890323972856}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac9360051bd7724ca38edd00830ec83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NoteRow
 --- !u!224 &6244296449057377065 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 617816506850273745, guid: 111531c0082b99947b326f376c83ddcc, type: 3}

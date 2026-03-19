@@ -19,7 +19,7 @@ public struct ObstacleExitedView
 /// </summary>
 public abstract class Obstacle : MonoBehaviour
 {
-    [Header("Debug")] [SerializeField] private bool debugLogs = false;
+    [Header("Debug")] [SerializeField] protected bool debugLogs = false;
 
     [field: SerializeField] public List<NoteID> sequenceCible { get; private set; } = new();
     public int indexCourant { get; private set; }
