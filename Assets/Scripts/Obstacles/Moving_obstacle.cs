@@ -20,14 +20,12 @@ public class Moving_obstacle : Movement_obstacle
 
     protected override void UnLockingBehaviour()
     {
-        print("ok");
         currentSteps++;
         transform.DOMoveY(transform.position.y - distance/steps, duration/steps).SetEase(Ease.InQuad);
     }
 
     protected override void LockedBehaviour()
     {
-        print("oh no");
         transform.DOMoveY(transform.position.y + distance/steps*currentSteps, duration/steps*currentSteps).SetEase(Ease.InQuad);
     }
 }

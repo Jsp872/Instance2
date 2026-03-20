@@ -14,6 +14,7 @@ public class Destroy_Particles : MonoBehaviour
     {
         particles = GetComponent<ParticleSystem>();
         emissions = particles.emission;
+        particles.Play();
         emissions.enabled = false;
     }
 

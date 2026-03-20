@@ -5,8 +5,8 @@ public class Instant_stairs : Stairs
 {
     [SerializeField] private int PlatformNumber;
 
-    void Awake()
-    {
+    private void Start()
+    { 
         InitPlatforms(PlatformNumber);
     }
 
@@ -14,7 +14,7 @@ public class Instant_stairs : Stairs
     {
         for (int i = 0; i < PlatformNumber; i++)
         {
-            PlatformRise( 1);
+            PlatformRise();
             currentStep++;
         }
     }

@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class Progressive_stairs : Stairs
 {
-    void Awake()
+    private void Start()
     {
-        InitPlatforms(steps);
+        InitPlatforms(sequenceCible.Count);
     }
 
     protected override void UnLockingBehaviour()
     {
-        PlatformRise(1);
+        PlatformRise();
         currentStep++;
     }
 
     protected override void UnlockedBehaviour()
     {
-        PlatformRise(1);
+        PlatformRise();
     }
 
     protected override void LockedBehaviour()
     {
         int step = currentStep;
         for (int i = 0; i < step; i++)
-        {
+        {           
             currentStep--;
-            PlatformRise(-1);
+            PlatformFall();
         }
     }
 }

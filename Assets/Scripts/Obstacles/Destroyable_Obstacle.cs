@@ -14,6 +14,7 @@ public class Destroyable_Obstacle : Movement_obstacle
     protected override void UnLockingBehaviour()
     {
         destroyEffect.ShortActivation();
+        StartCoroutine(DestroyCoroutine());
     }
 
     private IEnumerator DestroyCoroutine()

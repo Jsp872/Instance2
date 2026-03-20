@@ -42,6 +42,7 @@ public abstract class Obstacle : MonoBehaviour
 
         if (_camera == null)
             Debug.LogWarning($"[Obstacle] Aucune caméra assignée sur {gameObject.name}.", this);
+        Init();
     }
 
     private void Update()
@@ -166,6 +167,11 @@ public abstract class Obstacle : MonoBehaviour
     }
     
     //overridable functions
+    protected virtual void Init()
+    {
+        
+    }
+    
     protected virtual void UnLockingBehaviour()
     {
         

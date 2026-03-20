@@ -6,7 +6,7 @@ public class Stairs : Movement_obstacle
 {
     [SerializeField] private GameObject Platform;
     [SerializeField] private float spacing;
-    protected List<GameObject> Platforms;
+    protected List<GameObject> Platforms = new List<GameObject>();
     protected int steps;
     protected int currentStep;
 
@@ -16,12 +16,19 @@ public class Stairs : Movement_obstacle
         for (int i = 0; i < number; i++)
         {
             Vector2 pos = new Vector2(transform.position.x + spacing * i, transform.position.y);
-            Platforms[i] = Instantiate(Platform, pos, Quaternion.identity);
+            GameObject newPlatform = Instantiate(Platform, pos, Quaternion.identity);
+            Platforms.Add(newPlatform);
+            print(newPlatform);
         }
     }
 
-    protected void PlatformRise(int direction)
+    protected void PlatformRise()
     {
-        Platforms[currentStep].transform.DOMoveY(duration/steps * (currentStep+1) * direction, duration/Platforms.Count * (currentStep+1)).SetEase(Ease.InQuad);
+        Platforms[currentStep].transform.DOMoveY(transform.position.y + distance/steps * (currentStep+1) , duration/Platforms.Count * (currentStep+1)).SetEase(Ease.InQuad);
+    }
+
+    protected void PlatformFall()
+    {
+        Platforms[currentStep].transform.DOMoveY(transform.position.y, duration/steps* (currentStep+1)).SetEase(Ease.InQuad);
     }
 }
