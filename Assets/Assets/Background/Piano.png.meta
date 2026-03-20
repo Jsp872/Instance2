@@ -115,12 +115,12 @@ TextureImporter:
       name: Piano_0
       rect:
         serializedVersion: 2
-        x: 505
-        y: 134
-        width: 293
-        height: 252
+        x: 0
+        y: 0
+        width: 3840
+        height: 2160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -133,99 +133,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Piano_1
-      rect:
-        serializedVersion: 2
-        x: 1462
-        y: 136
-        width: 219
-        height: 209
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1083a11cc6cf4fd60800000000000000
-      internalID: 7923235188477933569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Piano_2
-      rect:
-        serializedVersion: 2
-        x: 1849
-        y: 137
-        width: 262
-        height: 226
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc86b3bf5fafccfb0800000000000000
-      internalID: -4626046782827435825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Piano_3
-      rect:
-        serializedVersion: 2
-        x: 2653
-        y: 137
-        width: 230
-        height: 221
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1591d8cfbaf86980800000000000000
-      internalID: -8545304591320640227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Piano_4
-      rect:
-        serializedVersion: 2
-        x: 3192
-        y: 139
-        width: 167
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 822069ee202b28930800000000000000
-      internalID: 4144070332796764712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d08ac68d5ccb77e46b10efc74cb40956
     internalID: 0
     vertices: []
     indices: 
@@ -233,13 +145,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":3840.0,"y":2160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Piano_0: 6663351734690151557
-      Piano_1: 7923235188477933569
-      Piano_2: -4626046782827435825
-      Piano_3: -8545304591320640227
-      Piano_4: 4144070332796764712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
