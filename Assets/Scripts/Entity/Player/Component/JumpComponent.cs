@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class JumpComponent : PlayerComponent
 {
-    [SerializeField] private Transform playerFeet;
     [SerializeField, Tooltip("Config Cache - changes don't save to SO!")]
     private JumpConfig config;
 
@@ -15,6 +14,8 @@ public class JumpComponent : PlayerComponent
     [SerializeField] private float DEBUG_derivedGravity;
 
     private Rigidbody2D rb;
+    private GroundSensor _groundSensor;
+
     private float derivedJumpVelocity;
     private float derivedGravity;
 
@@ -27,6 +28,8 @@ public class JumpComponent : PlayerComponent
         base.Initialize(controller);
         config = controller.GetConfig().jumpConfig;
         rb = controller.GetRb();
+        _groundSensor = controller.groundSensor;
+
         ComputeJumpPhysics();
     }
 
@@ -35,6 +38,7 @@ public class JumpComponent : PlayerComponent
         derivedJumpVelocity = (2f * config.jumpApexHeight) / config.jumpApexTime;
         derivedGravity = (2f * config.jumpApexHeight) / (config.jumpApexTime * config.jumpApexTime);
         rb.gravityScale = derivedGravity / Mathf.Abs(Physics2D.gravity.y);
+
         DEBUG_derivedJumpVelocity = derivedJumpVelocity;
         DEBUG_derivedGravity = derivedGravity;
     }
@@ -50,7 +54,7 @@ public class JumpComponent : PlayerComponent
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
-        bool grounded = IsGrounded();
+        bool grounded = _groundSensor.IsGrounded;
 
         UpdateCoyoteTime(grounded, dt);
         UpdateLanding(grounded);
@@ -99,6 +103,7 @@ public class JumpComponent : PlayerComponent
     private void UpdateGravity()
     {
         float baseGravityScale = derivedGravity / Mathf.Abs(Physics2D.gravity.y);
+
         if (rb.linearVelocityY < 0f)
             rb.gravityScale = baseGravityScale * config.fallGravityMultiplier;
         else if (rb.linearVelocityY > 0f)
@@ -148,27 +153,18 @@ public class JumpComponent : PlayerComponent
 
     private void OnJumpStarted()
     {
-        // SFX saut, squash animation, particules sol
         Debug.Log("[Jump] Started");
         EventBus.Publish(new OnJumpStarted());
     }
 
-    //private void OnJumpCut()
-    //{
-    //    // Feedback visuel : saut coup� (ex: particule burst vers le bas)
-    //    Debug.Log("[Jump] Cut");
-    //}
-
     private void OnApexReached()
     {
-        // Freeze frame court, particules apex, sfx apex
         Debug.Log("[Jump] Apex reached");
         EventBus.Publish(new OnApexReached());
     }
 
     private void OnFallStarted()
     {
-        // Animation de chute, sfx wind, tilt du sprite
         Debug.Log("[Jump] Fall started");
         EventBus.Publish(new OnFallStarted());
     }
@@ -178,22 +174,6 @@ public class JumpComponent : PlayerComponent
         isJumping = false;
         apexReached = false;
         isFalling = false;
-        // Squash landing, dust particles, sfx impact, screen shake
         EventBus.Publish(new OnJumpFinished());
-    }
-
-    private bool IsGrounded()
-    {
-        RaycastHit2D hit = MultyRaycastUtils.MultiRaycast(
-            origin: playerFeet,
-            direction: Vector2.down,
-            distance: config.checkIsGroundedRadius,
-            count: config.groundedRaycastCount,
-            spreadAxis: Vector2.right,
-            spread: config.raycastOffset,
-            layerMask: playerStatConfig.collisionLayers
-        );
-
-        return hit;
     }
 }

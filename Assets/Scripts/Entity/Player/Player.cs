@@ -12,20 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerController controller;
 
     private int playerLife;
-
-    [Header("_____DEBUG_____")] [SerializeField]
-    private Camera playerCamera;
-
-    private float cameraDefaultFOV;
-    [SerializeField] private float FOVvalueToAdd = 10;
-
-
     [SerializeField] private float respawnDelay;
 
 
     private void Awake()
     {
-        cameraDefaultFOV = playerCamera.orthographicSize;
         if (controller == null)
         {
             controller = GetComponent<PlayerController>();
@@ -75,12 +66,11 @@ public class Player : MonoBehaviour
     private void OnMaxSpeedReach(MaxSpeedReachCallback callback)
     {
         print("max speed Reach");
-        playerCamera.orthographicSize += FOVvalueToAdd;
     }
 
     private void OnLooserMaxSpeed(LooseMaxSpeedCallback callback)
     {
-        playerCamera.orthographicSize = cameraDefaultFOV;
+        print("max speed loose");
     }
 
     #endregion

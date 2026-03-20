@@ -1,41 +1,39 @@
-using System.Collections;
 using UnityEngine;
 
 public class AutoMoveComponent : PlayerComponent
 {
-    //[Header("Detection Zone ")]
-    //[SerializeField] private Transform obstacleDetector;
-    //[SerializeField] private Transform playerDeathDetection;
-
-
     [SerializeField, Tooltip("Config Cache - changes don't save to SO!")]
     private MovementConfig config;
 
     [field: Header("_____DEBUG_____")]
-    [field: SerializeField]
-    public float currentSpeed { get; private set; }
-
+    [field: SerializeField] public float currentSpeed { get; private set; }
     [SerializeField] private bool hasReachedMaxSpeed = false;
-    // [SerializeField] private bool wasInObstacleRange = false;
+
     private bool callEventOnce;
+
+    private NearObstacleSensor _nearSensor;
+    private FarObstacleSensor _farSensor;
 
     public override void Initialize(PlayerController controller)
     {
         base.Initialize(controller);
         config = controller.GetConfig().movementConfig;
         currentSpeed = config.defaultMoveSpeed;
+
+        _nearSensor = controller.nearObstacleSensor;
+        _farSensor = controller.farObstacleSensor;
     }
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
-        bool isOnObstacleRange = IsInObstacleRange();
-        bool hitObstacle = IsHitObstacle();
+        //bool hitObstacle = _nearSensor.ObstacleDetected;
+        bool isOnObstacleRange = _farSensor.ObstacleDetected;
 
-        if (hitObstacle)
-        {
-            OnHitObstacle();
-            return;
-        }
+        //if (hitObstacle)
+        //{
+        //    OnHitObstacle();
+        //    return;
+        //}
 
         if (isOnObstacleRange)
         {
@@ -44,8 +42,9 @@ public class AutoMoveComponent : PlayerComponent
                 config.playerObstacleRangeSpeed,
                 config.playerDeceleration * dt
             );
-            // wasInObstacleRange = true;
+
             hasReachedMaxSpeed = false;
+
             if (callEventOnce)
             {
                 OnLooseMaxSpeed();
@@ -60,11 +59,9 @@ public class AutoMoveComponent : PlayerComponent
             if (!hasReachedMaxSpeed && Mathf.Approximately(currentSpeed, config.maxMoveSpeed))
             {
                 hasReachedMaxSpeed = true;
-                OnMaxSpeedReach();
                 callEventOnce = true;
+                OnMaxSpeedReach();
             }
-
-            // wasInObstacleRange = false;
         }
 
         velocity = config.defaultMovementDir.normalized * currentSpeed;
@@ -72,48 +69,18 @@ public class AutoMoveComponent : PlayerComponent
 
     private void OnMaxSpeedReach()
     {
-        // Call start MaxSpeed feedback, animation or sfx
         Debug.Log("[AutoMove] Max speed reached!");
         EventBus.Publish(new MaxSpeedReachCallback());
     }
+
     private void OnLooseMaxSpeed()
     {
-        //cancel Max Speed rech CTX
         EventBus.Publish(new LooseMaxSpeedCallback());
     }
-    private void OnHitObstacle()
-    {
-        // Call Death Event
-        Debug.Log("[AutoMove] Hit obstacle!");
-        EventBus.Publish(new OnHitObstacleCallback());
-    }
-    
 
-    public bool IsHitObstacle()
-    {
-        RaycastHit2D hit = MultyRaycastUtils.MultiRaycast(
-            origin: transform,
-            direction: config.defaultMovementDir.normalized,
-            distance: config.playerDeathRange,
-            count: config.obstacleRaycastCount,
-            spreadAxis: Vector2.up,
-            spread: config.raycastOffset,
-            layerMask: playerStatConfig.collisionLayers
-        );
-        return hit;
-    }
-
-    public bool IsInObstacleRange()
-    {
-        RaycastHit2D hit = MultyRaycastUtils.MultiRaycast(
-            origin: transform,
-            direction: config.defaultMovementDir.normalized,
-            distance: config.obstacleDetectionDistance,
-            count: config.obstacleRaycastCount,
-            spreadAxis: Vector2.up,
-            spread: config.raycastOffset,
-            layerMask: playerStatConfig.collisionLayers
-        );
-        return hit;
-    }
+    //private void OnHitObstacle()
+    //{
+    //    Debug.Log("[AutoMove] Hit obstacle!");
+    //    EventBus.Publish(new OnHitObstacleCallback());
+    //}
 }
