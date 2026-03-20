@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     private int playerLife;
     [SerializeField] private float respawnDelay;
+    
+    public event Action OnDeath;
 
 
     private void Awake()
@@ -53,6 +55,7 @@ public class Player : MonoBehaviour
         playerLife--;
         if (playerLife <= 0)
         {
+            OnDeath?.Invoke();
             Respawn();
         }
     }
