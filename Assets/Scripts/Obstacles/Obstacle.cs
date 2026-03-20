@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Structures pour signaler l'entrée/sortie d'un obstacle dans le champ de vision.
 public struct ObstacleEnteredView
 {
     public Obstacle obstacle;
@@ -21,33 +20,63 @@ public abstract class Obstacle : MonoBehaviour
 {
     [Header("Debug")] [SerializeField] protected bool debugLogs = false;
 
+    private Camera _camera;
+
     [field: SerializeField] public List<NoteID> sequenceCible { get; private set; } = new();
     public int indexCourant { get; private set; }
 
     public event Action unlocked;
     public event Action<Obstacle> goodNote;
     public event Action badNote;
+
     private bool unlock;
     private bool definitivelyLocked;
+    private bool _isSubscribed = false;
+    private Renderer _renderer;
+    private Plane[] _frustumPlanes;
 
-    /// <summary>
-    /// Appelé quand l'obstacle devient visible dans la scène.
-    /// </summary>
-    private void OnBecameVisible()
+    private void Awake()
     {
-#if UNITY_EDITOR
-        if (!UnityEditor.EditorApplication.isPlaying) return;
-#endif
-        if (unlock || definitivelyLocked)
-        {
-            if (debugLogs)
-                Debug.Log($"[Obstacle] OnBecameVisible: déjà unlock ou définitivement verrouillé.", this);
-            return;
-        }
+        _camera = Camera.main;
+        _renderer = GetComponentInChildren<Renderer>();
+
+        if (_camera == null)
+            Debug.LogWarning($"[Obstacle] Aucune caméra assignée sur {gameObject.name}.", this);
+    }
+
+    private void Update()
+    {
+        if (_camera == null || _renderer == null) return;
+        if (unlock || definitivelyLocked) return;
+
+        _frustumPlanes = GeometryUtility.CalculateFrustumPlanes(_camera);
+        bool isVisibleNow = GeometryUtility.TestPlanesAABB(_frustumPlanes, _renderer.bounds);
+        Debug.Log($"[Obstacle] isVisibleNow: {isVisibleNow}", this);
+
+        if (isVisibleNow && !_isSubscribed)
+            HandleEnteredView();
+        else if (!isVisibleNow && _isSubscribed)
+            HandleExitedView();
+    }
+
+    private void HandleEnteredView()
+    {
+        _isSubscribed = true;
         EventBus.Publish(new ObstacleEnteredView { obstacle = this });
         EventBus.Subscribe<NoteID>(OnNoteReceived);
+
         if (debugLogs)
-            Debug.Log($"[Obstacle] OnBecameVisible: EventBus.Subscribe<NoteID>", this);
+            Debug.Log($"[Obstacle] HandleEnteredView: EventBus.Subscribe<NoteID>", this);
+    }
+
+    private void HandleExitedView()
+    {
+        _isSubscribed = false;
+        EventBus.Publish(new ObstacleExitedView { obstacle = this });
+        EventBus.Unsubscribe<NoteID>(OnNoteReceived);
+
+        if (debugLogs)
+            Debug.Log($"[Obstacle] HandleExitedView: EventBus.Unsubscribe<NoteID>", this);
     }
 
     /// <summary>
@@ -58,20 +87,6 @@ public abstract class Obstacle : MonoBehaviour
         if (debugLogs)
             Debug.Log($"[Obstacle] OnNoteReceived: {id}", this);
         CheckNote(id);
-    }
-
-    /// <summary>
-    /// Appelé quand l'obstacle devient invisible dans la scène.
-    /// </summary>
-    private void OnBecameInvisible()
-    {
-#if UNITY_EDITOR
-        if (!UnityEditor.EditorApplication.isPlaying) return;
-#endif
-        EventBus.Publish(new ObstacleExitedView { obstacle = this });
-        EventBus.Unsubscribe<NoteID>(OnNoteReceived);
-        if (debugLogs)
-            Debug.Log($"[Obstacle] OnBecameInvisible: EventBus.Unsubscribe<NoteID>", this);
     }
 
     /// <summary>
@@ -108,6 +123,11 @@ public abstract class Obstacle : MonoBehaviour
             if (debugLogs)
                 Debug.Log($"[Obstacle] Mauvaise note reçue: {receivedNote}, obstacle verrouillé.", this);
         }
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe<NoteID>(OnNoteReceived);
     }
 
     /// <summary>

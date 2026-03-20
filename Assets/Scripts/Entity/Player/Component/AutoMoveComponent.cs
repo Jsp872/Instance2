@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AutoMoveComponent : PlayerComponent
@@ -78,15 +79,15 @@ public class AutoMoveComponent : PlayerComponent
     private void OnLooseMaxSpeed()
     {
         //cancel Max Speed rech CTX
-        Debug.Log("[AutoMove] Loose Max speed");
         EventBus.Publish(new LooseMaxSpeedCallback());
     }
     private void OnHitObstacle()
     {
         // Call Death Event
-        Debug.Log("[AutoMove] Hit obstacle � death!");
+        Debug.Log("[AutoMove] Hit obstacle!");
         EventBus.Publish(new OnHitObstacleCallback());
     }
+    
 
     public bool IsHitObstacle()
     {

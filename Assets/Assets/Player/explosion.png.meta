@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: c632ca7424ea65c4f9597d6ff44e09f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5326471553223173678
+    second: Explosion-ezgif.com-gif-maker_0
+  - first:
+      213: -6844921913571511957
+    second: Explosion-ezgif.com-gif-maker_1
+  - first:
+      213: -2343475343292124132
+    second: Explosion-ezgif.com-gif-maker_2
+  - first:
+      213: -1958208697498313307
+    second: Explosion-ezgif.com-gif-maker_3
+  - first:
+      213: -2586652627269070916
+    second: Explosion-ezgif.com-gif-maker_4
+  - first:
+      213: -6129576988934166055
+    second: Explosion-ezgif.com-gif-maker_5
+  - first:
+      213: 6929822570415729013
+    second: Explosion-ezgif.com-gif-maker_6
+  - first:
+      213: -587324825781716380
+    second: Explosion-ezgif.com-gif-maker_7
+  - first:
+      213: 8450173467277531467
+    second: Explosion-ezgif.com-gif-maker_8
+  - first:
+      213: -5912633324322869247
+    second: Explosion-ezgif.com-gif-maker_9
+  - first:
+      213: -7279432101144384216
+    second: Explosion-ezgif.com-gif-maker_10
+  - first:
+      213: 687525939348083999
+    second: Explosion-ezgif.com-gif-maker_11
+  - first:
+      213: -5989354929637603872
+    second: Explosion-ezgif.com-gif-maker_12
+  - first:
+      213: -9151938652493999819
+    second: Explosion-ezgif.com-gif-maker_13
+  - first:
+      213: -1450958110456547659
+    second: Explosion-ezgif.com-gif-maker_14
+  - first:
+      213: -8174845671260792195
+    second: Explosion-ezgif.com-gif-maker_15
+  - first:
+      213: -556719827285680454
+    second: Explosion-ezgif.com-gif-maker_16
+  - first:
+      213: 3485570698091938238
+    second: Explosion-ezgif.com-gif-maker_17
+  - first:
+      213: -2237022897416160568
+    second: Explosion-ezgif.com-gif-maker_18
+  - first:
+      213: -1017659957054582795
+    second: Explosion-ezgif.com-gif-maker_19
+  - first:
+      213: -356487711625576260
+    second: Explosion-ezgif.com-gif-maker_20
+  - first:
+      213: -1791716383455143240
+    second: Explosion-ezgif.com-gif-maker_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 560
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a36f372c05b724ebc3a65fa5e78722
+      internalID: 530399711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 560
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6168f2c0d6e25c745b542b699b0cdf37
+      internalID: 1816049603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_2
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 560
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1403d329a0052204d8662171136ff434
+      internalID: -150229457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b1b211057281d7442bdbe543baa8b6ed
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":560.0,"y":560.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      explosion_0: 530399711
+      explosion_1: 1816049603
+      explosion_2: -150229457
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
