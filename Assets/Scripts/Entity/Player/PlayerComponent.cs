@@ -10,7 +10,7 @@ public abstract class PlayerComponent : MonoBehaviour
         this.playerController = playerController;
         this.playerStatConfig = playerController.GetConfig();
     }
-
+    public virtual void OnPlayerRespawn() { }
     public virtual bool CanUpdate() => true;
     public virtual void UpdateComponent(ref Vector3 velocity, float dT)
     {
