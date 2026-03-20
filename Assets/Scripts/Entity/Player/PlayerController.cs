@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print(collision?.gameObject.name);
         if (collision.gameObject.layer == playerConfig.spikeLayer)
         {
             print("collision avec le skipe");

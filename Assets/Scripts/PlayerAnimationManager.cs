@@ -6,6 +6,7 @@ public class PlayerAnimationManager : MonoBehaviour
     private static readonly int Jump = Animator.StringToHash("Jump");
     private static readonly int Fall = Animator.StringToHash("Fall");
     private static readonly int Land = Animator.StringToHash("Land");
+    private static readonly int Explode = Animator.StringToHash("Explode");
     [SerializeField] private Animator animator;
     private void OnEnable()
     {
@@ -13,6 +14,7 @@ public class PlayerAnimationManager : MonoBehaviour
         EventBus.Subscribe<OnApexReached>(OnApexReached);
         EventBus.Subscribe<OnFallStarted>(OnFallStarted);
         EventBus.Subscribe<OnJumpFinished>(OnJumpFinished);
+        EventBus.Subscribe<OnHitObstacleCallback>(OnDead);
     }
 
     private void OnDisable()
@@ -21,6 +23,7 @@ public class PlayerAnimationManager : MonoBehaviour
          EventBus.Unsubscribe<OnApexReached>(OnApexReached);
          EventBus.Unsubscribe<OnFallStarted>(OnFallStarted);
          EventBus.Unsubscribe<OnJumpFinished>(OnJumpFinished);
+         EventBus.Unsubscribe<OnHitObstacleCallback>(OnDead);
     }
 
     private void OnJumpFinished(OnJumpFinished obj)
@@ -40,5 +43,10 @@ public class PlayerAnimationManager : MonoBehaviour
     private void OnJumpStarted(OnJumpStarted obj)
     {
         animator.SetTrigger(Jump);
+    }
+
+    private void OnDead(OnHitObstacleCallback obj)
+    {
+            animator.SetTrigger(Explode);
     }
 }

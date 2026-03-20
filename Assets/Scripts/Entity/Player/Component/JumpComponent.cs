@@ -179,7 +179,6 @@ public class JumpComponent : PlayerComponent
         apexReached = false;
         isFalling = false;
         // Squash landing, dust particles, sfx impact, screen shake
-        Debug.Log("[Jump] Landed");
         EventBus.Publish(new OnJumpFinished());
     }
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3411146210206873931}
   - component: {fileID: 7164630825341938823}
   - component: {fileID: 145761577308323531}
+  - component: {fileID: 3256252710741456646}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -114,6 +115,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3256252710741456646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769530524685798889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e0ad9869bb7f04aa040f178b25c190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  eventsToTrigger:
+    _serializedList:
+    - Key: Disable
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5769530524685798889}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: Enable
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5769530524685798889}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
 --- !u!1 &6314593349213439236
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +389,7 @@ MonoBehaviour:
   controller: {fileID: 8897418187128262474}
   playerCamera: {fileID: 6579945138976910910}
   FOVvalueToAdd: 0
+  respawnDelay: 0.4
 --- !u!114 &8897418187128262474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,9 +403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   debugLogs: 0
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &145686162153050907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +458,6 @@ MonoBehaviour:
     obstacleRaycastCount: 0
   <currentSpeed>k__BackingField: 0
   hasReachedMaxSpeed: 0
-  wasInObstacleRange: 0
 --- !u!114 &7217884672382082571
 MonoBehaviour:
   m_ObjectHideFlags: 0
