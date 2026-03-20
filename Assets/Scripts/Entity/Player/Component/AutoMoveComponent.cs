@@ -77,10 +77,21 @@ public class AutoMoveComponent : PlayerComponent
     {
         EventBus.Publish(new LooseMaxSpeedCallback());
     }
-
+    
     //private void OnHitObstacle()
     //{
-    //    Debug.Log("[AutoMove] Hit obstacle!");
-    //    EventBus.Publish(new OnHitObstacleCallback());
+    //    if (enabled)
+    //    {
+    //        // Call Death Event
+    //        Debug.Log("[AutoMove] Hit obstacle!");
+    //        EventBus.Publish(new OnHitObstacleCallback());
+    //        enabled = false;
+    //    }
     //}
+
+    public override void OnPlayerRespawn()
+    {
+        base.OnPlayerRespawn();
+        enabled = true;
+    }
 }
