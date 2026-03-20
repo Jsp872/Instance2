@@ -40,6 +40,17 @@ public class PlayerController : MonoBehaviour
             Debug.Log("[PlayerController] Composants initialisés.", this);
     }
 
+    public void OnResetComponent()
+    {
+        ReSpawnComponent(jumpComponent, autoMoveComponent, pauseComponent, sendNoteComponent);
+    }
+    private void ReSpawnComponent(params PlayerComponent[] components)
+    {
+        for (int i = 0; i < components.Length; i++)
+        {
+            components[i].OnPlayerRespawn();
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == playerConfig.spikeLayer)

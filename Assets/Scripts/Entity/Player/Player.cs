@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
     private void Respawn()
     {
         transform.position = spawnPoint.position;
+        controller.OnResetComponent();
     }
 
     private void OnMaxSpeedReach(MaxSpeedReachCallback callback)
