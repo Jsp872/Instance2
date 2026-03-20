@@ -10,10 +10,15 @@ public class PlayerController : MonoBehaviour
 
     private PlayerStatConfig playerConfig;
     private Rigidbody2D rb;
-
-
     public PlayerStatConfig GetConfig() => playerConfig;
     public Rigidbody2D GetRb() => rb;
+
+    [Header("Player Detection Sensor")]
+    public GroundSensor groundSensor { get; set; }
+    public FarObstacleSensor farObstacleSensor { get; set; }
+    public NearObstacleSensor nearObstacleSensor { get; set; }
+
+
 
     [Header("InputComponent")]
     private JumpComponent jumpComponent;
@@ -29,20 +34,46 @@ public class PlayerController : MonoBehaviour
     public void InitializeComponent(PlayerStatConfig playerStatConfig)
     {
         playerConfig = playerStatConfig;
+
+        //Unity Component   
         AddAndInitComponent(out rb);
 
+        InitSensorsInChildren();
+
+        // Player Component
         AddAndInitComponent(out jumpComponent);
         AddAndInitComponent(out sendNoteComponent);
         AddAndInitComponent(out pauseComponent);
-
         AddAndInitComponent(out autoMoveComponent);
+
+
         if (debugLogs)
             Debug.Log("[PlayerController] Composants initialisés.", this);
+    }
+
+    private void InitSensorsInChildren()
+    {
+        SensorComponent[] sensors = GetComponentsInChildren<SensorComponent>();
+
+        if (sensors.Length == 0)
+        {
+            Debug.LogWarning("[PlayerController] Aucun SensorComponent trouvé dans les enfants.", this);
+            return;
+        }
+
+        foreach (SensorComponent sensor in sensors)
+        {
+            sensor.InitializedSensorComponent(this);
+
+            if (debugLogs)
+                Debug.Log($"[PlayerController] Sensor initialisé: {sensor.GetType().Name}", this);
+        }
     }
 
     public void OnResetComponent()
     {
         ReSpawnComponent(jumpComponent, autoMoveComponent, pauseComponent, sendNoteComponent);
+        ResetSensor(groundSensor, farObstacleSensor, nearObstacleSensor);
     }
     private void ReSpawnComponent(params PlayerComponent[] components)
     {
@@ -51,12 +82,11 @@ public class PlayerController : MonoBehaviour
             components[i].OnPlayerRespawn();
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void ResetSensor(params SensorComponent[] sensors)
     {
-        if (collision.gameObject.layer == playerConfig.spikeLayer)
+        for (int i = 0; i < sensors.Length; i++)
         {
-            print("collision avec le skipe");
-            EventBus.Publish(new OnHitObstacleCallback());
+            sensors[i].OnResetSensor();
         }
     }
 
@@ -73,8 +103,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector3 velocity = Vector3.zero;
-        UpdateComp(ref velocity, Time.deltaTime, autoMoveComponent, jumpComponent);
+        float deltaTime = Time.deltaTime;
+
+        UpdateSensor(deltaTime, groundSensor, farObstacleSensor, nearObstacleSensor);
+
+        UpdateComp(ref velocity, deltaTime, autoMoveComponent, jumpComponent);
+
+
         rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocityY);
+
+
         if (debugLogs)
             Debug.Log($"[PlayerController] Update: velocity={velocity}", this);
     }
@@ -116,9 +154,25 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < components.Length; i++)
         {
+            if (!components[i].CanUpdate())
+                continue;
+
             components[i].UpdateComponent(ref velocity, fixedDT);
+
             if (debugLogs)
                 Debug.Log($"[PlayerController] UpdateComp: {components[i].GetType().Name}", this);
+        }
+    }
+    private void UpdateSensor(float dT, params SensorComponent[] sensors)
+    {
+        foreach (SensorComponent sensor in sensors)
+        {
+            if (sensor is null) continue;
+
+            if (!sensor.CanUpdateSensor())
+                continue;
+
+            sensor.OnUpdateSensor(dT);
         }
     }
 }

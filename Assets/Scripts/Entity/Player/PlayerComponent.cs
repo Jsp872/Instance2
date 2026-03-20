@@ -12,11 +12,7 @@ public abstract class PlayerComponent : MonoBehaviour
     }
     public virtual void OnPlayerRespawn() { }
     public virtual bool CanUpdate() => true;
-    public virtual void UpdateComponent(ref Vector3 velocity, float dT)
-    {
-        if (!CanUpdate())
-            return;
-    }
+    public virtual void UpdateComponent(ref Vector3 velocity, float dT) { }
 
     public virtual void HandleInput<T>(InputAction.CallbackContext ctx, T param) { }
     public virtual void HandleInput(InputAction.CallbackContext ctx) { }
