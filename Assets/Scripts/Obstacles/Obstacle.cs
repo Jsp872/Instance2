@@ -115,6 +115,10 @@ public abstract class Obstacle : MonoBehaviour
                 Debug.Log($"[Obstacle] Bonne note reçue: {receivedNote}, indexCourant={indexCourant}", this);
             if (indexCourant >= sequenceCible.Count)
                 Unlock();
+            else
+            {
+                UnLockingBehaviour();
+            }
         }
         else
         {
@@ -122,6 +126,7 @@ public abstract class Obstacle : MonoBehaviour
             definitivelyLocked = true;
             if (debugLogs)
                 Debug.Log($"[Obstacle] Mauvaise note reçue: {receivedNote}, obstacle verrouillé.", this);
+            LockedBehaviour();
         }
     }
 
@@ -157,5 +162,22 @@ public abstract class Obstacle : MonoBehaviour
         unlocked?.Invoke();
         if (debugLogs)
             Debug.Log($"[Obstacle] Unlock: obstacle déverrouillé.", this);
+        UnlockedBehaviour();
+    }
+    
+    //overridable functions
+    protected virtual void UnLockingBehaviour()
+    {
+        
+    }
+
+    protected virtual void UnlockedBehaviour()
+    {
+        
+    }
+
+    protected virtual void LockedBehaviour()
+    {
+
     }
 }
