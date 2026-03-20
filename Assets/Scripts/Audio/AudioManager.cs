@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
             PlaySound("Music");
         }
         timeBetweenMusics += Time.deltaTime;
-        if (timeBetweenMusics >= GetLength("Music"))
+        if (timeBetweenMusics >= GetAudioLength("Music"))
         {
             PlaySound("Music");
         }
@@ -140,11 +140,6 @@ public class AudioManager : MonoBehaviour
 
     #region utility
 
-    public void LoadVolume(string pName, float pVolume)
-    {
-        
-    }
-
     public void ChangeVolume(string pName, float pVolume)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == pName);
@@ -157,11 +152,11 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeMasterMixerVolume()
     {
-        mixer.SetFloat(Master.name, Mathf.Log10(masterSlider.value) * 20);
+        mixer.SetFloat(Master.name, 0.01f + Mathf.Log10(masterSlider.value) * 20);
     }
     public void ChangeMusicMixerVolume()
     {
-        mixer.SetFloat(Music.name, Mathf.Log10(musicSlider.value) * 20);
+        mixer.SetFloat(Music.name, 0.01f + Mathf.Log10(musicSlider.value) * 20);
     }
     public void ChangeSFXMixerVolume()
     {
@@ -201,13 +196,13 @@ public class AudioManager : MonoBehaviour
 
     #region parameters
 
-    public float GetLength(string pName)
+    public float GetAudioLength(string pName)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == pName);
         return s.source.clip.length;
     }
 
-    public bool IsPlaying(string pName)
+    public bool IsAudioPlaying(string pName)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == pName);
         return s.source.isPlaying;
