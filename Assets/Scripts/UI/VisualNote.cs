@@ -99,8 +99,9 @@ public class VisualNote : MonoBehaviour
             float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
             float speed = layout.rect.width / distance * playerMovement.currentSpeed;
             
-            
             print($"[TEST]__Send Sound Note : {note}");
+           
+
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' → vitesse calculée : {speed:F2}", this);
 
