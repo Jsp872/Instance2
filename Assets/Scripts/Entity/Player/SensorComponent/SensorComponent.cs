@@ -1,6 +1,8 @@
 using UnityEngine;
 public abstract class SensorComponent : MonoBehaviour
 {
+    public bool debugLogs = false;
+
     protected PlayerController controller;
     protected Collider2D shapeCollider;
 
@@ -67,4 +69,7 @@ public abstract class SensorComponent : MonoBehaviour
     }
     protected virtual void CollisionEntry(Collision2D collision) { }
     protected virtual void CollisionExit(Collision2D collision) { }
+
+
+    public void Log(string message, Object ctx = null) { if (debugLogs) Debug.Log(message, ctx); }
 }

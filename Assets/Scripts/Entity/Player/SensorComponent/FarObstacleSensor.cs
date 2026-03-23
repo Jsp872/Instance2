@@ -20,12 +20,12 @@ public class FarObstacleSensor : SensorComponent
     protected override void TriggerEntry(Collider2D collision)
     {
         ObstacleDetected = true;
-        print("Obstacle is on detection range : " + collision?.name);
+        Log("Obstacle is on detection range : " + collision?.name);
     }
 
     protected override void TriggerExit(Collider2D collision)
     {
         ObstacleDetected = false;
-        print("Obstacle quit detection range : " + collision?.name);
+        Log("Obstacle quit detection range : " + collision?.name);
     }
 }

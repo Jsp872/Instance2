@@ -8,11 +8,6 @@ using UnityEngine.UI;
 /// Gère uniquement la visibilité de son Image : Hide() la rend transparente,
 /// Show() la rend opaque.
 /// </summary>
-/// <summary>
-/// Représente une note visuelle dans l'UI (élément d'une séquence Simon).
-/// Gère uniquement la visibilité de son Image : Hide() la rend transparente,
-/// Show() la rend opaque.
-/// </summary>
 public class Note : MonoBehaviour
 {
     private Image noteImage;

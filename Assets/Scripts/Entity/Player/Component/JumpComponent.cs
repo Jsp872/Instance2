@@ -47,9 +47,6 @@ public class JumpComponent : PlayerComponent
     {
         if (ctx.performed)
             jumpBufferTimer = configCopy.jumpBufferTime;
-
-        //if (ctx.canceled && isJumping && rb.linearVelocityY > 0f)
-        //    OnJumpCut();
     }
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
@@ -153,19 +150,19 @@ public class JumpComponent : PlayerComponent
 
     private void OnJumpStarted()
     {
-        Debug.Log("[Jump] Started");
+        Log("[Jump] Started");
         EventBus.Publish(new OnJumpStarted());
     }
 
     private void OnApexReached()
     {
-        Debug.Log("[Jump] Apex reached");
+        Log("[Jump] Apex reached");
         EventBus.Publish(new OnApexReached());
     }
 
     private void OnFallStarted()
     {
-        Debug.Log("[Jump] Fall started");
+        Log("[Jump] Fall started");
         EventBus.Publish(new OnFallStarted());
     }
 

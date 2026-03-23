@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parallaxer
       objectReference: {fileID: 0}
+    - target: {fileID: 7277674791062415059, guid: f0777994da8e0ff47933356f6b210b6b, type: 3}
+      propertyPath: gameCamera
+      value: 
+      objectReference: {fileID: 1893656703}
     - target: {fileID: 8388890395977998218, guid: f0777994da8e0ff47933356f6b210b6b, type: 3}
       propertyPath: gameCamera
       value: 
@@ -308,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteIntervalSpeed: 0.55
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -535,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteIntervalSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -724,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteIntervalSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -882,6 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteIntervalSpeed: 0.3
   <sequenceCible>k__BackingField: 00
   overDrive: 1
   vitesse: -5
@@ -15140,7 +15148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  debugLogs: 0
 --- !u!1 &738716122
 GameObject:
   m_ObjectHideFlags: 0
@@ -15222,7 +15229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  debugLogs: 0
 --- !u!114 &741232759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15338,7 +15344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  debugLogs: 0
 --- !u!1 &781374288
 GameObject:
   m_ObjectHideFlags: 0
@@ -15420,7 +15425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  debugLogs: 0
 --- !u!1 &826151435
 GameObject:
   m_ObjectHideFlags: 0
@@ -16020,6 +16024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteIntervalSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -16210,7 +16215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  debugLogs: 0
 --- !u!20 &1379377684 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6579945138976910910, guid: 2bb397de606724249bb941f122f4b812, type: 3}
@@ -16498,6 +16502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteIntervalSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -16643,7 +16648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  debugLogs: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

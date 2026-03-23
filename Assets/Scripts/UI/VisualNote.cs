@@ -54,7 +54,7 @@ public class VisualNote : MonoBehaviour
             GetComponent<CanvasGroup>().Toggle(false);
         }
 
-        StartCoroutine(ProcessNotes(obstacle));
+        StartCoroutine(ProcessNotes(e));
     }
 
     /// <summary>
@@ -87,15 +87,20 @@ public class VisualNote : MonoBehaviour
     /// <summary>
     /// Coroutine pour traiter l'affichage des notes.
     /// </summary>
-    private IEnumerator ProcessNotes(Obstacle obstacle)
+    private IEnumerator ProcessNotes(ObstacleEnteredView obstacleCtx)
     {
+        Obstacle obstacle = obstacleCtx.obstacle;
+
         for (var i = 0; i < obstacle.sequenceCible.Count; i++)
         {
-            var note = obstacle.sequenceCible[i];
+            NoteID note = obstacle.sequenceCible[i];
             RectTransform row = noteRows[(int)note];
             Note newNote = Instantiate(notePrefab, row);
             float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
             float speed = layout.rect.width / distance * playerMovement.currentSpeed;
+            
+            print($"[TEST]__Send Sound Note : {note}");
+           
 
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' → vitesse calculée : {speed:F2}", this);
@@ -105,8 +110,9 @@ public class VisualNote : MonoBehaviour
             notes.Add(newNote);
             if (i < obstacle.sequenceCible.Count - 1)
             {
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(obstacleCtx.noteIntervalSpeed);
             }
+
         }
 
         yield return null;
