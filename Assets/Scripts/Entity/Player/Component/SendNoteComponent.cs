@@ -32,5 +32,6 @@ public class SendNoteComponent : PlayerComponent
         if (!ctx.started) return;
         Log($"[SendNoteComponent] Note envoyée: {id}");
         EventBus.Publish(id);
+        EventBus.Publish(new OnSendNoteSound(id));
     }
 }
