@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public struct ObstacleEnteredView
@@ -55,8 +56,7 @@ public abstract class Obstacle : MonoBehaviour
 
         _frustumPlanes = GeometryUtility.CalculateFrustumPlanes(_camera);
         bool isVisibleNow = GeometryUtility.TestPlanesAABB(_frustumPlanes, _renderer.bounds);
-        Debug.Log($"[Obstacle] isVisibleNow: {isVisibleNow}", this);
-
+        Log($"[Obstacle] isVisibleNow: {isVisibleNow}");
         if (isVisibleNow && !_isSubscribed)
             HandleEnteredView();
         else if (!isVisibleNow && _isSubscribed)
@@ -69,8 +69,7 @@ public abstract class Obstacle : MonoBehaviour
         EventBus.Publish(new ObstacleEnteredView { obstacle = this, noteIntervalSpeed = noteIntervalSpeed });
         EventBus.Subscribe<NoteID>(OnNoteReceived);
 
-        if (debugLogs)
-            Debug.Log($"[Obstacle] HandleEnteredView: EventBus.Subscribe<NoteID>", this);
+        Log($"[Obstacle] HandleEnteredView: EventBus.Subscribe<NoteID>");
     }
 
     private void HandleExitedView()
@@ -79,8 +78,7 @@ public abstract class Obstacle : MonoBehaviour
         EventBus.Publish(new ObstacleExitedView { obstacle = this });
         EventBus.Unsubscribe<NoteID>(OnNoteReceived);
 
-        if (debugLogs)
-            Debug.Log($"[Obstacle] HandleExitedView: EventBus.Unsubscribe<NoteID>", this);
+        Log($"[Obstacle] HandleExitedView: EventBus.Unsubscribe<NoteID>");
     }
 
     /// <summary>
@@ -88,8 +86,7 @@ public abstract class Obstacle : MonoBehaviour
     /// </summary>
     private void OnNoteReceived(NoteID id)
     {
-        if (debugLogs)
-            Debug.Log($"[Obstacle] OnNoteReceived: {id}", this);
+        Log($"[Obstacle] OnNoteReceived: {id}");
         CheckNote(id);
     }
 
@@ -100,8 +97,7 @@ public abstract class Obstacle : MonoBehaviour
     {
         if (unlock || definitivelyLocked)
         {
-            if (debugLogs)
-                Debug.Log($"[Obstacle] CheckNote: déjà unlock ou définitivement verrouillé.", this);
+            Log($"[Obstacle] CheckNote: déjà unlock ou définitivement verrouillé.");
             return;
         }
 
@@ -115,8 +111,9 @@ public abstract class Obstacle : MonoBehaviour
         {
             indexCourant++;
             goodNote?.Invoke(this);
-            if (debugLogs)
-                Debug.Log($"[Obstacle] Bonne note reçue: {receivedNote}, indexCourant={indexCourant}", this);
+
+            Log($"[Obstacle] Bonne note reçue: {receivedNote}, indexCourant={indexCourant}");
+
             if (indexCourant >= sequenceCible.Count)
                 Unlock();
             else
@@ -128,8 +125,7 @@ public abstract class Obstacle : MonoBehaviour
         {
             badNote?.Invoke();
             definitivelyLocked = true;
-            if (debugLogs)
-                Debug.Log($"[Obstacle] Mauvaise note reçue: {receivedNote}, obstacle verrouillé.", this);
+            Log($"[Obstacle] Mauvaise note reçue: {receivedNote}, obstacle verrouillé.");
             LockedBehaviour();
         }
     }
@@ -146,8 +142,7 @@ public abstract class Obstacle : MonoBehaviour
     {
         indexCourant = 0;
         OnSequenceReset();
-        if (debugLogs)
-            Debug.Log($"[Obstacle] ResetSequence: indexCourant réinitialisé.", this);
+        Log($"[Obstacle] ResetSequence: indexCourant réinitialisé.");
     }
 
     /// <summary>
@@ -164,10 +159,11 @@ public abstract class Obstacle : MonoBehaviour
     {
         unlock = true;
         unlocked?.Invoke();
-        if (debugLogs)
-            Debug.Log($"[Obstacle] Unlock: obstacle déverrouillé.", this);
+        Log($"[Obstacle] Unlock: obstacle déverrouillé.");
         UnlockedBehaviour();
     }
+
+    public void Log(string message) { if (debugLogs) Debug.Log(message, this); }
 
     //overridable functions
     protected virtual void Init()
