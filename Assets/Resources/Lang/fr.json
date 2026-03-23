@@ -23,5 +23,12 @@
     "Sprint" : "Courir",
     "Interact" : "Interagir",
     "Reset" : "Reset",
-    "Do" : "Do"
+    "Do" : "Do",
+    "Re" : "Re",
+    "Mi" : "Mi",
+    "Fa" : "Fa",
+    "Resume" : "Reprendre",
+    "MainMenu" : "Menu principal",
+    "Victory" : "Victoire",
+    "NextLevel" : "Niveau suivant"
 }

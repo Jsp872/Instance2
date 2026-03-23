@@ -22,5 +22,13 @@
     "Crouch" : "Crouch",
     "Sprint" : "Sprint",
     "Interact" : "Interact",
-    "Reset" : "Reset"
+    "Reset" : "Reset",
+    "Do" : "Do",
+    "Re" : "Re",
+    "Mi" : "Mi",
+    "Fa" : "Fa",
+    "Resume" : "Resume",
+    "MainMenu" : "Main menu",
+    "Victory" : "Victory",
+    "NextLevel" : "Next level"
 }

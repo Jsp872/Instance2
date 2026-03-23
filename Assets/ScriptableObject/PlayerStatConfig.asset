@@ -14,23 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatConfig
   movementConfig:
     defaultMovementDir: {x: 1, y: 0, z: 0}
-    defaultMoveSpeed: 5
-    maxMoveSpeed: 5
-    accelerationSmoothTime: 0.55
-    obstacleDetectionDistance: 15
+    defaultMoveSpeed: 7
+    maxMoveSpeed: 9
+    accelerationSmoothTime: 0.8
     playerObstacleRangeSpeed: 6
     playerDeceleration: 0.75
-    playerDeathRange: 1.5
-    raycastOffset: 0.75
-    obstacleRaycastCount: 3
   jumpConfig:
     jumpApexHeight: 6.5
     jumpApexTime: 1
     coyoteTime: 0.15
     jumpBufferTime: 0.12
-    checkIsGroundedRadius: 0.05
-    raycastOffset: 0.75
-    groundedRaycastCount: 3
     fallGravityMultiplier: 3
     cutJumpGravityMultiplier: 2.5
     hasCoyoteTime: 1
