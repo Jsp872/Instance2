@@ -10,7 +10,6 @@ public class AutoMoveComponent : PlayerComponent
     [SerializeField] private bool hasReachedMaxSpeed = false;
 
     private bool callEventOnce;
-
     private FarObstacleSensor _farSensor;
 
     public override void Initialize(PlayerController controller)
@@ -24,14 +23,7 @@ public class AutoMoveComponent : PlayerComponent
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
-        //bool hitObstacle = _nearSensor.ObstacleDetected;
         bool isOnObstacleRange = _farSensor.ObstacleDetected;
-
-        //if (hitObstacle)
-        //{
-        //    OnHitObstacle();
-        //    return;
-        //}
 
         if (isOnObstacleRange)
         {
@@ -67,26 +59,15 @@ public class AutoMoveComponent : PlayerComponent
 
     private void OnMaxSpeedReach()
     {
-        Debug.Log("[AutoMove] Max speed reached!");
+        Log("[AutoMove] Max speed reached!");
         EventBus.Publish(new MaxSpeedReachCallback());
     }
 
     private void OnLooseMaxSpeed()
     {
+        Log("[AutoMove] Max speed loosing");
         EventBus.Publish(new LooseMaxSpeedCallback());
     }
-    
-    //private void OnHitObstacle()
-    //{
-    //    if (enabled)
-    //    {
-    //        // Call Death Event
-    //        Debug.Log("[AutoMove] Hit obstacle!");
-    //        EventBus.Publish(new OnHitObstacleCallback());
-    //        enabled = false;
-    //    }
-    //}
-
     public override void OnPlayerRespawn()
     {
         base.OnPlayerRespawn();

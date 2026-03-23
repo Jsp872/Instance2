@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteSpeed: 5
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -535,6 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -724,6 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -882,6 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteSpeed: 10
   <sequenceCible>k__BackingField: 00
   overDrive: 1
   vitesse: -5
@@ -16020,6 +16024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5
@@ -16498,6 +16503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingPlatform
   debugLogs: 0
+  noteSpeed: 0.3
   <sequenceCible>k__BackingField: 0102
   overDrive: 1
   vitesse: -5

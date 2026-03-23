@@ -5,6 +5,7 @@ using UnityEngine;
 public struct ObstacleEnteredView
 {
     public Obstacle obstacle;
+    public float noteIntervalSpeed;
 }
 
 public struct ObstacleExitedView
@@ -18,7 +19,9 @@ public struct ObstacleExitedView
 /// </summary>
 public abstract class Obstacle : MonoBehaviour
 {
-    [Header("Debug")] [SerializeField] protected bool debugLogs = false;
+    [Header("Debug")][SerializeField] protected bool debugLogs = false;
+
+    [Header("Note Speed")][SerializeField] protected float noteIntervalSpeed;
 
     private Camera _camera;
 
@@ -63,7 +66,7 @@ public abstract class Obstacle : MonoBehaviour
     private void HandleEnteredView()
     {
         _isSubscribed = true;
-        EventBus.Publish(new ObstacleEnteredView { obstacle = this });
+        EventBus.Publish(new ObstacleEnteredView { obstacle = this, noteIntervalSpeed = noteIntervalSpeed });
         EventBus.Subscribe<NoteID>(OnNoteReceived);
 
         if (debugLogs)
@@ -165,21 +168,21 @@ public abstract class Obstacle : MonoBehaviour
             Debug.Log($"[Obstacle] Unlock: obstacle déverrouillé.", this);
         UnlockedBehaviour();
     }
-    
+
     //overridable functions
     protected virtual void Init()
     {
-        
+
     }
-    
+
     protected virtual void UnLockingBehaviour()
     {
-        
+
     }
 
     protected virtual void UnlockedBehaviour()
     {
-        
+
     }
 
     protected virtual void LockedBehaviour()
