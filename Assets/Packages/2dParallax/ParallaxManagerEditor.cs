@@ -8,10 +8,10 @@ using UnityEditor;
 [CustomEditor(typeof(ParallaxManager))]
 public class ParallaxManagerEditor : Editor
 {
-    private void Awake()
-    {
-        if (!((ParallaxManager)target).gameCamera) ((ParallaxManager)target).gameCamera = Camera.main.transform;
-    }
+    //private void Awake()
+    //{
+    //    if (!((ParallaxManager)target).gameCamera) ((ParallaxManager)target).gameCamera = Camera.main.transform;
+    //}
 
     public override void OnInspectorGUI()
     {

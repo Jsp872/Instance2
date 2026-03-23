@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parallaxer
       objectReference: {fileID: 0}
+    - target: {fileID: 8388890395977998218, guid: f0777994da8e0ff47933356f6b210b6b, type: 3}
+      propertyPath: gameCamera
+      value: 
+      objectReference: {fileID: 1893656703}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14709,6 +14713,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 686239248}
     m_Modifications:
+    - target: {fileID: 3128967990366825046, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128967990366825046, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3868191797228496630, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14741,6 +14753,22 @@ PrefabInstance:
       propertyPath: obstacleCountBeforeHiding
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4162413538951658796, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162413538951658796, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343654515431707309, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343654515431707309, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4902093741676878931, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14811,6 +14839,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6244296449057377065, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540770888257851635, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540770888257851635, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8475337008340599040, guid: 84167bfce38eb064f83e9a7830d68d6b, type: 3}
@@ -16332,6 +16368,11 @@ PrefabInstance:
 --- !u!1 &1893656702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8488989145149911528, guid: 2bb397de606724249bb941f122f4b812, type: 3}
+  m_PrefabInstance: {fileID: 1893656701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1893656703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1771079314547040224, guid: 2bb397de606724249bb941f122f4b812, type: 3}
   m_PrefabInstance: {fileID: 1893656701}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1893656704 stripped
