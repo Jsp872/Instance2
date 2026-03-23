@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerController))]
 public class Player : MonoBehaviour
@@ -62,8 +63,9 @@ public class Player : MonoBehaviour
 
     private void Respawn()
     {
-        transform.position = spawnPoint.position;
-        controller.OnResetComponent();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //transform.position = spawnPoint.position;
+        //controller.OnResetComponent();
     }
 
     private void OnMaxSpeedReach(MaxSpeedReachCallback callback)
