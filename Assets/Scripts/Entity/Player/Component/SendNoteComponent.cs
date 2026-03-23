@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 // Enumération représentant les différentes notes musicales pouvant être envoyées.
 public enum NoteID : byte
 {
-    DO   = 0,
-    RE   = 1,
-    MI   = 2,
-    FA   = 3,
+    DO = 0,
+    RE = 1,
+    MI = 2,
+    FA = 3,
     NONE = 255,
 }
 
@@ -37,19 +37,13 @@ public class SendNoteComponent : PlayerComponent
     /// <summary>
     /// Gère l'entrée utilisateur pour envoyer une note via l'EventBus.
     /// </summary>
-    public override void HandleInput<T>(InputAction.CallbackContext ctx, T param)
+    public void HandleInput(InputAction.CallbackContext ctx, NoteID id)
     {
         if (!ctx.started) return;
-        if (param is NoteID id)
-        {
-            if (debugLogs)
-                Debug.Log($"[SendNoteComponent] Note envoyée: {id}");
-            EventBus.Publish(id);
-        }
-        else
-        {
-            if (debugLogs)
-                Debug.LogWarning("[SendNoteComponent] Paramètre d'entrée inattendu: " + param);
-        }
+
+        if (debugLogs)
+            Debug.Log($"[SendNoteComponent] Note envoyée: {id}");
+
+        EventBus.Publish(id);
     }
 }

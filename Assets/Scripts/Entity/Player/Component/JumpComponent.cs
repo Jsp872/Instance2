@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class JumpComponent : PlayerComponent
 {
-    [SerializeField, Tooltip("Config Cache - changes don't save to SO!")]
-    private JumpConfig config;
+    [SerializeField, Tooltip("Config Copy - changes don't save to SO!")]
+    private JumpConfig configCopy;
 
     [Header("______DEBUG_______")]
     [SerializeField] private float coyoteTimer;
@@ -26,7 +26,7 @@ public class JumpComponent : PlayerComponent
     public override void Initialize(PlayerController controller)
     {
         base.Initialize(controller);
-        config = controller.GetConfig().jumpConfig;
+        configCopy = controller.GetConfig().jumpConfig;
         rb = controller.GetRb();
         _groundSensor = controller.groundSensor;
 
@@ -35,8 +35,8 @@ public class JumpComponent : PlayerComponent
 
     private void ComputeJumpPhysics()
     {
-        derivedJumpVelocity = (2f * config.jumpApexHeight) / config.jumpApexTime;
-        derivedGravity = (2f * config.jumpApexHeight) / (config.jumpApexTime * config.jumpApexTime);
+        derivedJumpVelocity = (2f * configCopy.jumpApexHeight) / configCopy.jumpApexTime;
+        derivedGravity = (2f * configCopy.jumpApexHeight) / (configCopy.jumpApexTime * configCopy.jumpApexTime);
         rb.gravityScale = derivedGravity / Mathf.Abs(Physics2D.gravity.y);
 
         DEBUG_derivedJumpVelocity = derivedJumpVelocity;
@@ -46,7 +46,7 @@ public class JumpComponent : PlayerComponent
     public override void HandleInput(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-            jumpBufferTimer = config.jumpBufferTime;
+            jumpBufferTimer = configCopy.jumpBufferTime;
 
         //if (ctx.canceled && isJumping && rb.linearVelocityY > 0f)
         //    OnJumpCut();
@@ -63,7 +63,7 @@ public class JumpComponent : PlayerComponent
 
         UpdateJumpBuffer(dt);
 
-        if (config.hasJumpGravityModifiers)
+        if (configCopy.hasJumpGravityModifiers)
             UpdateGravity();
 
         if (isJumping)
@@ -77,11 +77,11 @@ public class JumpComponent : PlayerComponent
     {
         if (grounded)
         {
-            coyoteTimer = config.coyoteTime;
+            coyoteTimer = configCopy.coyoteTime;
         }
         else if (wasGrounded && !grounded)
         {
-            coyoteTimer = config.hasCoyoteTime ? config.coyoteTime : 0f;
+            coyoteTimer = configCopy.hasCoyoteTime ? configCopy.coyoteTime : 0f;
         }
         else
         {
@@ -105,9 +105,9 @@ public class JumpComponent : PlayerComponent
         float baseGravityScale = derivedGravity / Mathf.Abs(Physics2D.gravity.y);
 
         if (rb.linearVelocityY < 0f)
-            rb.gravityScale = baseGravityScale * config.fallGravityMultiplier;
+            rb.gravityScale = baseGravityScale * configCopy.fallGravityMultiplier;
         else if (rb.linearVelocityY > 0f)
-            rb.gravityScale = baseGravityScale * config.cutJumpGravityMultiplier;
+            rb.gravityScale = baseGravityScale * configCopy.cutJumpGravityMultiplier;
         else
             rb.gravityScale = baseGravityScale;
     }

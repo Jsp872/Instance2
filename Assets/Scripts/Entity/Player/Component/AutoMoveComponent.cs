@@ -11,7 +11,6 @@ public class AutoMoveComponent : PlayerComponent
 
     private bool callEventOnce;
 
-    private NearObstacleSensor _nearSensor;
     private FarObstacleSensor _farSensor;
 
     public override void Initialize(PlayerController controller)
@@ -20,7 +19,6 @@ public class AutoMoveComponent : PlayerComponent
         config = controller.GetConfig().movementConfig;
         currentSpeed = config.defaultMoveSpeed;
 
-        _nearSensor = controller.nearObstacleSensor;
         _farSensor = controller.farObstacleSensor;
     }
 
