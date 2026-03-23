@@ -1,25 +1,27 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using DG.Tweening;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] Sounds;
+    public Sound[] sounds;
     public AudioMixer mixer;
-    public AudioMixerGroup Master;
-    public AudioMixerGroup Music;
-    public AudioMixerGroup SFX;
+    public AudioMixerGroup master;
+    public AudioMixerGroup music;
+    public AudioMixerGroup sfx;
     [SerializeField] Slider masterSlider;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider sfxSlider;
     
-    private float timeBetweenMusics;
-    private bool resetMusic;
+    float timeBetweenMusics;
+    bool resetMusic;
 
-    [HideInInspector] public bool IsPlayingSound;
+    [HideInInspector] public bool isPlayingSound;
 
     public static AudioManager Instance;
 
@@ -31,7 +33,7 @@ public class AudioManager : MonoBehaviour
         
         Instance = this;
         
-        foreach (Sound s in Sounds)
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -79,7 +81,7 @@ public class AudioManager : MonoBehaviour
     {
         try
         {
-            Sound s = Array.Find(Sounds, sound => sound.name == pName);
+            Sound s = Array.Find(sounds, sound => sound.name == pName);
             s.source.Play();
         }
         catch
@@ -92,7 +94,7 @@ public class AudioManager : MonoBehaviour
     {
         try
         {
-            Sound s = Array.Find(Sounds, sound => sound.name == pName);
+            Sound s = Array.Find(sounds, sound => sound.name == pName);
             s.source.PlayOneShot(s.source.clip, s.source.volume);
         }
         catch
@@ -116,7 +118,7 @@ public class AudioManager : MonoBehaviour
     {
         try
         {
-            Sound s = Array.Find(Sounds, sound => sound.name == pName);
+            Sound s = Array.Find(sounds, sound => sound.name == pName);
             s.source.Stop();
         }
         catch
@@ -125,9 +127,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void stopAllSounds()
+    public void StopAllSounds()
     {
-        foreach (Sound s in Sounds)
+        foreach (Sound s in sounds)
         {
             if (s.source.isPlaying)
             {
@@ -142,7 +144,7 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeVolume(string pName, float pVolume)
     {
-        Sound s = Array.Find(Sounds, sound => sound.name == pName);
+        Sound s = Array.Find(sounds, sound => sound.name == pName);
         s.source.volume = pVolume;
     }
 
@@ -152,20 +154,20 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeMasterMixerVolume()
     {
-        mixer.SetFloat(Master.name, 0.01f + Mathf.Log10(masterSlider.value) * 20);
+        mixer.SetFloat(master.name, 0.01f + Mathf.Log10(masterSlider.value) * 20);
     }
     public void ChangeMusicMixerVolume()
     {
-        mixer.SetFloat(Music.name, 0.01f + Mathf.Log10(musicSlider.value) * 20);
+        mixer.SetFloat(music.name, 0.01f + Mathf.Log10(musicSlider.value) * 20);
     }
-    public void ChangeSFXMixerVolume()
+    public void ChangeSfxMixerVolume()
     {
-        mixer.SetFloat(SFX.name, Mathf.Log10(sfxSlider.value) * 20);
+        mixer.SetFloat(sfx.name, Mathf.Log10(sfxSlider.value) * 20);
     }
 
     public void ChangePitch(string pName, float pPitch)
     {
-        Sound s = Array.Find(Sounds, sound => sound.name == pName);
+        Sound s = Array.Find(sounds, sound => sound.name == pName);
         s.source.pitch = pPitch;
     }
 
@@ -178,7 +180,7 @@ public class AudioManager : MonoBehaviour
     {
         try
         {
-            Sound s = Array.Find(Sounds, sound => sound.name == pName);
+            Sound s = Array.Find(sounds, sound => sound.name == pName);
             while (Mathf.Approximately(s.source.volume, pTargetVolume))
             {
                 s.source.DOFade(pTargetVolume, pDuration);
@@ -198,13 +200,13 @@ public class AudioManager : MonoBehaviour
 
     public float GetAudioLength(string pName)
     {
-        Sound s = Array.Find(Sounds, sound => sound.name == pName);
+        Sound s = Array.Find(sounds, sound => sound.name == pName);
         return s.source.clip.length;
     }
 
     public bool IsAudioPlaying(string pName)
     {
-        Sound s = Array.Find(Sounds, sound => sound.name == pName);
+        Sound s = Array.Find(sounds, sound => sound.name == pName);
         return s.source.isPlaying;
     }
 

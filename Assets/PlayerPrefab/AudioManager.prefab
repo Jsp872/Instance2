@@ -44,12 +44,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c881c5ebf87de3a18e19b25a06495a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  Sounds: []
-  mixer: {fileID: 0}
-  Master: {fileID: 0}
-  Music: {fileID: 0}
-  SFX: {fileID: 0}
+  sounds:
+  - name: do
+    clip: {fileID: 8300000, guid: 135c50f1c842f38a1a78a6015c5a5b11, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: re
+    clip: {fileID: 8300000, guid: ef811090bb3a07a3bab371a9f1902e24, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: mi
+    clip: {fileID: 8300000, guid: 135c50f1c842f38a1a78a6015c5a5b11, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: fa
+    clip: {fileID: 8300000, guid: f86c8a0225d92e1708d47f5367d50d98, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: sol
+    clip: {fileID: 8300000, guid: 4ce03d7e673dee2a3bb56e9823606823, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: la
+    clip: {fileID: 8300000, guid: d7e6a2fe7c6774a8281b3550377636e0, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: si
+    clip: {fileID: 8300000, guid: 55f252341f137fcf7a78e1fdaa7c6ed8, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: do+1
+    clip: {fileID: 8300000, guid: 1021504523ff47011b3d07e37564ce36, type: 3}
+    audioMixerGroup: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  mixer: {fileID: 24100000, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  master: {fileID: 24300002, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  music: {fileID: -2334716603293347469, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  sfx: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
   masterSlider: {fileID: 0}
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
-  IsPlayingSound: 0
+  isPlayingSound: 0
