@@ -18,9 +18,6 @@ namespace Lang
         {
             {"fr", "Français"},
             {"en", "English"},
-            {"es", "Español"},
-            {"de", "Deutsch"},
-            {"it", "Italiano"}
         };
 
         private void Awake()
