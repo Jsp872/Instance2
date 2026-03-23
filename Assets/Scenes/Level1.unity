@@ -1032,15 +1032,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14848,6 +14848,14 @@ MonoBehaviour:
     - Key: 3
       Value: {fileID: 8300000, guid: b92ecb8e4c74e2b408e2cedafb78b470, type: 3}
   sources: {fileID: 675153401}
+  missSoundClip: {fileID: 8300000, guid: 1015a5a85c6f2ed4b87ea4061f1e03a1, type: 3}
+  mixer: {fileID: 24100000, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  master: {fileID: 24300002, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  music: {fileID: -2334716603293347469, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  sfx: {fileID: 3873065237387445527, guid: f4912eebbe7feb9aaaa7c43f081e84d7, type: 2}
+  masterSlider: {fileID: 2092193611}
+  musicSlider: {fileID: 2092193610}
+  sfxSlider: {fileID: 2092193609}
 --- !u!82 &675153401
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15688,6 +15696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::End_Of_Level_Trigger
   VictoryScreen: {fileID: 449957757}
+  delayBeforeVictoryScreen: 0
 --- !u!61 &826151437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16944,6 +16953,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87058e3fb495943bb2a49ae1d00ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+--- !u!114 &2092193609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3933604183482331387, guid: e3d7fe39bee0f9d42ad9866b57be03b5, type: 3}
+  m_PrefabInstance: {fileID: 974013403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &2092193610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5188093591860375536, guid: e3d7fe39bee0f9d42ad9866b57be03b5, type: 3}
+  m_PrefabInstance: {fileID: 974013403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &2092193611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5813839073651946561, guid: e3d7fe39bee0f9d42ad9866b57be03b5, type: 3}
+  m_PrefabInstance: {fileID: 974013403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

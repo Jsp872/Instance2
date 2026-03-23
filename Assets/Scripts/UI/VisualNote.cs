@@ -64,6 +64,8 @@ public class VisualNote : MonoBehaviour
     {
         if (debugLogs)
             Debug.Log($"[VisualNote] Note ratée !", this);
+        EventBus.Publish<OnMissSound>(new OnMissSound());
+
         foreach (Note note in notes)
         {
             DOTween.Kill(note.GetComponent<RectTransform>());
