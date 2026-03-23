@@ -9,6 +9,9 @@ public class NoteAudioManager : MonoBehaviour
     [SerializeField] SerializedDictionary<NoteID, AudioClip> noteSound = new SerializedDictionary<NoteID, AudioClip>();
     [SerializeField] private AudioSource sources;
 
+    [SerializeField] private AudioClip missSoundClip;
+
+
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private AudioMixerGroup master;
     [SerializeField] private AudioMixerGroup music;
@@ -23,16 +26,23 @@ public class NoteAudioManager : MonoBehaviour
     private void OnEnable()
     {
         EventBus.Subscribe<OnSendNoteSound>(PlaySound);
+        EventBus.Subscribe<OnMissSound>(MissSound);
     }
     private void OnDisable()
     {
         EventBus.Unsubscribe<OnSendNoteSound>(PlaySound);
+        EventBus.Unsubscribe<OnMissSound>(MissSound);
     }
     #endregion
 
     private void PlaySound(OnSendNoteSound callback)
     {
         sources.clip = noteSound[callback.id];
+        sources.Play();
+    }
+    private void MissSound(OnMissSound callback)
+    {
+        sources.clip = missSoundClip;
         sources.Play();
     }
 
@@ -61,3 +71,5 @@ public class NoteAudioManager : MonoBehaviour
 
     #endregion
 }
+
+public struct OnMissSound { }
