@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: "Coin_Gauche_Bas_pasdid\xE9edenom_0"
+  m_Name: Coin_gauche_bas_0
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 9165306001471629814, guid: fbf877824395017609fe706d487725c9, type: 3}
+  m_Sprite: {fileID: -321087239984250863, guid: 3ef42e4a786912455b465d9cc0680e5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
