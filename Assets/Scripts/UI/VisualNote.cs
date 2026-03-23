@@ -93,12 +93,14 @@ public class VisualNote : MonoBehaviour
 
         for (var i = 0; i < obstacle.sequenceCible.Count; i++)
         {
-            var note = obstacle.sequenceCible[i];
+            NoteID note = obstacle.sequenceCible[i];
             RectTransform row = noteRows[(int)note];
             Note newNote = Instantiate(notePrefab, row);
             float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
             float speed = layout.rect.width / distance * playerMovement.currentSpeed;
-
+            
+            
+            print($"[TEST]__Send Sound Note : {note}");
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' → vitesse calculée : {speed:F2}", this);
 
@@ -109,6 +111,7 @@ public class VisualNote : MonoBehaviour
             {
                 yield return new WaitForSeconds(obstacleCtx.noteIntervalSpeed);
             }
+
         }
 
         yield return null;

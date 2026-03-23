@@ -19,5 +19,5 @@ public abstract class PlayerComponent : MonoBehaviour
     public virtual void UpdateComponent(ref Vector3 velocity, float dt) { }
     public virtual void HandleInput(InputAction.CallbackContext ctx) { }
 
-    public void Log(string message) { if (debugLogs) Debug.Log(message); }
+    public void Log(string message, Object ctx = null) { if (debugLogs) Debug.Log(message, ctx); }
 }

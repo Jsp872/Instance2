@@ -34,15 +34,15 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         EventBus.Subscribe<OnHitObstacleCallback>(OnHittedWall);
-        EventBus.Subscribe<MaxSpeedReachCallback>(OnMaxSpeedReach);
-        EventBus.Subscribe<LooseMaxSpeedCallback>(OnLooserMaxSpeed);
+        //EventBus.Subscribe<MaxSpeedReachCallback>(OnMaxSpeedReach);
+        //EventBus.Subscribe<LooseMaxSpeedCallback>(OnLooserMaxSpeed);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<OnHitObstacleCallback>(OnHittedWall);
-        EventBus.Unsubscribe<MaxSpeedReachCallback>(OnMaxSpeedReach);
-        EventBus.Unsubscribe<LooseMaxSpeedCallback>(OnLooserMaxSpeed);
+        //EventBus.Unsubscribe<MaxSpeedReachCallback>(OnMaxSpeedReach);
+        //EventBus.Unsubscribe<LooseMaxSpeedCallback>(OnLooserMaxSpeed);
     }
 
     private void OnHittedWall(OnHitObstacleCallback callback)
@@ -68,15 +68,15 @@ public class Player : MonoBehaviour
         //controller.OnResetComponent();
     }
 
-    private void OnMaxSpeedReach(MaxSpeedReachCallback callback)
-    {
-        print("max speed Reach");
-    }
+    //private void OnMaxSpeedReach(MaxSpeedReachCallback callback)
+    //{
+    //    print("max speed Reach");
+    //}
 
-    private void OnLooserMaxSpeed(LooseMaxSpeedCallback callback)
-    {
-        print("max speed loose");
-    }
+    //private void OnLooserMaxSpeed(LooseMaxSpeedCallback callback)
+    //{
+    //    print("max speed loose");
+    //}
 
     #endregion
 }
