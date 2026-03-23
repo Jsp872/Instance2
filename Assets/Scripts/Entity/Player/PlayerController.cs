@@ -1,178 +1,168 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Contrôleur principal du joueur, orchestre les composants modulaires et gère l'entrée.
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    // Permet d'activer/désactiver les logs de debug depuis l'inspecteur.
-    [Header("Debug")][SerializeField] private bool debugLogs = false;
+    [Header("Debug")]
+    [SerializeField] private bool debugLogs = false;
+
+    [Header("Sensors")]
+    public GroundSensor groundSensor;
+    public FarObstacleSensor farObstacleSensor;
+    public NearObstacleSensor nearObstacleSensor;
 
     private PlayerStatConfig playerConfig;
     private Rigidbody2D rb;
-    public PlayerStatConfig GetConfig() => playerConfig;
-    public Rigidbody2D GetRb() => rb;
 
-    [Header("Player Detection Sensor")]
-    public GroundSensor groundSensor { get; set; }
-    public FarObstacleSensor farObstacleSensor { get; set; }
-    public NearObstacleSensor nearObstacleSensor { get; set; }
+    // Composants updatés chaque frame
+    private readonly List<PlayerComponent> updatableComponents = new();
 
-
-
-    [Header("InputComponent")]
+    // Composants spécifiques gardés pour le dispatch d'input
     private JumpComponent jumpComponent;
     private SendNoteComponent sendNoteComponent;
     private PauseComponent pauseComponent;
-
-    [Header("MovementComponent")]
     private AutoMoveComponent autoMoveComponent;
 
-    /// <summary>
-    /// Initialise tous les composants du joueur.
-    /// </summary>
-    public void InitializeComponent(PlayerStatConfig playerStatConfig)
-    {
-        playerConfig = playerStatConfig;
+    public PlayerStatConfig GetConfig() => playerConfig;
+    public Rigidbody2D GetRb() => rb;
 
-        //Unity Component   
-        AddAndInitComponent(out rb);
+
+    public void InitializeComponent(PlayerStatConfig config)
+    {
+        playerConfig = config;
+
+        rb = GetComponent<Rigidbody2D>();
 
         InitSensorsInChildren();
 
-        // Player Component
-        AddAndInitComponent(out jumpComponent);
-        AddAndInitComponent(out sendNoteComponent);
-        AddAndInitComponent(out pauseComponent);
-        AddAndInitComponent(out autoMoveComponent);
+        AddPlayerComponent(out jumpComponent, isUpdatableComp: true);
+        AddPlayerComponent(out sendNoteComponent);
+        AddPlayerComponent(out pauseComponent);
+        AddPlayerComponent(out autoMoveComponent, isUpdatableComp: true);
 
-
-        if (debugLogs)
-            Debug.Log("[PlayerController] Composants initialisés.", this);
+        Log("[PlayerController] Composants initialisés.");
     }
 
     private void InitSensorsInChildren()
     {
         SensorComponent[] sensors = GetComponentsInChildren<SensorComponent>();
-
         if (sensors.Length == 0)
         {
-            Debug.LogWarning("[PlayerController] Aucun SensorComponent trouvé dans les enfants.", this);
+            Debug.LogWarning("[PlayerController] Aucun SensorComponent trouvé.", this);
             return;
         }
 
         foreach (SensorComponent sensor in sensors)
         {
             sensor.InitializedSensorComponent(this);
-
-            if (debugLogs)
-                Debug.Log($"[PlayerController] Sensor initialisé: {sensor.GetType().Name}", this);
+            Log($"[PlayerController] Sensor initialisé: {sensor.GetType().Name}");
         }
     }
+
 
     public void OnResetComponent()
     {
-        ReSpawnComponent(jumpComponent, autoMoveComponent, pauseComponent, sendNoteComponent);
-        ResetSensor(groundSensor, farObstacleSensor, nearObstacleSensor);
-    }
-    private void ReSpawnComponent(params PlayerComponent[] components)
-    {
-        for (int i = 0; i < components.Length; i++)
-        {
-            components[i].OnPlayerRespawn();
-        }
-    }
-    private void ResetSensor(params SensorComponent[] sensors)
-    {
-        for (int i = 0; i < sensors.Length; i++)
-        {
-            sensors[i].OnResetSensor();
-        }
+        foreach (PlayerComponent comp in updatableComponents)
+            comp.OnPlayerRespawn();
+
+        ResetSensors(groundSensor, farObstacleSensor, nearObstacleSensor);
     }
 
-    /// <summary>
-    /// Applique une force d'impulsion pour le rebond.
-    /// </summary>
-    public void Bounce(Vector2 force)
+    private void ResetSensors(params SensorComponent[] sensors)
     {
-        rb.AddForce(force, ForceMode2D.Impulse);
-        if (debugLogs)
-            Debug.Log($"[PlayerController] Bounce: force={force}", this);
+        foreach (var sensor in sensors)
+            sensor.OnResetSensor();
     }
 
     private void Update()
     {
-        Vector3 velocity = Vector3.zero;
-        float deltaTime = Time.deltaTime;
+        float dt = Time.deltaTime;
+        var velocity = Vector3.zero;
 
-        UpdateSensor(deltaTime, groundSensor, farObstacleSensor, nearObstacleSensor);
-
-        UpdateComp(ref velocity, deltaTime, autoMoveComponent, jumpComponent);
-
+        UpdateSensors(dt, groundSensor, farObstacleSensor, nearObstacleSensor);
+        UpdateComponents(ref velocity, dt);
 
         rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocityY);
 
-
-        if (debugLogs)
-            Debug.Log($"[PlayerController] Update: velocity={velocity}", this);
+        Log($"[PlayerController] velocity={velocity}");
     }
 
-    #region Input Controller
-    // Gestion des entrées utilisateur pour chaque note et action.
-    public void OnSendDO(InputAction.CallbackContext ctx) { if (debugLogs) Debug.Log("[PlayerController] OnSendDO", this); sendNoteComponent.HandleInput(ctx, NoteID.DO); }
-    public void OnSendRE(InputAction.CallbackContext ctx) { if (debugLogs) Debug.Log("[PlayerController] OnSendRE", this); sendNoteComponent.HandleInput(ctx, NoteID.RE); }
-    public void OnSendMI(InputAction.CallbackContext ctx) { if (debugLogs) Debug.Log("[PlayerController] OnSendMI", this); sendNoteComponent.HandleInput(ctx, NoteID.MI); }
-    public void OnSendFA(InputAction.CallbackContext ctx) { if (debugLogs) Debug.Log("[PlayerController] OnSendFA", this); sendNoteComponent.HandleInput(ctx, NoteID.FA); }
-    public void OnJump(InputAction.CallbackContext ctx) { if (debugLogs) Debug.Log("[PlayerController] OnJump", this); jumpComponent.HandleInput(ctx); }
-    public void OnOpenPauseSetting(InputAction.CallbackContext ctx) { if (debugLogs) Debug.Log("[PlayerController] OnOpenPauseSetting", this); pauseComponent.HandleInput(ctx); }
-    #endregion
-
-    /// <summary>
-    /// Ajoute et initialise un composant sur le GameObject.
-    /// </summary>
-    private void AddAndInitComponent<T>(out T component) where T : Component
+    private void UpdateComponents(ref Vector3 velocity, float dt)
     {
-        if (!TryGetComponent(out component))
+        foreach (var comp in updatableComponents)
         {
-            component = gameObject.AddComponent<T>();
-            if (debugLogs)
-                Debug.Log($"[PlayerController] Composant ajouté: {typeof(T).Name}", this);
-        }
-
-        if (component is PlayerComponent pComponent)
-        {
-            pComponent.Initialize(this);
-            if (debugLogs)
-                Debug.Log($"[PlayerController] PlayerComponent initialisé: {typeof(T).Name}", this);
+            if (!comp.CanUpdate()) continue;
+            comp.UpdateComponent(ref velocity, dt);
+            Log($"[PlayerController] UpdateComp: {comp.GetType().Name}");
         }
     }
 
-    /// <summary>
-    /// Met à jour tous les composants du joueur.
-    /// </summary>
-    private void UpdateComp(ref Vector3 velocity, float fixedDT, params PlayerComponent[] components)
-    {
-        for (int i = 0; i < components.Length; i++)
-        {
-            if (!components[i].CanUpdate())
-                continue;
-
-            components[i].UpdateComponent(ref velocity, fixedDT);
-
-            if (debugLogs)
-                Debug.Log($"[PlayerController] UpdateComp: {components[i].GetType().Name}", this);
-        }
-    }
-    private void UpdateSensor(float dT, params SensorComponent[] sensors)
+    private void UpdateSensors(float dt, params SensorComponent[] sensors)
     {
         foreach (SensorComponent sensor in sensors)
         {
-            if (sensor is null) continue;
-
-            if (!sensor.CanUpdateSensor())
-                continue;
-
-            sensor.OnUpdateSensor(dT);
+            if (sensor == null || !sensor.CanUpdateSensor()) return;
+            sensor.OnUpdateSensor(dt);
         }
+    }
+    public void OnJump(InputAction.CallbackContext ctx)
+    {
+        Log("[PlayerController] OnJump");
+        jumpComponent.HandleInput(ctx);
+    }
+    public void OnOpenPauseSetting(InputAction.CallbackContext ctx)
+    {
+        Log("[PlayerController] OnOpenPauseSetting");
+        pauseComponent.HandleInput(ctx);
+    }
+    public void OnSendDO(InputAction.CallbackContext ctx)
+    {
+        Log("[PlayerController] OnSendDO");
+        sendNoteComponent.HandleInput(ctx, NoteID.DO);
+    }
+    public void OnSendRE(InputAction.CallbackContext ctx)
+    {
+        Log("[PlayerController] OnSendRE");
+        sendNoteComponent.HandleInput(ctx, NoteID.RE);
+    }
+    public void OnSendMI(InputAction.CallbackContext ctx)
+    {
+        Log("[PlayerController] OnSendMI");
+        sendNoteComponent.HandleInput(ctx, NoteID.MI);
+    }
+    public void OnSendFA(InputAction.CallbackContext ctx)
+    {
+        Log("[PlayerController] OnSendFA");
+        sendNoteComponent.HandleInput(ctx, NoteID.FA);
+    }
+
+
+    public void Bounce(Vector2 force)
+    {
+        rb.AddForce(force, ForceMode2D.Impulse);
+        Log($"[PlayerController] Bounce: force={force}");
+    }
+
+    private void AddPlayerComponent<T>(out T pComponent, bool isUpdatableComp = false) where T : PlayerComponent
+    {
+        if (!TryGetComponent(out pComponent))
+        {
+            pComponent = gameObject.AddComponent<T>();
+        }
+
+        pComponent.Initialize(this);
+
+        if (isUpdatableComp)
+        {
+            updatableComponents.Add(pComponent);
+        }
+
+        Log($"[PlayerController] PlayerComponent initialisé: {typeof(T).Name}");
+    }
+    private void Log(string msg)
+    {
+        if (debugLogs) Debug.Log(msg, this);
     }
 }
