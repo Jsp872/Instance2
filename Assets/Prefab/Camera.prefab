@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8832105011097234029}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,5 +153,5 @@ MonoBehaviour:
   player: {fileID: 0}
   <offset>k__BackingField: {x: 7, y: 3.5, z: -10}
   speedX: 10
-  speedY: 1
+  speedY: 0.1
   lockThreshold: 0.1
