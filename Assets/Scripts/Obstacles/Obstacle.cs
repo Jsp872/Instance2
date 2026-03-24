@@ -22,7 +22,7 @@ public abstract class Obstacle : MonoBehaviour
 {
     [Header("Debug")][SerializeField] protected bool debugLogs = false;
 
-    [Header("Note Speed")][SerializeField] protected float noteIntervalSpeed;
+    [Header("Note Speed")][SerializeField] protected float noteIntervalSpeed = .1f;
 
     private Camera _camera;
 
