@@ -7,10 +7,6 @@ public class PlayerBlackboard : MonoBehaviour
     public float GameChronometer { get; set; }
     public int PlayerDeaths { get; set; }
 
-    [Header("_____DEBUG_____")]
-    public float chronos;
-    public float death;
-
     [Header("Collect Delay")]
     private readonly List<IBBContributor> _contributors = new();
     [SerializeField] private float collectIntervalSeconds = 1f;
@@ -23,6 +19,20 @@ public class PlayerBlackboard : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    public void ResetAll()
+    {
+        GameChronometer = 0.0f;
+        PlayerDeaths = 0;
+    }
+
+    [ContextMenu("Print_DEBUG_var")]
+    public void Print_DEBUG_var()
+    {
+        print($"Game Chornometer : {GameChronometer} " +
+              $"Player Deaths count : {PlayerDeaths} ");
+    }
+
 
     public void Register(IBBContributor contributor) => _contributors.Add(contributor);
     public void Unregister(IBBContributor contributor) => _contributors.Remove(contributor);

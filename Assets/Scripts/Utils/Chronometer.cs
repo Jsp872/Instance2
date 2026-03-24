@@ -27,7 +27,6 @@ public class Chronometer : MonoBehaviour, IBBContributor
     public void WriteToBB(PlayerBlackboard bb)
     {
         bb.GameChronometer = _chronometer;
-        bb.chronos = bb.GameChronometer;
     }
     public void ReadFromBB(PlayerBlackboard bb) => _chronometer = bb.GameChronometer;
 }
