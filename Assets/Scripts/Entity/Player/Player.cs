@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
 
     private int playerLife;
     [SerializeField] private float respawnDelay;
-    
+    public float GetRespawnDelay { get => respawnDelay; }
+
     public event Action OnDeath;
 
 
@@ -48,6 +49,12 @@ public class Player : MonoBehaviour
     private void OnHittedWall(OnHitObstacleCallback callback)
     {
         StartCoroutine(KillAfterDelay());
+        DisableAllComponent();
+    }
+
+    private void DisableAllComponent()
+    {
+        controller.DisableAllComponent();
     }
 
     private IEnumerator KillAfterDelay()
@@ -56,8 +63,8 @@ public class Player : MonoBehaviour
         //playerLife--;
         //if (playerLife <= 0)
         //{
-            OnDeath?.Invoke();
-            Respawn();
+        OnDeath?.Invoke();
+        Respawn();
         //}
     }
 

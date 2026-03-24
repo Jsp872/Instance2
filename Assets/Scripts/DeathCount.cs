@@ -34,7 +34,6 @@ public class DeathCount : MonoBehaviour, IBBContributor
     public void WriteToBB(PlayerBlackboard bb)
     {
         bb.PlayerDeaths = Deaths;
-        bb.death = bb.PlayerDeaths;
     }
     public void ReadFromBB(PlayerBlackboard bb) => Deaths = bb.PlayerDeaths;
 }

@@ -48,7 +48,10 @@ public class PlayerAnimationManager : MonoBehaviour
 
     private void OnDead(OnHitObstacleCallback obj)
     {
-        Debug.Log("Dead");
+        float respawnDelay = GetComponent<Player>().GetRespawnDelay;
+        float deathAnimDuration = 0.3f;
+
+        animator.speed = deathAnimDuration / respawnDelay;
         animator.SetTrigger(Explode);
     }
 }
