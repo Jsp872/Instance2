@@ -9,14 +9,10 @@ public class NoteAuras : MonoBehaviour
     [SerializeField] private Color Re;
     [SerializeField] private Color Mi;
     [SerializeField] private Color Fa;
-    private ParticleSystem ps;
-    private ParticleSystem.EmissionModule em;
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
-        ps = GetComponent<ParticleSystem>();
-        em = ps.emission;
-        em.enabled = false;
-        ps.Play();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -34,27 +30,27 @@ public class NoteAuras : MonoBehaviour
         print(note);
         if (note == NoteID.DO)
         {
-            ps.startColor = Do;
+            spriteRenderer.color = Do;
         }
         else if (note == NoteID.RE)
         {
-            ps.startColor = Re;
+            spriteRenderer.color = Re;
         }
         else if (note == NoteID.MI)
         {
-            ps.startColor = Mi;
+            spriteRenderer.color = Mi;
         }
         else if (note == NoteID.FA)
         {
-            ps.startColor = Fa;
+            spriteRenderer.color = Fa;
         }
         StartCoroutine(PlayParticles());
     }
 
     private IEnumerator PlayParticles()
     {
-        em.enabled = true;
+        spriteRenderer.enabled = true;
         yield return new WaitForSeconds(Duration);
-        em.enabled = false;
+        spriteRenderer.enabled = false;
     }
 }

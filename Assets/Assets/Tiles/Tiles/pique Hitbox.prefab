@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984085444928988292}
   - component: {fileID: 4484448338341057477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pique Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
