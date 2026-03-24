@@ -528,7 +528,7 @@ MonoBehaviour:
   - name: Brume_Premier_Plan_0
     intensity: 0.5
     sprite: {fileID: 3594155010493256009}
-    anchor: {x: 0, y: 0}
+    anchor: {x: 0, y: 3}
     loop: 1
     duplicate: {fileID: 0}
     spriteWidth: 0

@@ -39,7 +39,7 @@ public class SmoothCamera : MonoBehaviour
 
         if (!isLockedOn)
         {
-            if (Vector3.Distance(transform.position, targetPosition) <= lockThreshold)
+            if (Mathf.Abs(targetPosition.x - transform.position.x) <= lockThreshold)
             {
                 isLockedOn = true; 
             }
