@@ -71,9 +71,10 @@ public class PlayerController : MonoBehaviour
     }
     private void DisablePlayerComponents(params PlayerComponent[] components)
     {
+        print("Appele toi");
         for(int i = 0; i < components.Length; i++)
         {
-            components[i].enabled = false;
+            components[i].enabled = !components[i].enabled;
         }
     }
     private void UpdateComponents(ref Vector3 velocity, float dt)
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < sensors.Length; i++)
         {
-            sensors[i].enabled = false;
+            sensors[i].enabled = !sensors[i].enabled;
         }
     }
     private void UpdateSensors(float dt, params SensorComponent[] sensors)
@@ -136,6 +137,7 @@ public class PlayerController : MonoBehaviour
     public void OnOpenPauseSetting(InputAction.CallbackContext ctx)
     {
         Log("[PlayerController] OnOpenPauseSetting");
+        DisableAllComponent();
         pauseComponent.HandleInput(ctx);
     }
     public void OnSendDO(InputAction.CallbackContext ctx)

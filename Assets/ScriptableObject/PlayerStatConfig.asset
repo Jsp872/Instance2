@@ -20,7 +20,7 @@ MonoBehaviour:
     playerObstacleRangeSpeed: 6
     playerDeceleration: 0.75
   jumpConfig:
-    jumpApexHeight: 6.5
+    jumpApexHeight: 4.5
     jumpApexTime: 1
     coyoteTime: 0.15
     jumpBufferTime: 0.12

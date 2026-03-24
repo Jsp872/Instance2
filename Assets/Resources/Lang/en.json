@@ -30,5 +30,6 @@
     "Resume" : "Resume",
     "MainMenu" : "Main menu",
     "Victory" : "Victory",
-    "NextLevel" : "Next level"
+    "NextLevel" : "Next level",
+    "Retry" : "Retry"
 }
