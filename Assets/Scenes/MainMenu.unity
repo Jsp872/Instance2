@@ -1350,6 +1350,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &914850863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914850854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9f21dab3f2a3841bf59ccb6918e346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverBehaviour
+  amplitude: 5
+  speed: 1.5
 --- !u!114 &1016500838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6224919853118883705, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
@@ -3387,15 +3401,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2132722749517812222, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1151227088}
+    - targetCorrespondingSourceObject: {fileID: 2132722749517812222, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1151227094}
     - targetCorrespondingSourceObject: {fileID: 6637440921152357305, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2110885840}
+    - targetCorrespondingSourceObject: {fileID: 6637440921152357305, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110885844}
     - targetCorrespondingSourceObject: {fileID: 2426584855675888762, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1349216074}
+    - targetCorrespondingSourceObject: {fileID: 2426584855675888762, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349216078}
     - targetCorrespondingSourceObject: {fileID: 1236298176076826310, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 914850859}
+    - targetCorrespondingSourceObject: {fileID: 1236298176076826310, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 914850863}
     - targetCorrespondingSourceObject: {fileID: 2817114847177914432, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1416300461}
@@ -3513,6 +3539,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569241607}
   m_CullTransparentMesh: 1
+--- !u!114 &1151227094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151227087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9f21dab3f2a3841bf59ccb6918e346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverBehaviour
+  amplitude: 5
+  speed: 1.5
 --- !u!1 &1167238052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1812997553005310323, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
@@ -4143,6 +4183,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1349216078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349216069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9f21dab3f2a3841bf59ccb6918e346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverBehaviour
+  amplitude: 5
+  speed: 1.5
 --- !u!1 &1413829072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,6 +5493,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2110885844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110885835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9f21dab3f2a3841bf59ccb6918e346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverBehaviour
+  amplitude: 5
+  speed: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -85,6 +85,15 @@ public class Note : MonoBehaviour
         noteImage.color = c;
         if (debugLogs) Debug.Log($"[Note] SetColor({c}) → '{gameObject.name}' couleur définie.", this);
     }
+    
+    /// <summary>
+    /// Définit le sprite de la note (utilisée lors de l'activation).
+    /// </summary>
+    public void SetSprite(Sprite c)
+    {
+        noteImage.sprite = c;
+        if (debugLogs) Debug.Log($"[Note] SetColor({c}) → '{gameObject.name}' couleur définie.", this);
+    }
 
     /// <summary>
     /// Anime la note pour la mettre en avant (taille/couleur).

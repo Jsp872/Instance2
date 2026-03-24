@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -9,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class VisualNote : MonoBehaviour
 {
-    [SerializeField] private List<Color> noteColorInRowOrder = new();
+    [SerializeField] private List<Sprite> noteColorInRowOrder = new();
     [SerializeField] private RectTransform layout;
     [SerializeField] private Note notePrefab;
     [SerializeField] private AutoMoveComponent playerMovement;
@@ -113,7 +112,7 @@ public class VisualNote : MonoBehaviour
                 Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' -> vitesse calculée : {speed:F2}", this);
 
             newNote.StartMove(speed, layout.rect.width);
-            newNote.SetColor(noteColorInRowOrder[(int)note]);
+            newNote.SetSprite(noteColorInRowOrder[(int)note]);
             notes.Add(newNote);
             if (i < obstacle.sequenceCible.Count - 1)
             {
