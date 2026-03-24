@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4448260650601904813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.339, y: 0.138, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2e9fda1ebbfc4478ea39cef2337c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NearObstacleSensor
+  debugLogs: 0
 --- !u!70 &6421452836626661534
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc102728b762f174595d94294873c1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FarObstacleSensor
+  debugLogs: 0
 --- !u!1 &6314593349213439236
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557b56e874eb2aa46a05947929c256b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundSensor
+  debugLogs: 0
 --- !u!70 &7692870812508969360
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -413,8 +416,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2195145, y: -0.0449439}
-  m_Size: {x: 1.2704782, y: 0.89848983}
+  m_Offset: {x: 0.38495466, y: -0.04494392}
+  m_Size: {x: 1.6013631, y: 0.8984935}
   m_Direction: 1
 --- !u!1 &7993387898709474178
 GameObject:
@@ -626,6 +629,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   debugLogs: 0
+  groundSensor: {fileID: 0}
+  farObstacleSensor: {fileID: 0}
+  nearObstacleSensor: {fileID: 0}
 --- !u!114 &145686162153050907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d8c8df5def5d549a543d621fe3dcdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpComponent
-  config:
+  configCopy:
     jumpApexHeight: 0
     jumpApexTime: 0
     coyoteTime: 0
@@ -685,7 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76e77a05ae1d7243aa23eace0b2f466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SendNoteComponent
-  debugLogs: 0
 --- !u!50 &3647767684448582984
 Rigidbody2D:
   serializedVersion: 5
