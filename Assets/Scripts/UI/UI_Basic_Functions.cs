@@ -1,4 +1,3 @@
-using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,7 @@ public class UI_Basic_Functions : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-    
+
     public void Open(UI_Basic_Functions UI)
     {
         UI.gameObject.SetActive(true);
