@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -14,12 +13,13 @@ public class VisualNote : MonoBehaviour
     [SerializeField] private Note notePrefab;
     [SerializeField] private AutoMoveComponent playerMovement;
 
-    [Tooltip("Rangées UI à initialiser avec le nombre de notes de la séquence cible.")] [SerializeField]
+    [Tooltip("Rangées UI à initialiser avec le nombre de notes de la séquence cible.")]
+    [SerializeField]
     private List<RectTransform> noteRows;
 
     private List<Note> notes = new();
 
-    [Header("Debug")] [SerializeField] private bool debugLogs = false;
+    [Header("Debug")][SerializeField] private bool debugLogs = false;
     [SerializeField] private int obstacleCountBeforeHiding;
     private int obstacleCount;
 
@@ -84,10 +84,6 @@ public class VisualNote : MonoBehaviour
     {
         if (debugLogs)
             Debug.Log($"[VisualNote] Note réussie !", this);
-
-        EventBus.Publish(new OnSendNoteSound(callback.note));
-        print("_______________ALL OnSendNoteSound_____________________");
-
         notes[0].Disable();
         notes.RemoveAt(0);
     }
@@ -106,6 +102,8 @@ public class VisualNote : MonoBehaviour
             Note newNote = Instantiate(notePrefab, row);
             float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
             float speed = layout.rect.width / distance * playerMovement.currentSpeed;
+
+            EventBus.Publish(new OnSendNoteSound(note));
 
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' -> vitesse calculée : {speed:F2}", this);

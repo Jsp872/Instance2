@@ -15,23 +15,41 @@ public enum NoteID : byte
 /// </summary>
 public class SendNoteComponent : PlayerComponent
 {
+    private bool isNearToObstacle = false;
     /// <summary>
     /// Initialise le composant avec le contrôleur du joueur.
     /// </summary>
     public override void Initialize(PlayerController controller)
     {
         base.Initialize(controller);
+
+        EventBus.Subscribe<ObstacleEnteredView>(OnObstacleEnteredView);
+        EventBus.Subscribe<ObstacleExitedView>(OnObstacleExitedView);
+        
         Log("[SendNoteComponent] Initialisé avec PlayerController: " + controller.name);
+    }
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<ObstacleEnteredView>(OnObstacleEnteredView);
+        EventBus.Unsubscribe<ObstacleExitedView>(OnObstacleExitedView);
     }
 
     /// <summary>
     /// Gère l'entrée utilisateur pour envoyer une note via l'EventBus.
     /// </summary>
+    /// 
+    private void OnObstacleEnteredView(ObstacleEnteredView callback) => isNearToObstacle = true;
+    private void OnObstacleExitedView(ObstacleExitedView callback) => isNearToObstacle = false;
+
     public void HandleInput(InputAction.CallbackContext ctx, NoteID id)
     {
         if (!ctx.started) return;
         Log($"[SendNoteComponent] Note envoyée: {id}");
         EventBus.Publish(id);
-        EventBus.Publish(new OnSendNoteSound(id));
+
+        if (!isNearToObstacle)
+        {
+            EventBus.Publish(new OnSendNoteSound(id));
+        }
     }
 }
