@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,11 @@ public class JumpComponent : PlayerComponent
     private bool apexReached;
     private bool isFalling;
 
+    [Header("Jump Delay params")]
+    private Coroutine jumpDelayRoutine;
+    private float limitJumpDelay = 0.15f;
+    private bool canJump = true;
+
     public override void Initialize(PlayerController controller)
     {
         base.Initialize(controller);
@@ -46,8 +52,30 @@ public class JumpComponent : PlayerComponent
     public override void HandleInput(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
+        {
+            if (!canJump) return;
+
+            if (jumpDelayRoutine != null)
+            {
+                StopCoroutine(jumpDelayRoutine);
+                jumpDelayRoutine = null;
+            }
+
+            canJump = false;
             jumpBufferTimer = configCopy.jumpBufferTime;
+        }
+        else if (ctx.canceled)
+        {
+            if (enabled)
+                jumpDelayRoutine = StartCoroutine(StartJumpDelay());
+        }
     }
+    private IEnumerator StartJumpDelay()
+    {
+        yield return new WaitForSeconds(limitJumpDelay);
+        canJump = true;
+    }
+
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
