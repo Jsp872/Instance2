@@ -5,6 +5,6 @@ public class deathPrint : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<TextMeshProUGUI>().text = "Deaths : " + DeathCount.deathCount.Deaths;
+        GetComponent<TextMeshProUGUI>().text = "Deaths : " + DeathCount.Instance.Deaths;
     }
 }
