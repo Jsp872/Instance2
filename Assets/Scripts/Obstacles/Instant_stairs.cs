@@ -17,5 +17,6 @@ public class Instant_stairs : Stairs
             PlatformRise();
             currentStep++;
         }
+        base.UnlockedBehaviour();
     }
 }
