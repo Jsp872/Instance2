@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public interface IBBContributor
 {
     void ReadFromBB(PlayerBlackboard bb);
@@ -6,8 +8,13 @@ public interface IBBContributor
 
     sealed void Register()
     {
-        PlayerBlackboard.Instance.Register(this);
-        ReadFromBB(PlayerBlackboard.Instance);
+        PlayerBlackboard bb = PlayerBlackboard.Instance;
+
+        if (bb is null)
+            return;
+
+        bb.Register(this);
+        ReadFromBB(bb);
     }
     sealed void Unregister() => PlayerBlackboard.Instance.Unregister(this);
 }
