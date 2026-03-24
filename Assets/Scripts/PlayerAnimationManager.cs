@@ -4,41 +4,33 @@ using UnityEngine;
 public class PlayerAnimationManager : MonoBehaviour
 {
     private static readonly int Jump = Animator.StringToHash("Jump");
-    private static readonly int Fall = Animator.StringToHash("Fall");
-    private static readonly int Land = Animator.StringToHash("Land");
-    private static readonly int Explode = Animator.StringToHash("Explode");
+    private static readonly int IsGrounded = Animator.StringToHash("IsGrounded");
+    private static readonly int VerticalVel = Animator.StringToHash("VerticalVel");
+    private static readonly int Dead = Animator.StringToHash("dead");
     [SerializeField] private Animator animator;
+    [SerializeField] private GroundSensor groundSensor;
+    [SerializeField] private Rigidbody2D rb;
 
     private void OnEnable()
     {
         EventBus.Subscribe<OnJumpStarted>(OnJumpStarted);
-        EventBus.Subscribe<OnApexReached>(OnApexReached);
-        EventBus.Subscribe<OnFallStarted>(OnFallStarted);
-        EventBus.Subscribe<OnJumpFinished>(OnJumpFinished);
         EventBus.Subscribe<OnHitObstacleCallback>(OnDead);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<OnJumpStarted>(OnJumpStarted);
-        EventBus.Unsubscribe<OnApexReached>(OnApexReached);
-        EventBus.Unsubscribe<OnFallStarted>(OnFallStarted);
-        EventBus.Unsubscribe<OnJumpFinished>(OnJumpFinished);
         EventBus.Unsubscribe<OnHitObstacleCallback>(OnDead);
     }
 
-    private void OnJumpFinished(OnJumpFinished obj)
+    private void Update()
     {
-        animator.SetTrigger(Land);
-    }
-
-    private void OnFallStarted(OnFallStarted obj)
-    {
-        animator.SetTrigger(Fall);
-    }
-
-    private void OnApexReached(OnApexReached obj)
-    {
+        animator.SetBool(IsGrounded, groundSensor.IsGrounded);
+        animator.SetFloat(VerticalVel, rb.linearVelocityY);
+        if (rb.linearVelocityY < -.1f)
+        {
+            print("VerticalVel :" + rb.linearVelocityY);
+        }
     }
 
     private void OnJumpStarted(OnJumpStarted obj)
@@ -48,10 +40,6 @@ public class PlayerAnimationManager : MonoBehaviour
 
     private void OnDead(OnHitObstacleCallback obj)
     {
-        float respawnDelay = GetComponent<Player>().GetRespawnDelay;
-        float deathAnimDuration = 0.3f;
-
-        animator.speed = deathAnimDuration / respawnDelay;
-        animator.SetTrigger(Explode);
+        animator.SetBool(Dead, true);
     }
 }

@@ -917,3 +917,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   animator: {fileID: 145761577308323531}
+  groundSensor: {fileID: 8239937207777798479}
+  rb: {fileID: 3647767684448582984}
