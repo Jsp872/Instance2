@@ -16,6 +16,7 @@ public class Progressive_stairs : Stairs
     protected override void UnlockedBehaviour()
     {
         PlatformRise();
+        base.UnlockedBehaviour();
     }
 
     protected override void LockedBehaviour()

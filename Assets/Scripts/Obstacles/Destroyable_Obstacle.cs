@@ -9,6 +9,7 @@ public class Destroyable_Obstacle : Movement_obstacle
     {
         destroyEffect.LongActivation(duration);
         transform.DOMoveY(distance,duration).SetEase(Ease.InQuad);
+        base.UnlockedBehaviour();
     }
 
     protected override void UnLockingBehaviour()

@@ -188,7 +188,8 @@ public abstract class Obstacle : MonoBehaviour
 
     protected virtual void UnlockedBehaviour()
     {
-
+        enabled = false;
+        EventBus.Publish(new ObstacleExitedView { obstacle = this });
     }
 
     protected virtual void LockedBehaviour()
