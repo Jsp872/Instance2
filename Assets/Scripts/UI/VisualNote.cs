@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -84,6 +85,9 @@ public class VisualNote : MonoBehaviour
     {
         if (debugLogs)
             Debug.Log($"[VisualNote] Note réussie !", this);
+
+        EventBus.Publish(new OnSendNoteSound(callback.note));
+
         notes[0].Disable();
         notes.RemoveAt(0);
     }

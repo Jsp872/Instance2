@@ -25,7 +25,7 @@ public class SendNoteComponent : PlayerComponent
 
         EventBus.Subscribe<ObstacleEnteredView>(OnObstacleEnteredView);
         EventBus.Subscribe<ObstacleExitedView>(OnObstacleExitedView);
-        
+
         Log("[SendNoteComponent] Initialisé avec PlayerController: " + controller.name);
     }
     private void OnDisable()
@@ -34,13 +34,19 @@ public class SendNoteComponent : PlayerComponent
         EventBus.Unsubscribe<ObstacleExitedView>(OnObstacleExitedView);
     }
 
+    private void OnObstacleEnteredView(ObstacleEnteredView callback)
+    {
+        isNearToObstacle = true;
+    }
+    private void OnObstacleExitedView(ObstacleExitedView callback)
+    {
+        isNearToObstacle = false;
+    }
+
     /// <summary>
     /// Gère l'entrée utilisateur pour envoyer une note via l'EventBus.
     /// </summary>
     /// 
-    private void OnObstacleEnteredView(ObstacleEnteredView callback) => isNearToObstacle = true;
-    private void OnObstacleExitedView(ObstacleExitedView callback) => isNearToObstacle = false;
-
     public void HandleInput(InputAction.CallbackContext ctx, NoteID id)
     {
         if (!ctx.started) return;
