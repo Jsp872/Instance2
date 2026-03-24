@@ -1,6 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -65,6 +66,7 @@ public class VisualNote : MonoBehaviour
         if (debugLogs)
             Debug.Log($"[VisualNote] Note ratée !", this);
         EventBus.Publish<OnMissSound>(new OnMissSound());
+        print("_________________CALL OnMissSound______________");
 
         foreach (Note note in notes)
         {
@@ -78,10 +80,14 @@ public class VisualNote : MonoBehaviour
     /// <summary>
     /// Callback lors d'une bonne note.
     /// </summary>
-    private void OnGoodNote(Obstacle obstacle)
+    private void OnGoodNote(OnGoodNote callback)
     {
         if (debugLogs)
             Debug.Log($"[VisualNote] Note réussie !", this);
+
+        EventBus.Publish(new OnSendNoteSound(callback.note));
+        print("_______________ALL OnSendNoteSound_____________________");
+
         notes[0].Disable();
         notes.RemoveAt(0);
     }
@@ -100,10 +106,6 @@ public class VisualNote : MonoBehaviour
             Note newNote = Instantiate(notePrefab, row);
             float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
             float speed = layout.rect.width / distance * playerMovement.currentSpeed;
-
-
-            EventBus.Publish(new OnSendNoteSound(note));
-
 
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nouvelle note pour '{obstacle.gameObject.name}' -> vitesse calculée : {speed:F2}", this);

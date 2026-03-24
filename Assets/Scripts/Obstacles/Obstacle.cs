@@ -14,6 +14,16 @@ public struct ObstacleExitedView
     public Obstacle obstacle;
 }
 
+public struct OnGoodNote
+{
+    public Obstacle obstacle;
+    public NoteID note;
+    public OnGoodNote(Obstacle obstacle, NoteID note)
+    {
+        this.obstacle = obstacle;
+        this.note = note;
+    }
+}
 /// <summary>
 /// Classe abstraite représentant un obstacle interactif.
 /// Gère la séquence de notes, l'état de verrouillage et la logique d'événement.
@@ -30,7 +40,7 @@ public abstract class Obstacle : MonoBehaviour
     public int indexCourant { get; private set; }
 
     public event Action unlocked;
-    public event Action<Obstacle> goodNote;
+    public event Action<OnGoodNote> goodNote;
     public event Action badNote;
 
     private bool unlock;
@@ -110,7 +120,7 @@ public abstract class Obstacle : MonoBehaviour
         if (receivedNote == sequenceCible[indexCourant])
         {
             indexCourant++;
-            goodNote?.Invoke(this);
+            goodNote?.Invoke(new OnGoodNote(this, receivedNote));
 
             Log($"[Obstacle] Bonne note reçue: {receivedNote}, indexCourant={indexCourant}");
 
