@@ -16,6 +16,8 @@ public class Moving_obstacle : Movement_obstacle
         transform.DOMoveY(transform.position.y - distance/steps, duration/steps).SetEase(Ease.InQuad);
         if (debugLogs)
             Debug.Log($"[Spike] OnUnlocked: distance={distance}, duration={duration}", this);
+
+        base.UnlockedBehaviour();
     }
 
     protected override void UnLockingBehaviour()
