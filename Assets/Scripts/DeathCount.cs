@@ -1,27 +1,40 @@
+// DeathCount.cs
 using UnityEngine;
 
-public class DeathCount : MonoBehaviour
+public class DeathCount : MonoBehaviour, IBBContributor
 {
-    public static DeathCount deathCount;
+    public static DeathCount Instance;
     [SerializeField] private Player player;
-    private int deaths;
-    public int Deaths { get => deaths;}
+    public int Deaths { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
-        if (deathCount == null)
-        {
-            deathCount = this;
-        }
+        Instance = this;
     }
 
-    void Start()
+    private void OnEnable()
     {
-        player.OnDeath += AddDeath;
+        player.OnDeath += HandleDeath;
+        ((IBBContributor)this).Register();
     }
 
-    private void AddDeath()
+    private void OnDisable()
     {
-        deaths++;
+        player.OnDeath -= HandleDeath;
+        ((IBBContributor)this).Unregister();
     }
+
+    private void HandleDeath()
+    {
+        Deaths++;
+        WriteToBB(PlayerBlackboard.Instance);
+    }
+
+    public bool CanWriteOnUpdate() => false;
+    public void WriteToBB(PlayerBlackboard bb)
+    {
+        bb.PlayerDeaths = Deaths;
+        bb.death = bb.PlayerDeaths;
+    }
+    public void ReadFromBB(PlayerBlackboard bb) => Deaths = bb.PlayerDeaths;
 }

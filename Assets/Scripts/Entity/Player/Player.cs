@@ -53,12 +53,12 @@ public class Player : MonoBehaviour
     private IEnumerator KillAfterDelay()
     {
         yield return new WaitForSeconds(respawnDelay);
-        playerLife--;
-        if (playerLife <= 0)
-        {
+        //playerLife--;
+        //if (playerLife <= 0)
+        //{
             OnDeath?.Invoke();
             Respawn();
-        }
+        //}
     }
 
     private void Respawn()

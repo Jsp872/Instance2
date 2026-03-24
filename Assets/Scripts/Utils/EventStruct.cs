@@ -9,7 +9,6 @@ public struct OnJumpStarted { }
 public struct OnApexReached { }
 public struct OnFallStarted { }
 public struct OnJumpFinished { }
-
 public struct OnSendNoteSound
 {
     public NoteID id;
