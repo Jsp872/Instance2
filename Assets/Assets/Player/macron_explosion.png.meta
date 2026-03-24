@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: 0e26c39b8cdc89b48bf5a76148c4da88
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3570539511742720987
+    second: macron_explosion_0
+  - first:
+      213: 8575885925212776350
+    second: macron_explosion_1
+  - first:
+      213: -4338986372745819004
+    second: macron_explosion_2
+  - first:
+      213: -5528833098697459989
+    second: macron_explosion_3
+  - first:
+      213: 8885137222283396301
+    second: macron_explosion_4
+  - first:
+      213: 1163557991923607908
+    second: macron_explosion_5
+  - first:
+      213: -3165910355020138472
+    second: macron_explosion_6
+  - first:
+      213: 1750545843348037053
+    second: macron_explosion_7
+  - first:
+      213: 2502580509113835676
+    second: macron_explosion_8
+  - first:
+      213: 4795084775032866711
+    second: macron_explosion_9
+  - first:
+      213: 3117626887861078728
+    second: macron_explosion_10
+  - first:
+      213: 5599875502275499037
+    second: macron_explosion_11
+  - first:
+      213: -2179215878432834757
+    second: macron_explosion_12
+  - first:
+      213: -9063926666176809612
+    second: macron_explosion_13
+  - first:
+      213: 7225640432331353171
+    second: macron_explosion_14
+  - first:
+      213: -5808315740576006909
+    second: macron_explosion_15
+  - first:
+      213: 2020305646715701752
+    second: macron_explosion_16
+  - first:
+      213: 3296327231854522896
+    second: macron_explosion_17
+  - first:
+      213: -3645427228941571032
+    second: macron_explosion_18
+  - first:
+      213: -4182706593105595200
+    second: macron_explosion_19
+  - first:
+      213: -8310283305883271310
+    second: macron_explosion_20
+  - first:
+      213: -551411207589212197
+    second: macron_explosion_21
+  - first:
+      213: 2783449848740701829
+    second: macron_explosion_22
+  - first:
+      213: 9192714130268708184
+    second: macron_explosion_23
+  - first:
+      213: -4932921564706669509
+    second: macron_explosion_24
+  - first:
+      213: -1016914709615439266
+    second: macron_explosion_25
+  - first:
+      213: 6407311288073197318
+    second: macron_explosion_26
+  - first:
+      213: -6118581235898207987
+    second: macron_explosion_27
+  - first:
+      213: -5075911076671051503
+    second: macron_explosion_28
+  - first:
+      213: 9097596282792296851
+    second: macron_explosion_29
+  - first:
+      213: -6216963880368993307
+    second: macron_explosion_30
+  - first:
+      213: -4661155127747336681
+    second: macron_explosion_31
+  - first:
+      213: 6564010836660642221
+    second: macron_explosion_32
+  - first:
+      213: 6883144006638361218
+    second: macron_explosion_33
+  - first:
+      213: 3555020182270847427
+    second: macron_explosion_34
+  - first:
+      213: -1387212911704107046
+    second: macron_explosion_35
+  - first:
+      213: -576932274632541527
+    second: macron_explosion_36
+  - first:
+      213: 3299527719901822913
+    second: macron_explosion_37
+  - first:
+      213: -8245221397206711637
+    second: macron_explosion_38
+  - first:
+      213: 3084647019651058993
+    second: macron_explosion_39
+  - first:
+      213: 9068274559315129471
+    second: macron_explosion_40
+  - first:
+      213: -3362864105691731972
+    second: macron_explosion_41
+  - first:
+      213: -9146496993096928323
+    second: macron_explosion_42
+  - first:
+      213: 5373314755810589753
+    second: macron_explosion_43
+  - first:
+      213: 1133651114219024092
+    second: macron_explosion_44
+  - first:
+      213: 393273330507100172
+    second: macron_explosion_45
+  - first:
+      213: 7963128142654766166
+    second: macron_explosion_46
+  - first:
+      213: -6573732622650187806
+    second: macron_explosion_47
+  - first:
+      213: 4144045060891420285
+    second: macron_explosion_48
+  - first:
+      213: 9191571669003462904
+    second: macron_explosion_49
+  - first:
+      213: 806860552284608377
+    second: macron_explosion_50
+  - first:
+      213: -7518024968060405570
+    second: macron_explosion_51
+  - first:
+      213: -4128503878562235117
+    second: macron_explosion_52
+  - first:
+      213: -7275982853635959080
+    second: macron_explosion_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: macron_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524141a4b35e27ec0800000000000000
+      internalID: -3570539511742720987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macron_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97649edfcaa30770800000000000000
+      internalID: 8575885925212776350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macron_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c893702e2d8c3c0800000000000000
+      internalID: -4338986372745819004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macron_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be637b9f693a543b0800000000000000
+      internalID: -5528833098697459989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1f276ea39fff5b9418eb7ff6472b031e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      macron_explosion_0: -3570539511742720987
+      macron_explosion_1: 8575885925212776350
+      macron_explosion_2: -4338986372745819004
+      macron_explosion_3: -5528833098697459989
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

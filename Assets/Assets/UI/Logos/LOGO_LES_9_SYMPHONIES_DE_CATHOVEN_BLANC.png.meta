@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 8bece23c1341c9c419bebd1e6822c3cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3038687187676430488
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_0
+  - first:
+      213: 2044376435094407077
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_1
+  - first:
+      213: -4217789353931335207
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_2
+  - first:
+      213: -8609775436976178510
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_3
+  - first:
+      213: -146152143827010689
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_4
+  - first:
+      213: -5680436477667334911
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_5
+  - first:
+      213: -8128246110201666033
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_6
+  - first:
+      213: 7789549822342538
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_7
+  - first:
+      213: -4493170865620950323
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_8
+  - first:
+      213: 2729427257791415935
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_9
+  - first:
+      213: 268273713804733051
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_10
+  - first:
+      213: 5919766529771567089
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_11
+  - first:
+      213: -8767725803798608746
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_12
+  - first:
+      213: -471318167419921832
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_13
+  - first:
+      213: 1096465235284496813
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_14
+  - first:
+      213: 4346774900023178555
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_15
+  - first:
+      213: 1623572583072801527
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_16
+  - first:
+      213: 7603225486401945974
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_17
+  - first:
+      213: -7775620246884095541
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_18
+  - first:
+      213: -6678673058272012254
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_19
+  - first:
+      213: 5117900114568359807
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_20
+  - first:
+      213: 7089227150184731471
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_21
+  - first:
+      213: -1656238793223860204
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_22
+  - first:
+      213: 7667379065709513841
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_23
+  - first:
+      213: 5538430123029812680
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_24
+  - first:
+      213: 8147085665902580575
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_0
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1145
+        width: 374
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8900cf4c5e59b2a20800000000000000
+      internalID: 3038687187676430488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_1
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1167
+        width: 479
+        height: 813
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a74bf049851f5c10800000000000000
+      internalID: 2044376435094407077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_2
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 1501
+        width: 32
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d99f7dede66775c0800000000000000
+      internalID: -4217789353931335207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1094
+        width: 101
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bab62b4bdee38880800000000000000
+      internalID: -8609775436976178510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1093
+        width: 101
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b77084663c8fdf0800000000000000
+      internalID: -146152143827010689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_5
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1093
+        width: 130
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 105a77bae190b21b0800000000000000
+      internalID: -5680436477667334911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_6
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1167
+        width: 182
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f06aa726a3ba23f80800000000000000
+      internalID: -8128246110201666033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_7
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 1168
+        width: 219
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85fe16ed8cab1000800000000000000
+      internalID: 7789549822342538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_8
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 1167
+        width: 143
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2678f47ec05a1c0800000000000000
+      internalID: -4493170865620950323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_9
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1167
+        width: 215
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f760dec31afd0e520800000000000000
+      internalID: 2729427257791415935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_10
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 1168
+        width: 300
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ae7e5758919b300800000000000000
+      internalID: 268273713804733051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_11
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 1168
+        width: 127
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7f7486b4c372250800000000000000
+      internalID: 5919766529771567089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_12
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 1167
+        width: 31
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694ce88b5d7c25680800000000000000
+      internalID: -8767725803798608746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_13
+      rect:
+        serializedVersion: 2
+        x: 2679
+        y: 1167
+        width: 150
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a5fb6bf9a8579f0800000000000000
+      internalID: -471318167419921832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_14
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 1162
+        width: 201
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da192b9725d673f00800000000000000
+      internalID: 1096465235284496813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_15
+      rect:
+        serializedVersion: 2
+        x: 3110
+        y: 0
+        width: 1982
+        height: 1403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35377acdb8d25c30800000000000000
+      internalID: 4346774900023178555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 838
+        width: 112
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f22e1989a6188610800000000000000
+      internalID: 1623572583072801527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_17
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 837
+        width: 102
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6714f28db45148960800000000000000
+      internalID: 7603225486401945974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_18
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 595
+        width: 414
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9632c1592771490800000000000000
+      internalID: -7775620246884095541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_19
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 597
+        width: 432
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22899b61d369053a0800000000000000
+      internalID: -6678673058272012254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_20
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 600
+        width: 237
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f27c4d90f660740800000000000000
+      internalID: 5117900114568359807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_21
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 595
+        width: 314
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43d0d2688ef16260800000000000000
+      internalID: 7089227150184731471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_22
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 597
+        width: 438
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4109baab79bd309e0800000000000000
+      internalID: -1656238793223860204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_23
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 595
+        width: 285
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17cc1e103a0086a60800000000000000
+      internalID: 7667379065709513841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_24
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 595
+        width: 219
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5d3806ad47cdc40800000000000000
+      internalID: 5538430123029812680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_25
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 597
+        width: 185
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53dcce7f33401170800000000000000
+      internalID: 8147085665902580575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_0: 3038687187676430488
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_1: 2044376435094407077
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_10: 268273713804733051
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_11: 5919766529771567089
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_12: -8767725803798608746
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_13: -471318167419921832
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_14: 1096465235284496813
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_15: 4346774900023178555
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_16: 1623572583072801527
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_17: 7603225486401945974
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_18: -7775620246884095541
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_19: -6678673058272012254
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_2: -4217789353931335207
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_20: 5117900114568359807
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_21: 7089227150184731471
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_22: -1656238793223860204
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_23: 7667379065709513841
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_24: 5538430123029812680
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_25: 8147085665902580575
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_3: -8609775436976178510
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_4: -146152143827010689
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_5: -5680436477667334911
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_6: -8128246110201666033
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_7: 7789549822342538
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_8: -4493170865620950323
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_BLANC_9: 2729427257791415935
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
