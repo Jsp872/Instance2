@@ -1378,7 +1378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7266927364313218303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1509,8 +1509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34dc3c4749ff8b04d9fc54c0e5a96701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Victory
-  totalTimer_TEXT: {fileID: 0}
-  totalPlayerDeath_TEXT: {fileID: 0}
+  totalTimer_TEXT: {fileID: 7133928123118038901}
+  totalPlayerDeath_TEXT: {fileID: 556047179186938034}
 --- !u!1 &5468772973105490016
 GameObject:
   m_ObjectHideFlags: 0
