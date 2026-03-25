@@ -33,5 +33,11 @@
   "NextLevel": "Niveau suivant",
   "Retry": "Recommencer",
   "Deaths": "Morts",
-  "Cheats" : "Triches"
+  "Cheats" : "Triches",
+  "Teleportation": "Teleportation",
+  "ActivateCheat": "Activation de la triche",
+  "EnableHelper": "Activer aide",
+  "DisableHelper": "Désactiver aide",
+  "Tutorial" : "Tutoriel",
+  "Level1" : "Niveau 1"
 }

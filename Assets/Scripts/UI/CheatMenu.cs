@@ -4,9 +4,8 @@ using UnityEngine.SceneManagement;
 public class CheatMenu : UI_Basic_Functions
 {
     [SerializeField] private GameObject cheatPanel;
-    [SerializeField] private TextMeshProUGUI enableTextMesh;
-    [SerializeField] private string enableText = "Enable Visual Helper";
-    [SerializeField] private string disableText = "Disable Visual Helper";
+    [SerializeField] private TextMeshProUGUI enableTextMesh1;
+    [SerializeField] private TextMeshProUGUI enableTextMesh2;
 
     bool enableHelper = true;
 
@@ -27,7 +26,8 @@ public class CheatMenu : UI_Basic_Functions
     {
         enableHelper = !enableHelper;
         EventBus.Publish(new ActiveVisibleNoteHelper(enableHelper));
-        enableTextMesh.text = enableHelper ? enableText : disableText;
+        enableTextMesh1.enabled = !enableHelper;
+        enableTextMesh2.enabled = enableHelper;
     }
 }
 
