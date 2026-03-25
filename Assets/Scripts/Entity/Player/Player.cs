@@ -54,7 +54,8 @@ public class Player : MonoBehaviour
 
     private void DisableAllComponent()
     {
-        controller.DisableAllComponent();
+        controller.DisableAllComponent(false);
+        controller.enabled = false;
     }
 
     private IEnumerator KillAfterDelay()
