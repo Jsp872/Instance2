@@ -31,5 +31,6 @@
     "MainMenu" : "Main menu",
     "Victory" : "Victory",
     "NextLevel" : "Next level",
-    "Retry" : "Retry"
+    "Retry" : "Retry",
+    "Deaths" : "Deaths"
 }
