@@ -23,14 +23,36 @@ public class VisualNote : MonoBehaviour
     [SerializeField] private int obstacleCountBeforeHiding;
     private int obstacleCount;
 
+    private bool cheatHelperEnable = false;
+
     private void Awake()
     {
         if (noteRows == null || noteRows.Count == 0)
             Debug.LogWarning($"[VisualNote] Aucune NoteRow assignée sur '{gameObject.name}'.", this);
     }
 
-    private void OnEnable() => EventBus.Subscribe<ObstacleEnteredView>(OnNewObstacle);
-    private void OnDisable() => EventBus.Unsubscribe<ObstacleEnteredView>(OnNewObstacle);
+    private void OnEnable()
+    {
+        EventBus.Subscribe<ObstacleEnteredView>(OnNewObstacle);
+        EventBus.Subscribe<ActiveVisibleNoteHelper>(EnableCheatHelperPanel);
+    }
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<ObstacleEnteredView>(OnNewObstacle);
+        EventBus.Unsubscribe<ActiveVisibleNoteHelper>(EnableCheatHelperPanel);
+    }
+
+
+    private void EnableCheatHelperPanel(ActiveVisibleNoteHelper callback)
+    {
+        cheatHelperEnable = callback.isActive;
+        if (obstacleCount >= obstacleCountBeforeHiding + 1 && cheatHelperEnable)
+        {
+            GetComponent<CanvasGroup>().Toggle(true);
+        }
+        GetComponent<CanvasGroup>().Toggle(cheatHelperEnable);
+    }
+
 
     /// <summary>
     /// Callback lors de l'entrée d'un nouvel obstacle.
@@ -48,10 +70,11 @@ public class VisualNote : MonoBehaviour
         obstacle.goodNote += OnGoodNote;
         obstacle.badNote += OnBadNote;
         obstacleCount++;
-        if (obstacleCount >= obstacleCountBeforeHiding + 1)
+        if (!cheatHelperEnable && obstacleCount >= obstacleCountBeforeHiding + 1)
         {
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nombre d'obstacles atteint ({obstacleCount}), désactivation du composant.", this);
+
             GetComponent<CanvasGroup>().Toggle(false);
         }
 

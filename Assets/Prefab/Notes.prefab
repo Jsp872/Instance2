@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NoteAnimation
   rotationZ: 10
   rotationDuration: 1.09
-  rotationMode: 1
+  rotationMode: 3
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1

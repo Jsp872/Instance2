@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1089562469}
   - component: {fileID: 1089562468}
   m_Layer: 0
-  m_Name: TEST_AudioSource
+  m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,10 +936,6 @@ PrefabInstance:
     - target: {fileID: 1004440203804058204, guid: a4e746ba1951b304880f2bc1d2f43b0e, type: 3}
       propertyPath: m_Name
       value: Notes
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196246317954118112, guid: a4e746ba1951b304880f2bc1d2f43b0e, type: 3}
-      propertyPath: rotationMode
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
