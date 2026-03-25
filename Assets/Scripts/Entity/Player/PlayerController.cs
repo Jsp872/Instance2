@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Debug")]
-    [SerializeField] private bool debugLogs = false;
-
     [Header("Sensors")]
     public GroundSensor groundSensor;
     public FarObstacleSensor farObstacleSensor;
     public NearObstacleSensor nearObstacleSensor;
+    
+    [Header("Debug")]
+    [SerializeField] private bool debugLogs = false;
 
     private PlayerStatConfig playerConfig;
     private Rigidbody2D rb;
@@ -26,8 +26,7 @@ public class PlayerController : MonoBehaviour
     private AutoMoveComponent autoMoveComponent;
 
     private bool isPaused = false;
-    public bool pauseMenuIsActive = false;
-
+    private bool pauseMenuIsActive = false;
     public void SetPauseMenuIsActive(bool value) => pauseMenuIsActive = value;
 
     public PlayerStatConfig GetConfig() => playerConfig;

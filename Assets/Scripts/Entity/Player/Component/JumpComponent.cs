@@ -15,7 +15,7 @@ public class JumpComponent : PlayerComponent
     [SerializeField] private float DEBUG_derivedGravity;
 
     private Rigidbody2D rb;
-    private GroundSensor _groundSensor;
+    private GroundSensor groundSensor;
 
     private float derivedJumpVelocity;
     private float derivedGravity;
@@ -34,7 +34,7 @@ public class JumpComponent : PlayerComponent
         base.Initialize(controller);
         configCopy = controller.GetConfig().jumpConfig;
         rb = controller.GetRb();
-        _groundSensor = controller.groundSensor;
+        groundSensor = controller.groundSensor;
 
         ComputeJumpPhysics();
     }
@@ -79,7 +79,7 @@ public class JumpComponent : PlayerComponent
 
     public override void UpdateComponent(ref Vector3 velocity, float dt)
     {
-        bool grounded = _groundSensor.IsGrounded;
+        bool grounded = groundSensor.IsGrounded;
 
         UpdateCoyoteTime(grounded, dt);
         UpdateLanding(grounded);

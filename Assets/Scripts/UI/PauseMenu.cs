@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : UI_Basic_Functions
 {
@@ -19,5 +20,6 @@ public class PauseMenu : UI_Basic_Functions
     public void ResetBBVariables()
     {
         PlayerBlackboard.Instance.ResetAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerController))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform spawnPoint;
-    public void SetSpawnPoint(Transform spawnPoint) => this.spawnPoint = spawnPoint;
-
     [SerializeField] private PlayerStatConfig playerStatConfig;
     [SerializeField] private PlayerController controller;
 
@@ -61,19 +58,13 @@ public class Player : MonoBehaviour
     private IEnumerator KillAfterDelay()
     {
         yield return new WaitForSeconds(respawnDelay);
-        //playerLife--;
-        //if (playerLife <= 0)
-        //{
         OnDeath?.Invoke();
         Respawn();
-        //}
     }
 
     private void Respawn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //transform.position = spawnPoint.position;
-        //controller.OnResetComponent();
     }
 
     //private void OnMaxSpeedReach(MaxSpeedReachCallback callback)

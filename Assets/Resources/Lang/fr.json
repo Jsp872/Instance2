@@ -36,8 +36,8 @@
   "Cheats" : "Triches",
   "Teleportation": "Teleportation",
   "ActivateCheat": "Activation de la triche",
-  "EnableCheat": "Activer aide",
-  "DisableCheat": "Désactiver aide",
+  "EnableHelper": "Activer aide",
+  "DisableHelper": "Désactiver aide",
   "Tutorial" : "Tutoriel",
   "Level1" : "Niveau 1"
 }

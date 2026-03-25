@@ -36,8 +36,8 @@
   "Cheats": "Cheats",
   "Teleportation": "Teleportation",
   "ActivateCheat": "Activate cheat",
-  "EnableCheat": "EnableCheat",
-  "DisableCheat": "DisableCheat",
+  "EnableHelper": "Enable Helper",
+  "DisableHelper": "Disable Helper",
   "Tutorial" : "Tutorial",
   "Level1" : "Level 1"
 }
