@@ -34,4 +34,10 @@
   "Retry": "Retry",
   "Deaths": "Deaths",
   "Cheats": "Cheats",
+  "Teleportation": "Teleportation",
+  "ActivateCheat": "Activate cheat",
+  "EnableHelper": "Enable Helper",
+  "DisableHelper": "Disable Helper",
+  "Tutorial" : "Tutorial",
+  "Level1" : "Level 1"
 }
