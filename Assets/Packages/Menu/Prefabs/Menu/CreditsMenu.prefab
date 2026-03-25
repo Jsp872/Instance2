@@ -247,8 +247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 228.86938, y: 125}
-  m_SizeDelta: {x: 392.1421, y: 67.489}
+  m_AnchoredPosition: {x: 155.06616, y: 136.67537}
+  m_SizeDelta: {x: 346.2745, y: 44.1383}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5535933488580635294
 CanvasRenderer:
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Antoine CYPIERE
+  m_text: -Antoine CYPIERE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -305,8 +305,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -384,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 36.332478, y: -185.1}
-  m_SizeDelta: {x: 324.0961, y: 67.489}
+  m_AnchoredPosition: {x: 27.281, y: -195.1}
+  m_SizeDelta: {x: 337.99, y: 41.7859}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5579520435969557505
 CanvasRenderer:
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dorian XAVIER
+  m_text: -Dorian XAVIER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -442,8 +442,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -658,7 +658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: -462}
+  m_AnchoredPosition: {x: 19, y: -415}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1035913582542416451
@@ -809,7 +809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 178.27995, y: -78}
+  m_AnchoredPosition: {x: 188.27995, y: -77.299995}
   m_SizeDelta: {x: 338.74, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1780753660326096696
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Louis ANCIEN
+  m_text: -Louis ANCIEN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -867,8 +867,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -946,8 +946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 55.427856, y: -252.1}
-  m_SizeDelta: {x: 362.2869, y: 67.489}
+  m_AnchoredPosition: {x: 35.880074, y: -248.1}
+  m_SizeDelta: {x: 355.1911, y: 44.1955}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3969079711213463394
 CanvasRenderer:
@@ -977,7 +977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Louis GUICHARD
+  m_text: -Louis GUICHARD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -1004,8 +1004,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1049,81 +1049,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &2975663195811335345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5061644073357133654}
-  - component: {fileID: 9167383973242253365}
-  - component: {fileID: 3326248069262972186}
-  m_Layer: 0
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5061644073357133654
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2975663195811335345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4032657161387616795}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &9167383973242253365
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2975663195811335345}
-  m_CullTransparentMesh: 1
---- !u!114 &3326248069262972186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2975663195811335345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3677423563987794621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1159,6 @@ RectTransform:
   - {fileID: 5949859442069009242}
   - {fileID: 3283322739726800492}
   - {fileID: 5961229900326702102}
-  - {fileID: 4032657161387616795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1276,8 +1200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -90.34313, y: 57}
-  m_SizeDelta: {x: 106.9776, y: 67.489}
+  m_AnchoredPosition: {x: -96.711784, y: 66}
+  m_SizeDelta: {x: 94.2403, y: 48.383}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1391165084029997085
 CanvasRenderer:
@@ -1413,7 +1337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 26, y: 41}
+  m_AnchoredPosition: {x: 48.200012, y: 36.6}
   m_SizeDelta: {x: 83.1807, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8797611924056333828
@@ -1660,7 +1584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 898d5c69cea2c5d42be1799fb18170fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95ff57f52993d0345a96d0dc3651d638, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1704,8 +1628,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 73, y: 4.2}
-  m_SizeDelta: {x: 397.4312, y: 67.489}
+  m_AnchoredPosition: {x: 27.2808, y: 17.999992}
+  m_SizeDelta: {x: 337.9927, y: 48.3121}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7379113061243426289
 CanvasRenderer:
@@ -1735,7 +1659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mathis GASSARINO
+  m_text: -Mathis GASSARINO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -1762,8 +1686,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1841,7 +1765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 168, y: 84}
+  m_AnchoredPosition: {x: 178, y: 77.1}
   m_SizeDelta: {x: 318.4032, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &882178488491881558
@@ -1872,7 +1796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lucas MAILLOT
+  m_text: -Lucas MAILLOT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -1899,8 +1823,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2053,8 +1977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -138.8, y: 129.99997}
-  m_SizeDelta: {x: 244.6177, y: 67.489}
+  m_AnchoredPosition: {x: -116.6, y: 137.14401}
+  m_SizeDelta: {x: 222.9343, y: 53.201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8632231348466987595
 CanvasRenderer:
@@ -2190,8 +2114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 67.73407, y: 198.17017}
-  m_SizeDelta: {x: 423.13, y: 67.489}
+  m_AnchoredPosition: {x: -6.2362, y: 198.17017}
+  m_SizeDelta: {x: 1048.7913, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6531304984158244021
 CanvasRenderer:
@@ -2248,14 +2172,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2327,8 +2251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 80.6, y: 92.8}
-  m_SizeDelta: {x: 409.8632, y: 67.489}
+  m_AnchoredPosition: {x: 36.78003, y: 102.7206}
+  m_SizeDelta: {x: 365.3176, y: 47.6478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4618009507562047857
 CanvasRenderer:
@@ -2358,7 +2282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C\xE9lian JUAN-CONTI"
+  m_text: "-C\xE9lian JUAN-CONTI"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -2385,8 +2309,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2488,7 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2539,7 +2463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 24.8, y: 129.5}
+  m_AnchoredPosition: {x: 47, y: 129.5}
   m_SizeDelta: {x: 83.1807, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1930055879792349784
@@ -2680,7 +2604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: -83}
+  m_AnchoredPosition: {x: 24, y: -83}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7156252429519629070
@@ -2717,8 +2641,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 41.26764, y: -119}
-  m_SizeDelta: {x: 333.9664, y: 67.489}
+  m_AnchoredPosition: {x: 26.081, y: -142.1}
+  m_SizeDelta: {x: 335.59, y: 48.2117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5798407832678336361
 CanvasRenderer:
@@ -2748,7 +2672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hana\xE9 DORIDON"
+  m_text: "-Hana\xE9 DORIDON"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -2775,8 +2699,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2854,8 +2778,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 127.333984, y: -59.7}
-  m_SizeDelta: {x: 506.099, y: 67.489}
+  m_AnchoredPosition: {x: 0.7745, y: -62.500008}
+  m_SizeDelta: {x: 284.9789, y: 92.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4574341055136677351
 CanvasRenderer:
@@ -2885,7 +2809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Antoine BAILLY-MAITRE
+  m_text: -Antoine BAILLY-MAITRE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -2912,8 +2836,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3066,8 +2990,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 144.7, y: 123}
-  m_SizeDelta: {x: 352.1624, y: 67.489}
+  m_AnchoredPosition: {x: 178.9, y: 133.64}
+  m_SizeDelta: {x: 352.1624, y: 46.201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5586004458217888349
 CanvasRenderer:
@@ -3124,8 +3048,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3247,8 +3171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 171.25519, y: 198.17017}
-  m_SizeDelta: {x: 216.0878, y: 67.489}
+  m_AnchoredPosition: {x: 112.08984, y: 198.17017}
+  m_SizeDelta: {x: 258.2675, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3203361183488678804
 CanvasRenderer:
@@ -3305,8 +3229,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3384,7 +3308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 178, y: -12}
+  m_AnchoredPosition: {x: 188, y: -11.299988}
   m_SizeDelta: {x: 339.3114, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9187789981992445014
@@ -3415,7 +3339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Axelle SANCHEZ
+  m_text: -Axelle SANCHEZ
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
   m_sharedMaterial: {fileID: 5905117997738062096, guid: 569093057332e9d42aef150a6729e6c2, type: 2}
@@ -3442,8 +3366,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 31
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3521,8 +3445,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 181, y: 198.17017}
-  m_SizeDelta: {x: 394.3678, y: 67.489}
+  m_AnchoredPosition: {x: 231.92822, y: 198.17017}
+  m_SizeDelta: {x: 496.2242, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6072292972504537988
 CanvasRenderer:
@@ -3579,8 +3503,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3624,38 +3548,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8940130536415183723
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4032657161387616795}
-  m_Layer: 0
-  m_Name: NoteGroup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4032657161387616795
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8940130536415183723}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 757, y: -172, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5061644073357133654}
-  m_Father: {fileID: 6949293963145759401}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8999175908448528896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,8 +3582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 12.4666, y: 198.17017}
-  m_SizeDelta: {x: 312.5952, y: 67.489}
+  m_AnchoredPosition: {x: 55.5134, y: 198.17017}
+  m_SizeDelta: {x: 398.6887, y: 67.489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7007049646794932042
 CanvasRenderer:
@@ -3748,8 +3640,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
