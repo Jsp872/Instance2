@@ -3953,6 +3953,10 @@ PrefabInstance:
       propertyPath: gameCamera
       value: 
       objectReference: {fileID: 1935177782}
+    - target: {fileID: 7380004046865751958, guid: f0777994da8e0ff47933356f6b210b6b, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 8388890395977998218, guid: f0777994da8e0ff47933356f6b210b6b, type: 3}
       propertyPath: gameCamera
       value: 
