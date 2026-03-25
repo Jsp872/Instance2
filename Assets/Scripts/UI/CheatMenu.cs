@@ -1,21 +1,14 @@
-using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-public class CheatMenu : MonoBehaviour
+public class CheatMenu : UI_Basic_Functions
 {
-    [SerializeField] private List<string> allLevelSceneName = new();
     [SerializeField] private GameObject cheatPanel;
+    [SerializeField] private TextMeshProUGUI enableTextMesh;
+    [SerializeField] private string enableText = "Enable Visual Helper";
+    [SerializeField] private string disableText = "Disable Visual Helper";
 
-    [SerializeField] private GameObject goToLevelUICard;
-    [SerializeField] private GameObject goToUiParent;
-
-    private void Awake()
-    {
-        SetUiCard();
-    }
+    bool enableHelper = true;
 
     public void OpenCheatPanel(bool value)
     {
@@ -23,29 +16,17 @@ public class CheatMenu : MonoBehaviour
     }
     public void SwitchToLevel(int levelID)
     {
-        if (levelID >= allLevelSceneName.Count)
-            return;
-
-        SceneManager.LoadScene(allLevelSceneName[levelID]);
+        SceneManager.LoadScene(levelID);
         OpenCheatPanel(false);
     }
-    public void ActiveVisibleNoteHelper(bool value)
+    public void ActiveVisibleNoteHelper()
     {
-        EventBus.Publish(new ActiveVisibleNoteHelper(value));
+        enableHelper = !enableHelper;
+
+        EventBus.Publish(new ActiveVisibleNoteHelper(enableHelper));
+        enableTextMesh.text = enableHelper ? enableText : disableText;
+        print(enableHelper);
     }
-
-    public void SetUiCard()
-    {
-        for (int i = 0; i < allLevelSceneName.Count; i++)
-        {
-            int levelIndex = i;
-
-            GameObject newCard = Instantiate(goToLevelUICard, goToUiParent.transform);
-            newCard.GetComponentInChildren<TextMeshProUGUI>().text = allLevelSceneName[levelIndex];
-            newCard.GetComponentInChildren<Button>().onClick.AddListener(() => SwitchToLevel(levelIndex));
-        }
-    }
-
 }
 
 public struct ActiveVisibleNoteHelper
