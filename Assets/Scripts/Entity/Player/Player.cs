@@ -1,19 +1,25 @@
-using System;
+//using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerController))]
 public class Player : MonoBehaviour
 {
+    [SerializeField] private ScreenFade screenFade;
     [SerializeField] private PlayerStatConfig playerStatConfig;
     [SerializeField] private PlayerController controller;
+
+    [SerializeField] private List<AudioClip> deathCatSounds = new();
+    [SerializeField] private AudioSource playerAudioSource;
+
 
     private int playerLife;
     [SerializeField] private float respawnDelay;
     public float GetRespawnDelay { get => respawnDelay; }
 
-    public event Action OnDeath;
+    public event System.Action OnDeath;
 
 
     private void Awake()
@@ -21,6 +27,10 @@ public class Player : MonoBehaviour
         if (controller == null)
         {
             controller = GetComponent<PlayerController>();
+        }
+        if (screenFade is null)
+        {
+            screenFade = FindFirstObjectByType<ScreenFade>();
         }
 
         controller.InitializeComponent(playerStatConfig);
@@ -45,6 +55,7 @@ public class Player : MonoBehaviour
 
     private void OnHittedWall(OnHitObstacleCallback callback)
     {
+        playerAudioSource.clip = PickRandomDeathSound();
         StartCoroutine(KillAfterDelay());
         DisableAllComponent();
     }
@@ -57,14 +68,19 @@ public class Player : MonoBehaviour
 
     private IEnumerator KillAfterDelay()
     {
+        playerAudioSource.Play();
         yield return new WaitForSeconds(respawnDelay);
         OnDeath?.Invoke();
         Respawn();
     }
 
+    private AudioClip PickRandomDeathSound()
+    {
+        return deathCatSounds[Random.Range(0, deathCatSounds.Count)];
+    }
     private void Respawn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        screenFade.FadeOut(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name), 0.3f);
     }
 
     //private void OnMaxSpeedReach(MaxSpeedReachCallback callback)

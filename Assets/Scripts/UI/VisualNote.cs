@@ -45,7 +45,6 @@ public class VisualNote : MonoBehaviour
 
     private void EnableCheatHelperPanel(ActiveVisibleNoteHelper callback)
     {
-        print("received Input : value : " + callback.isActive);
         cheatHelperEnable = callback.isActive;
 
         if (obstacleCount >= obstacleCountBeforeHiding + 1)
@@ -94,7 +93,7 @@ public class VisualNote : MonoBehaviour
 
         foreach (Note note in notes)
         {
-            DOTween.Kill(note.GetComponent<RectTransform>());
+            DOTween.Kill(note.GetComponent<RectTransform>());   
             note.SetColor(Color.black);
         }
 

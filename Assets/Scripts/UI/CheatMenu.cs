@@ -11,20 +11,17 @@ public class CheatMenu : UI_Basic_Functions
 
     private void Awake()
     {
+        enableHelper = PlayerBlackboard.Instance.enableVisualHelper;
         ActiveVisibleNoteHelper();
     }
     public void OpenCheatPanel(bool value)
     {
         cheatPanel.SetActive(value);
     }
-    public void SwitchToLevel(int levelID)
-    {
-        SceneManager.LoadScene(levelID);
-        OpenCheatPanel(false);
-    }
     public void ActiveVisibleNoteHelper()
     {
         enableHelper = !enableHelper;
+        PlayerBlackboard.Instance.enableVisualHelper = enableHelper;
         EventBus.Publish(new ActiveVisibleNoteHelper(enableHelper));
         enableTextMesh1.enabled = !enableHelper;
         enableTextMesh2.enabled = enableHelper;

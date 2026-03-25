@@ -3,23 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class UI_Basic_Functions : MonoBehaviour
 {
-    public void OpenScene(string sceneName)
+    private ScreenFade _screenFade;
+
+    private ScreenFade ScreenFade
     {
-        SceneManager.LoadScene(sceneName);
+        get
+        {
+            if (_screenFade == null)
+                _screenFade = FindFirstObjectByType<ScreenFade>();
+            return _screenFade;
+        }
     }
 
-    public void Open(UI_Basic_Functions UI)
+    public virtual void OpenScene(string sceneName)
     {
-        UI.gameObject.SetActive(true);
+        if (ScreenFade == null)
+        {
+            Debug.LogError("ScreenFade introuvable dans la scène !", this);
+            return;
+        }
+
+        ScreenFade.FadeOut(() => SceneManager.LoadScene(sceneName));
     }
 
-    public void Close(UI_Basic_Functions UI)
-    {
-        UI.gameObject.SetActive(false);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
+    public void Open(UI_Basic_Functions UI) => UI.gameObject.SetActive(true);
+    public void Close(UI_Basic_Functions UI) => UI.gameObject.SetActive(false);
+    public void Quit() => Application.Quit();
 }

@@ -12,7 +12,7 @@ namespace Menu
         public Button btn;
         public Image enabledImg;
     }
-    public class MainMenuManager : MonoBehaviour
+    public class MainMenuManager : UI_Basic_Functions
     {
         [SerializeField] private List<Btn> sectionBtns;
 
@@ -23,11 +23,6 @@ namespace Menu
                 sectionBtn.btn.onClick.AddListener(() => OpenSection(sectionBtns.IndexOf(sectionBtn)));
             }
             OpenSection(0);
-        }
-
-        public void LoadScene(int index)
-        {
-            SceneManager.LoadScene(index);
         }
         public void QuitGame()
         {

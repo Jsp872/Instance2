@@ -1,21 +1,34 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : UI_Basic_Functions
 {
-    [Header("Reference")]
-    [SerializeField] private GameObject pauseMenus;
-
     private void OnEnable()
     {
-        Time.timeScale = 0;
+        SetTimePause();
     }
 
     private void OnDisable()
     {
+        SetTimeUnPause();
+    }
+
+    public override void OpenScene(string sceneName)
+    {
+        SetTimeUnPause();
+        base.OpenScene(sceneName);
+    }
+
+    public void SetTimePause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void SetTimeUnPause()
+    {
         Time.timeScale = 1;
     }
+
 
     public void ResetBBVariables()
     {
