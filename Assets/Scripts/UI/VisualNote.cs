@@ -45,14 +45,14 @@ public class VisualNote : MonoBehaviour
 
     private void EnableCheatHelperPanel(ActiveVisibleNoteHelper callback)
     {
+        print("received Input : value : " + callback.isActive);
         cheatHelperEnable = callback.isActive;
-        if (obstacleCount >= obstacleCountBeforeHiding + 1 && cheatHelperEnable)
-        {
-            GetComponent<CanvasGroup>().Toggle(true);
-        }
-        GetComponent<CanvasGroup>().Toggle(cheatHelperEnable);
-    }
 
+        if (obstacleCount >= obstacleCountBeforeHiding + 1)
+        {
+            GetComponent<CanvasGroup>().Toggle(cheatHelperEnable);
+        }
+    }
 
     /// <summary>
     /// Callback lors de l'entrée d'un nouvel obstacle.
@@ -72,6 +72,7 @@ public class VisualNote : MonoBehaviour
         obstacleCount++;
         if (!cheatHelperEnable && obstacleCount >= obstacleCountBeforeHiding + 1)
         {
+            print(cheatHelperEnable);
             if (debugLogs)
                 Debug.Log($"[VisualNote] Nombre d'obstacles atteint ({obstacleCount}), désactivation du composant.", this);
 

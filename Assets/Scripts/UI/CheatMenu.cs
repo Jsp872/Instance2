@@ -10,6 +10,10 @@ public class CheatMenu : UI_Basic_Functions
 
     bool enableHelper = true;
 
+    private void Awake()
+    {
+        ActiveVisibleNoteHelper();
+    }
     public void OpenCheatPanel(bool value)
     {
         cheatPanel.SetActive(value);
@@ -22,10 +26,8 @@ public class CheatMenu : UI_Basic_Functions
     public void ActiveVisibleNoteHelper()
     {
         enableHelper = !enableHelper;
-
         EventBus.Publish(new ActiveVisibleNoteHelper(enableHelper));
         enableTextMesh.text = enableHelper ? enableText : disableText;
-        print(enableHelper);
     }
 }
 

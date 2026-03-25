@@ -29,7 +29,7 @@ public class PlayerAnimationManager : MonoBehaviour
         animator.SetFloat(VerticalVel, rb.linearVelocityY);
         if (rb.linearVelocityY < -.1f)
         {
-            print("VerticalVel :" + rb.linearVelocityY);
+            //print("VerticalVel :" + rb.linearVelocityY);
         }
     }
 
