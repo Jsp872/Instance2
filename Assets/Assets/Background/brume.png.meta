@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 060392663e29818468fe3b490b76f447
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4726933635155038792
+    second: brume_0
+  - first:
+      213: -901985614208823223
+    second: brume_1
+  - first:
+      213: -2971324651350572239
+    second: brume_2
+  - first:
+      213: 5436646189592201450
+    second: brume_3
+  - first:
+      213: 4073041856971073269
+    second: brume_4
+  - first:
+      213: -551866290699267284
+    second: brume_5
+  - first:
+      213: 2051496097669464158
+    second: brume_6
+  - first:
+      213: 2930421803791658673
+    second: brume_7
+  - first:
+      213: -4596315794205580077
+    second: brume_8
+  - first:
+      213: -3522645933696390467
+    second: brume_9
+  - first:
+      213: 5239405617330679551
+    second: brume_10
+  - first:
+      213: 3234666068320532825
+    second: brume_11
+  - first:
+      213: 5888323544976406874
+    second: brume_12
+  - first:
+      213: -6229411701932424627
+    second: brume_13
+  - first:
+      213: 5673262678197963043
+    second: brume_14
+  - first:
+      213: -5179042498964302906
+    second: brume_15
+  - first:
+      213: 6068421112317178241
+    second: brume_16
+  - first:
+      213: -8508463700450688276
+    second: brume_17
+  - first:
+      213: -4098892548151805910
+    second: brume_18
+  - first:
+      213: -506217997216460438
+    second: brume_19
+  - first:
+      213: 7408715900255069291
+    second: brume_20
+  - first:
+      213: -4666987648427713933
+    second: brume_21
+  - first:
+      213: -1760200720322369132
+    second: brume_22
+  - first:
+      213: 639463904562597492
+    second: brume_23
+  - first:
+      213: 6746939414174910525
+    second: brume_24
+  - first:
+      213: -575951427293241839
+    second: brume_25
+  - first:
+      213: 6303884347178745955
+    second: brume_26
+  - first:
+      213: 6486954919097141148
+    second: brume_27
+  - first:
+      213: 3434480020384761618
+    second: brume_28
+  - first:
+      213: 3534624058953366536
+    second: brume_29
+  - first:
+      213: 6496520532121232495
+    second: brume_30
+  - first:
+      213: 4541244437313146516
+    second: brume_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: brume_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 60
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8421348c811799140800000000000000
+      internalID: 4726933635155038792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 808
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9401290ecd08b73f0800000000000000
+      internalID: -901985614208823223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 817
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13343ebe8fbb3c6d0800000000000000
+      internalID: -2971324651350572239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 812
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8cf14a7e8d27b40800000000000000
+      internalID: 5436646189592201450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 818
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6ee003df9568830800000000000000
+      internalID: 4073041856971073269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 804
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c239b5358806758f0800000000000000
+      internalID: -551866290699267284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 798
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5040bfd4d0687c10800000000000000
+      internalID: 2051496097669464158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_7
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 768
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1beaf01ca13faa820800000000000000
+      internalID: 2930421803791658673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_8
+      rect:
+        serializedVersion: 2
+        x: 3603
+        y: 785
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4ebd2332b9630c0800000000000000
+      internalID: -4596315794205580077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_9
+      rect:
+        serializedVersion: 2
+        x: 3624
+        y: 725
+        width: 70
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba6d84ef2c0d1fc0800000000000000
+      internalID: -3522645933696390467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_10
+      rect:
+        serializedVersion: 2
+        x: 3678
+        y: 790
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe6e2f36ab16b840800000000000000
+      internalID: 5239405617330679551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_11
+      rect:
+        serializedVersion: 2
+        x: 3685
+        y: 789
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9593141b6a7d3ec20800000000000000
+      internalID: 3234666068320532825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 751
+        width: 11
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5933e4011787b150800000000000000
+      internalID: 5888323544976406874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_13
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 769
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4208aadf0fac89a0800000000000000
+      internalID: -6229411701932424627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_14
+      rect:
+        serializedVersion: 2
+        x: 3608
+        y: 777
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329887bf85a7bbe40800000000000000
+      internalID: 5673262678197963043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_15
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 757
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3d49479485028b0800000000000000
+      internalID: -5179042498964302906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_16
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 760
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181752b89dc573450800000000000000
+      internalID: 6068421112317178241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_17
+      rect:
+        serializedVersion: 2
+        x: 3565
+        y: 755
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2c45e185ddbe980800000000000000
+      internalID: -8508463700450688276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_18
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 756
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a287aeeb1fecd17c0800000000000000
+      internalID: -4098892548151805910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_19
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 757
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61d001e96d89f8f0800000000000000
+      internalID: -506217997216460438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 750
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64ed74bbdb01d660800000000000000
+      internalID: 7408715900255069291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_21
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 743
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a9454e5778b3fb0800000000000000
+      internalID: -4666987648427713933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_22
+      rect:
+        serializedVersion: 2
+        x: 3591
+        y: 740
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4996cc355c28297e0800000000000000
+      internalID: -1760200720322369132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_23
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 722
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e432e7805dfd800800000000000000
+      internalID: 639463904562597492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_24
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 736
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d384afe76a1f1ad50800000000000000
+      internalID: 6746939414174910525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_25
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 726
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e9e487a3fc108f0800000000000000
+      internalID: -575951427293241839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_26
+      rect:
+        serializedVersion: 2
+        x: 3593
+        y: 718
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3600cb21a65eb7750800000000000000
+      internalID: 6303884347178745955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9702ca212b460a50800000000000000
+      internalID: 6486954919097141148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3830
+        height: 731
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217c533c169b9af20800000000000000
+      internalID: 3434480020384761618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_29
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 719
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80cf678bad18d0130800000000000000
+      internalID: 3534624058953366536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_30
+      rect:
+        serializedVersion: 2
+        x: 3539
+        y: 715
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f642e110107482a50800000000000000
+      internalID: 6496520532121232495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brume_31
+      rect:
+        serializedVersion: 2
+        x: 3557
+        y: 723
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ec44451cdb50f30800000000000000
+      internalID: 4541244437313146516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      brume_0: 4726933635155038792
+      brume_1: -901985614208823223
+      brume_10: 5239405617330679551
+      brume_11: 3234666068320532825
+      brume_12: 5888323544976406874
+      brume_13: -6229411701932424627
+      brume_14: 5673262678197963043
+      brume_15: -5179042498964302906
+      brume_16: 6068421112317178241
+      brume_17: -8508463700450688276
+      brume_18: -4098892548151805910
+      brume_19: -506217997216460438
+      brume_2: -2971324651350572239
+      brume_20: 7408715900255069291
+      brume_21: -4666987648427713933
+      brume_22: -1760200720322369132
+      brume_23: 639463904562597492
+      brume_24: 6746939414174910525
+      brume_25: -575951427293241839
+      brume_26: 6303884347178745955
+      brume_27: 6486954919097141148
+      brume_28: 3434480020384761618
+      brume_29: 3534624058953366536
+      brume_3: 5436646189592201450
+      brume_30: 6496520532121232495
+      brume_31: 4541244437313146516
+      brume_4: 4073041856971073269
+      brume_5: -551866290699267284
+      brume_6: 2051496097669464158
+      brume_7: 2930421803791658673
+      brume_8: -4596315794205580077
+      brume_9: -3522645933696390467
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

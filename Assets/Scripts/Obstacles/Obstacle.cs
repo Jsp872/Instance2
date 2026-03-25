@@ -79,7 +79,7 @@ public abstract class Obstacle : MonoBehaviour
         EventBus.Publish(new ObstacleEnteredView { obstacle = this, noteIntervalSpeed = noteIntervalSpeed });
         EventBus.Subscribe<NoteID>(OnNoteReceived);
 
-        Log($"[Obstacle] HandleEnteredView: EventBus.Subscribe<NoteID>");
+        Log($"[Obstacle] HandleEnteredView: EventBus.Subscribe<NoteID>"); 
     }
 
     private void HandleExitedView()

@@ -17,8 +17,20 @@ public class ParallaxManagerEditor : Editor
     {
         base.OnInspectorGUI();
         ParallaxManager manager = (ParallaxManager)target;
-        manager.ResetBackgrounds();
-        if (GUILayout.Button("Set Intensities")) manager.ResetIntensities();
+
+        if (GUILayout.Button("Reset Backgrounds"))
+        {
+            Undo.RecordObject(manager, "Reset Parallax Backgrounds");
+            manager.ResetBackgrounds();
+            EditorUtility.SetDirty(manager);
+        }
+
+        if (GUILayout.Button("Set Intensities"))
+        {
+            Undo.RecordObject(manager, "Set Parallax Intensities");
+            manager.ResetIntensities();
+            EditorUtility.SetDirty(manager);
+        }
     }
 }
 #endif
