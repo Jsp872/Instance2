@@ -15,7 +15,7 @@ MonoBehaviour:
   movementConfig:
     defaultMovementDir: {x: 1, y: 0, z: 0}
     defaultMoveSpeed: 7
-    maxMoveSpeed: 9
+    maxMoveSpeed: 8
     accelerationSmoothTime: 0.8
     playerObstacleRangeSpeed: 6
     playerDeceleration: 0.75
