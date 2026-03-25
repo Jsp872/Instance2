@@ -885,6 +885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: victory menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5371310778683281264, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -935,15 +939,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266927364313218303, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -965,19 +969,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8237162934511589439, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8856227064863777658, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449957763}
-    - targetCorrespondingSourceObject: {fileID: 768701352389872857, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449957762}
-    - targetCorrespondingSourceObject: {fileID: 8466266476516539507, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449957761}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
 --- !u!114 &449957757 stripped
 MonoBehaviour:
@@ -990,60 +989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b304c3f8e9923542bf7c783bf663b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_Basic_Functions
---- !u!1 &449957758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8466266476516539507, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-  m_PrefabInstance: {fileID: 449957756}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &449957759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 768701352389872857, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-  m_PrefabInstance: {fileID: 449957756}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &449957760 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8856227064863777658, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-  m_PrefabInstance: {fileID: 449957756}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &449957761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449957758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a4c393c323c8642a0b17aa3ca79883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lang.TextKey
-  key: NextLevel
---- !u!114 &449957762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449957759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a4c393c323c8642a0b17aa3ca79883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lang.TextKey
-  key: MainMenu
---- !u!114 &449957763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449957760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a4c393c323c8642a0b17aa3ca79883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lang.TextKey
-  key: Victory
 --- !u!1 &515134281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,17 +1876,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 22949755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &858596006 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6994392539433079972, guid: ab43df39a1767bc43b0d105a58d9740f, type: 3}
-  m_PrefabInstance: {fileID: 449957756}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &968245535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,7 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67aa6fac116e363438383af661515ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chronometer
-  timerText: {fileID: 858596006}
+  timerText: {fileID: 0}
 --- !u!1 &1376575915
 GameObject:
   m_ObjectHideFlags: 0
