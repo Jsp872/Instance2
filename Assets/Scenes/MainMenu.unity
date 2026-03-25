@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2752021950217880764, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2968688800353579757, guid: 1b4d50fac1d0ef540a2dc0139b18b474, type: 3}
       propertyPath: m_Name
       value: CanvasMenu
