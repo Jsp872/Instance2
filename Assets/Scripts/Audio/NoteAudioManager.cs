@@ -1,7 +1,7 @@
 using AYellowpaper.SerializedCollections;
+using Menu;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 
 public class NoteAudioManager : MonoBehaviour
 {
@@ -10,17 +10,7 @@ public class NoteAudioManager : MonoBehaviour
     [SerializeField] private AudioSource sources;
 
     [SerializeField] private AudioClip missSoundClip;
-
-
-    [SerializeField] private AudioMixer mixer;
-    [SerializeField] private AudioMixerGroup master;
-    [SerializeField] private AudioMixerGroup music;
-    [SerializeField] private AudioMixerGroup sfx;
-
-    [Header("Volume slider ref")]
-    [SerializeField] private Slider masterSlider;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private AudioMixer audioMixer;
 
     #region Events  
     private void OnEnable()
@@ -32,6 +22,20 @@ public class NoteAudioManager : MonoBehaviour
     {
         EventBus.Unsubscribe<OnSendNoteSound>(PlaySound);
         EventBus.Unsubscribe<OnMissSound>(MissSound);
+    }
+    private void Start()
+    {
+        ApplyMixerValue(SettingsKeys.General);
+        ApplyMixerValue(SettingsKeys.Music);
+        ApplyMixerValue(SettingsKeys.Sfx);
+    }
+
+    private void ApplyMixerValue(string key)
+    {
+        if (PlayerPrefs.HasKey(key))
+        {
+            audioMixer.SetFloat(key, PlayerPrefs.GetFloat(key));
+        }
     }
     #endregion
 
@@ -45,31 +49,6 @@ public class NoteAudioManager : MonoBehaviour
         sources.clip = missSoundClip;
         sources.Play();
     }
-
-    #region utility
-
-    public void ChangeVolume(float pVolume)
-    {
-        sources.volume = pVolume;
-    }
-    public void ChangeMixerVolume(float pVolume, AudioMixerGroup pMixer)
-    {
-        mixer.SetFloat(pMixer.name, pVolume);
-    }
-    public void ChangeMasterMixerVolume()
-    {
-        mixer.SetFloat(master.name, 0.01f + Mathf.Log10(masterSlider.value) * 20);
-    }
-    public void ChangeMusicMixerVolume()
-    {
-        mixer.SetFloat(music.name, 0.01f + Mathf.Log10(musicSlider.value) * 20);
-    }
-    public void ChangeSfxMixerVolume()
-    {
-        mixer.SetFloat(sfx.name, Mathf.Log10(sfxSlider.value) * 20);
-    }
-
-    #endregion
 }
 
 public struct OnMissSound { }

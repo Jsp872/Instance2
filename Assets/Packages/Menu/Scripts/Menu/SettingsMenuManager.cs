@@ -51,14 +51,11 @@ namespace Menu
             sliderGeneral?.onValueChanged.AddListener(SetVolumeGeneral);
             sliderMusic?.onValueChanged.AddListener(SetVolumeMusic);
             sliderSfx?.onValueChanged.AddListener(SetVolumeSfx);
-        }
-        private void OnEnable()
-        {
+
             InitAudioSettings(sliderGeneral, SettingsKeys.General);
             InitAudioSettings(sliderMusic, SettingsKeys.Music);
             InitAudioSettings(sliderSfx, SettingsKeys.Sfx);
         }
-
         public void SetCurrentPanel(GameObject panel)
         {
             currentPanel.SetActive(false);
@@ -117,11 +114,13 @@ namespace Menu
         {
             if (slider is null || !PlayerPrefs.HasKey(key) || audioMixer is null)
             {
+                print("Set on start failed");   
                 return;
             }
-        
-            slider.value = PlayerPrefs.GetFloat(key);
-            audioMixer.SetFloat(key, slider.value);
+
+            float savedValue = PlayerPrefs.GetFloat(key);
+            slider.value = savedValue;
+            audioMixer.SetFloat(key, savedValue);
         }
 
         #endregion
