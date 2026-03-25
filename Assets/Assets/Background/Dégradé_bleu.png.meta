@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ed93473e1061d4c40a4902706b25b165
+guid: 2763576b5be756e49b7dc53ba6312e0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8140927639353546349
-    second: Arbre_0
+      213: -5799272717331300149
+    second: "D\xE9grad\xE9_bleu_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arbre_0
+      name: "D\xE9grad\xE9_bleu_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 3731
-        height: 2160
+        y: 1163
+        width: 3840
+        height: 997
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d66d3d53e826af070800000000000000
-      internalID: 8140927639353546349
+      spriteID: bc08adf7038d48fa0800000000000000
+      internalID: -5799272717331300149
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Arbre_0: 8140927639353546349
+      "D\xE9grad\xE9_bleu_0": -5799272717331300149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

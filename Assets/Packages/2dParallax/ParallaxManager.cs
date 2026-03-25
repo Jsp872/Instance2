@@ -35,6 +35,7 @@ public class ParallaxManager : MonoBehaviour
         // Conteneur séparé pour ne pas polluer les enfants directs (ResetBackgrounds)
         GameObject container = new GameObject("_LoopDuplicates");
         container.transform.SetParent(transform);
+        container.transform.localScale = Vector3.one;
         loopContainer = container.transform;
 
         for (int i = 0; i < backgrounds.Length; i++)
