@@ -18,11 +18,6 @@ public class CheatMenu : UI_Basic_Functions
     {
         cheatPanel.SetActive(value);
     }
-    public void SwitchToLevel(int levelID)
-    {
-        SceneManager.LoadScene(levelID);
-        OpenCheatPanel(false);
-    }
     public void ActiveVisibleNoteHelper()
     {
         enableHelper = !enableHelper;

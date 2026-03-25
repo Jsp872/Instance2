@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private ScreenFade screenFade;
     public void SetSpawnPoint(Transform spawnPoint) => this.spawnPoint = spawnPoint;
 
     [SerializeField] private PlayerStatConfig playerStatConfig;
@@ -24,6 +25,10 @@ public class Player : MonoBehaviour
         if (controller == null)
         {
             controller = GetComponent<PlayerController>();
+        }
+        if (screenFade is null)
+        {
+            screenFade = FindFirstObjectByType<ScreenFade>();
         }
 
         controller.InitializeComponent(playerStatConfig);
@@ -71,7 +76,7 @@ public class Player : MonoBehaviour
 
     private void Respawn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        screenFade.FadeOut(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
         //transform.position = spawnPoint.position;
         //controller.OnResetComponent();
     }

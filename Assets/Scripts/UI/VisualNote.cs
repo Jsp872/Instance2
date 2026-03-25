@@ -94,7 +94,7 @@ public class VisualNote : MonoBehaviour
 
         foreach (Note note in notes)
         {
-            DOTween.Kill(note.GetComponent<RectTransform>());
+            DOTween.Kill(note.GetComponent<RectTransform>());   
             note.SetColor(Color.black);
         }
 

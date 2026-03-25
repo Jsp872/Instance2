@@ -3,9 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class UI_Basic_Functions : MonoBehaviour
 {
-    public void OpenScene(string sceneName)
+    private ScreenFade screenFade;
+    private void Start()
     {
-        SceneManager.LoadScene(sceneName);
+        screenFade = FindFirstObjectByType<ScreenFade>();
+    }
+
+    public virtual void OpenScene(string sceneName)
+    {
+        screenFade.FadeOut(() => SceneManager.LoadScene(sceneName));
     }
 
     public void Open(UI_Basic_Functions UI)
