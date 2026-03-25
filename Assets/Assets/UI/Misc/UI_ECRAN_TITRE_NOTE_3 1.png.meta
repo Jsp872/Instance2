@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7bf8bc8f5271a984a994c9b1a2f7b81e
+guid: acab003dea0b9e541bb375a0fe11c579
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1887469988537897825
-    second: UI_ECRAN_TITRE_NOTE_2_0
+      213: -1864251667178176375
+    second: UI_ECRAN_TITRE_NOTE_3 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_ECRAN_TITRE_NOTE_2_0
+      name: UI_ECRAN_TITRE_NOTE_3 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 227
-        height: 258
+        x: 80
+        y: 28
+        width: 504
+        height: 485
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 163130f44f3a13a10800000000000000
-      internalID: 1887469988537897825
+      spriteID: 9804ae56cf8d026e0800000000000000
+      internalID: -1864251667178176375
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_ECRAN_TITRE_NOTE_2_0: 1887469988537897825
+      UI_ECRAN_TITRE_NOTE_3 1_0: -1864251667178176375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
