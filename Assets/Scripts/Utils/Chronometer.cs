@@ -13,14 +13,6 @@ public class Chronometer : MonoBehaviour, IBBContributor
     private void Update()
     {
         _chronometer += Time.deltaTime;
-        UpdateTimerUI();
-    }
-
-    private void UpdateTimerUI()
-    {
-        int seconds = (int)_chronometer;
-        int milliseconds = Mathf.FloorToInt((_chronometer * 100f) % 100f);
-        timerText.text = $"{seconds}.{milliseconds:00}";
     }
 
     public bool CanWriteOnUpdate() => true;
