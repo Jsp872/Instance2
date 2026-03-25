@@ -45,7 +45,6 @@ public class VisualNote : MonoBehaviour
 
     private void EnableCheatHelperPanel(ActiveVisibleNoteHelper callback)
     {
-        print("received Input : value : " + callback.isActive);
         cheatHelperEnable = callback.isActive;
 
         if (obstacleCount >= obstacleCountBeforeHiding + 1)

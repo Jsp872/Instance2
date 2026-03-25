@@ -16,19 +16,18 @@ public class ScreenFade : MonoBehaviour
     {
         FadeIn();
     }
-    public void FadeOut(Action callback)
+    public void FadeOut(Action callback, float fadeDuration = -1)
     {
-        StartCoroutine(StartFade(true, callback));
+        float duration = fadeDuration < -1 ? this.fadeDuration : fadeDuration;
+        StartCoroutine(StartFade(true, duration, callback));
     }
     public void FadeIn()
     {
-        StartCoroutine(StartFade(false));
+        StartCoroutine(StartFade(false, fadeDuration));
     }
 
-    public IEnumerator StartFade(bool isOut, Action callback = null)
+    public IEnumerator StartFade(bool isOut, float fadeDuration, Action callback = null)
     {
-        group.blocksRaycasts = true;
-
         float start = isOut ? 0f : 1f;
         float end = isOut ? 1f : 0f;
 
@@ -47,7 +46,6 @@ public class ScreenFade : MonoBehaviour
         }
 
         group.alpha = end;
-        group.blocksRaycasts = false;
         callback?.Invoke();
     }
 }
