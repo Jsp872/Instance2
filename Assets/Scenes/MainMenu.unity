@@ -937,6 +937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Notes
       objectReference: {fileID: 0}
+    - target: {fileID: 4196246317954118112, guid: a4e746ba1951b304880f2bc1d2f43b0e, type: 3}
+      propertyPath: rotationMode
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
