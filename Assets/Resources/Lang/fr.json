@@ -31,5 +31,6 @@
     "MainMenu" : "Menu principal",
     "Victory" : "Victoire",
     "NextLevel" : "Niveau suivant",
-    "Retry" : "Recommencer"
+    "Retry" : "Recommencer",
+    "Deaths" : "Morts"
 }

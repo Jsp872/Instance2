@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 6059624299327001033}
   - component: {fileID: 5239586181901810104}
   - component: {fileID: 2495014897381898000}
-  - component: {fileID: 6200887052687242007}
+  - component: {fileID: 2684271491611674300}
   m_Layer: 5
   m_Name: victory menu
   m_TagString: Untagged
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6200887052687242007
+--- !u!114 &2684271491611674300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,9 +612,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5371310778683281264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec54b0409dce34499d4da8c6854b084, type: 3}
+  m_Script: {fileID: 11500000, guid: 34dc3c4749ff8b04d9fc54c0e5a96701, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  m_EditorClassIdentifier: Assembly-CSharp::Victory
 --- !u!1 &5719914622172031907
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 5746177846821073578}
   - component: {fileID: 7844983778357150429}
   - component: {fileID: 8283699227671905721}
+  - component: {fileID: 328129489422875109}
   m_Layer: 5
   m_Name: Deaths
   m_TagString: Untagged
@@ -824,7 +825,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -898,6 +899,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eaeca33a67c094c8459fc72a5d418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::deathPrint
+--- !u!114 &328129489422875109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295271298480658093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a4c393c323c8642a0b17aa3ca79883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lang.TextKey
+  key: Deaths
 --- !u!1 &8466266476516539507
 GameObject:
   m_ObjectHideFlags: 0
