@@ -72,17 +72,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991438843003715333}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.29884547, w: 0.95430154}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 794403472566174685}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.777}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1655, y: -754}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1618.6, y: -757.2}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5952529577852920285
 CanvasRenderer:
@@ -134,19 +134,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c22dcaeaad02b7489a70b0061c28710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteAnimation
-  rotationZ: 10
+  rotationZ: 5.49
   rotationDuration: 0.41
-  rotationMode: 1
+  rotationMode: 2
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
-  scaleTo: 1.2
-  scaleDuration: 0.13
+  scaleTo: 1.1
+  scaleDuration: 0.8
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
-  moveYDuration: 0.9
+  moveYOffset: 20
+  moveYDuration: 1.5
   moveYEase: 10
   moveYLoops: -1
   moveYLoopType: 1
@@ -185,8 +185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121, y: -718}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -79.4, y: -733.1}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8195732784464186315
 CanvasRenderer:
@@ -249,8 +249,8 @@ MonoBehaviour:
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
-  moveYDuration: 1.65
+  moveYOffset: 0
+  moveYDuration: 1
   moveYEase: 10
   moveYLoops: -1
   moveYLoopType: 1
@@ -290,7 +290,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -185, y: -777}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5137634053765343053
 CanvasRenderer:
@@ -342,9 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c22dcaeaad02b7489a70b0061c28710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rotationZ: 10
+  rotationZ: 3.2
   rotationDuration: 1.44
-  rotationMode: 1
+  rotationMode: 2
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
@@ -384,17 +384,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604749151393727198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.13518694, w: 0.9908201}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 794403472566174685}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.539}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -119, y: -841}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -130.3, y: -863.8}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1459955986381262424
 CanvasRenderer:
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NoteAnimation
   rotationZ: 10
   rotationDuration: 0.52
-  rotationMode: 1
+  rotationMode: 2
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
@@ -457,7 +457,7 @@ MonoBehaviour:
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
+  moveYOffset: 20.2
   moveYDuration: 0.84
   moveYEase: 10
   moveYLoops: -1
@@ -497,8 +497,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.373}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1335.3, y: -259.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1322, y: -251.7}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2643269519298566941
 CanvasRenderer:
@@ -592,16 +592,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5075182097675154419}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3601447, w: 0.93289644}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 794403472566174685}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -42.218}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1726, y: -801}
+  m_AnchoredPosition: {x: -1742.9, y: -792.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4803871695952798359
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c22dcaeaad02b7489a70b0061c28710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rotationZ: 10
+  rotationZ: 3
   rotationDuration: 2.05
-  rotationMode: 1
+  rotationMode: 0
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
@@ -665,8 +665,8 @@ MonoBehaviour:
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
-  moveYDuration: 0.86
+  moveYOffset: 25
+  moveYDuration: 1
   moveYEase: 10
   moveYLoops: -1
   moveYLoopType: 1
@@ -696,16 +696,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5290312027673883992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.12384974, w: 0.992301}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 794403472566174685}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.229}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1390, y: -318}
+  m_AnchoredPosition: {x: -1398.3, y: -305.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8629696278982933534
@@ -758,19 +758,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c22dcaeaad02b7489a70b0061c28710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rotationZ: 10
-  rotationDuration: 2.05
-  rotationMode: 1
+  rotationZ: 13.3
+  rotationDuration: 1.3
+  rotationMode: 2
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
   scaleTo: 1.2
-  scaleDuration: 1.1
+  scaleDuration: 1
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
-  moveYDuration: 0.86
+  moveYOffset: 0
+  moveYDuration: 1
   moveYEase: 10
   moveYLoops: -1
   moveYLoopType: 1
@@ -809,8 +809,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -277, y: -819}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -279.1, y: -857.3}
+  m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1320763822996880349
 CanvasRenderer:
@@ -862,19 +862,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c22dcaeaad02b7489a70b0061c28710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteAnimation
-  rotationZ: 10
+  rotationZ: 0
   rotationDuration: 0.7
   rotationMode: 1
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
-  scaleTo: 1.2
-  scaleDuration: 1.16
+  scaleTo: 1.25
+  scaleDuration: 1.1
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
-  moveYDuration: 0.6
+  moveYOffset: 20
+  moveYDuration: 1
   moveYEase: 10
   moveYLoops: -1
   moveYLoopType: 1
@@ -904,17 +904,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7511827305038966553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3073838, w: 0.95158565}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 794403472566174685}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35.803}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1647, y: -845}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1639.6, y: -850.1}
+  m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4427499398133286446
 CanvasRenderer:
@@ -966,9 +966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c22dcaeaad02b7489a70b0061c28710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteAnimation
-  rotationZ: 10
+  rotationZ: 3.54
   rotationDuration: 0.78
-  rotationMode: 1
+  rotationMode: 2
   rotationEase: 1
   rotationLoops: -1
   rotationLoopType: 1
@@ -977,8 +977,8 @@ MonoBehaviour:
   scaleEase: 1
   scaleLoops: -1
   scaleLoopType: 1
-  moveYOffset: 40
-  moveYDuration: 0.92
+  moveYOffset: 25
+  moveYDuration: 1.1
   moveYEase: 10
   moveYLoops: -1
   moveYLoopType: 1
@@ -1017,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286, y: -732}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -290.6, y: -690.3}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5325645297620772925
 CanvasRenderer:
@@ -1121,8 +1121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -23.301}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1409.5, y: -251.6}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1412.9, y: -235.3}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8715287817080651458
 CanvasRenderer:

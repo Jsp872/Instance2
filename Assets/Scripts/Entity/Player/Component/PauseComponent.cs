@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PauseComponent : PlayerComponent
 {
-    [SerializeField] private PauseMenu PauseMenu;
+    [SerializeField] public PauseMenu PauseMenu;
 
-    public override void HandleInput(InputAction.CallbackContext context)
+    public void HandleInput(InputAction.CallbackContext context, bool activePanel)
     {
-        PauseMenu.gameObject.SetActive(true);
+        PauseMenu.gameObject.SetActive(activePanel);
     }
 }

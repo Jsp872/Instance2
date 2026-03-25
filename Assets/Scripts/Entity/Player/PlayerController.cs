@@ -24,8 +24,11 @@ public class PlayerController : MonoBehaviour
     private SendNoteComponent sendNoteComponent;
     private PauseComponent pauseComponent;
     private AutoMoveComponent autoMoveComponent;
-    
+
     private bool isPaused = false;
+    public bool pauseMenuIsActive = false;
+
+    public void SetPauseMenuIsActive(bool value) => pauseMenuIsActive = value;
 
     public PlayerStatConfig GetConfig() => playerConfig;
     public Rigidbody2D GetRb() => rb;
@@ -69,12 +72,12 @@ public class PlayerController : MonoBehaviour
     public void DisableAllComponent(bool value)
     {
         DisableSensor(value, groundSensor, nearObstacleSensor, farObstacleSensor);
-        DisablePlayerComponents(value, autoMoveComponent, jumpComponent, sendNoteComponent, pauseComponent);
+        DisablePlayerComponents(value, autoMoveComponent, jumpComponent, sendNoteComponent);
         isPaused = !value;
     }
     private void DisablePlayerComponents(bool value, params PlayerComponent[] components)
     {
-        for(int i = 0; i < components.Length; i++)
+        for (int i = 0; i < components.Length; i++)
         {
             components[i].enabled = value;
         }
@@ -137,13 +140,24 @@ public class PlayerController : MonoBehaviour
         Log("[PlayerController] OnJump");
         jumpComponent.HandleInput(ctx);
     }
+
     public void OnOpenPauseSetting(InputAction.CallbackContext ctx)
     {
-        if (isPaused) return;
-        Log("[PlayerController] OnOpenPauseSetting");
-        DisableAllComponent(false);
-        pauseComponent.HandleInput(ctx);
+        if (ctx.started)
+        {
+            Log("[PlayerController] OnOpenPauseSetting");
+
+            EnablePauseMenu();
+            pauseComponent.HandleInput(ctx, pauseMenuIsActive);
+        }
     }
+    public void EnablePauseMenu()
+    {
+        pauseMenuIsActive = !pauseMenuIsActive;
+        DisableAllComponent(!pauseMenuIsActive);
+    }
+
+
     public void OnSendDO(InputAction.CallbackContext ctx)
     {
         if (isPaused) return;
