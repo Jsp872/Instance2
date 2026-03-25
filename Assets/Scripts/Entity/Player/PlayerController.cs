@@ -64,17 +64,18 @@ public class PlayerController : MonoBehaviour
 
         ResetSensors(groundSensor, farObstacleSensor, nearObstacleSensor);
     }
-    public void DisableAllComponent()
+    public void DisableAllComponent(bool value)
     {
-        DisableSensor(groundSensor, nearObstacleSensor, farObstacleSensor);
-        DisablePlayerComponents(autoMoveComponent, jumpComponent, sendNoteComponent, pauseComponent);
+        DisableSensor(value, groundSensor, nearObstacleSensor, farObstacleSensor);
+        DisablePlayerComponents(value, autoMoveComponent, jumpComponent, sendNoteComponent, pauseComponent);
+        GetComponent<PlayerInput>().enabled = value;
     }
-    private void DisablePlayerComponents(params PlayerComponent[] components)
+    private void DisablePlayerComponents(bool value, params PlayerComponent[] components)
     {
         print("Appele toi");
         for(int i = 0; i < components.Length; i++)
         {
-            components[i].enabled = !components[i].enabled;
+            components[i].enabled = value;
         }
     }
     private void UpdateComponents(ref Vector3 velocity, float dt)
@@ -110,11 +111,11 @@ public class PlayerController : MonoBehaviour
         foreach (var sensor in sensors)
             sensor.OnResetSensor();
     }
-    private void DisableSensor(params SensorComponent[] sensors)
+    private void DisableSensor(bool value, params SensorComponent[] sensors)
     {
         for (int i = 0; i < sensors.Length; i++)
         {
-            sensors[i].enabled = !sensors[i].enabled;
+            sensors[i].enabled = value;
         }
     }
     private void UpdateSensors(float dt, params SensorComponent[] sensors)
@@ -137,7 +138,7 @@ public class PlayerController : MonoBehaviour
     public void OnOpenPauseSetting(InputAction.CallbackContext ctx)
     {
         Log("[PlayerController] OnOpenPauseSetting");
-        DisableAllComponent();
+        //DisableAllComponent(false);
         pauseComponent.HandleInput(ctx);
     }
     public void OnSendDO(InputAction.CallbackContext ctx)

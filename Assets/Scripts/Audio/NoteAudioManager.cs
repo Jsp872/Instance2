@@ -34,10 +34,12 @@ public class NoteAudioManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(key))
         {
-            audioMixer.SetFloat(key, PlayerPrefs.GetFloat(key));
+            float savedValue = PlayerPrefs.GetFloat(key);
+            float dBValue = Mathf.Log10(Mathf.Max(savedValue, 0.0001f)) * 20; 
+            audioMixer.SetFloat(key, dBValue);
         }
     }
-    #endregion
+        #endregion
 
     private void PlaySound(OnSendNoteSound callback)
     {

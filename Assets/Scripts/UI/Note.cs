@@ -21,6 +21,10 @@ public class Note : MonoBehaviour
     {
         noteImage = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
+        if(TryGetComponent(out Canvas canvas))
+        {
+            canvas.sortingOrder = -10;
+        }
 
         if (noteImage == null)
         {

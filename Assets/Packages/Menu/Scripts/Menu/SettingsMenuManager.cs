@@ -106,21 +106,18 @@ namespace Menu
                 return;
             }
 
-            audioMixer.SetFloat(key, volume);
+            float audioVolume = Mathf.Log10(Mathf.Max(volume, 0.0001f)) * 20;
+            audioMixer.SetFloat(key, audioVolume);
             PlayerPrefs.SetFloat(key, volume);
+            print("save to playerPref new volume" + volume);
         }
 
         private void InitAudioSettings(Slider slider, string key)
         {
-            if (slider is null || !PlayerPrefs.HasKey(key) || audioMixer is null)
-            {
-                print("Set on start failed");   
-                return;
-            }
+            if (slider is null || !PlayerPrefs.HasKey(key) || audioMixer is null) return;
 
             float savedValue = PlayerPrefs.GetFloat(key);
             slider.value = savedValue;
-            audioMixer.SetFloat(key, savedValue);
         }
 
         #endregion
