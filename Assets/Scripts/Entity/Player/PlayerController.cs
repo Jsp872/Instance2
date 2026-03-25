@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private SendNoteComponent sendNoteComponent;
     private PauseComponent pauseComponent;
     private AutoMoveComponent autoMoveComponent;
+    
+    private bool isPaused = false;
 
     public PlayerStatConfig GetConfig() => playerConfig;
     public Rigidbody2D GetRb() => rb;
@@ -68,11 +70,10 @@ public class PlayerController : MonoBehaviour
     {
         DisableSensor(value, groundSensor, nearObstacleSensor, farObstacleSensor);
         DisablePlayerComponents(value, autoMoveComponent, jumpComponent, sendNoteComponent, pauseComponent);
-        GetComponent<PlayerInput>().enabled = value;
+        isPaused = !value;
     }
     private void DisablePlayerComponents(bool value, params PlayerComponent[] components)
     {
-        print("Appele toi");
         for(int i = 0; i < components.Length; i++)
         {
             components[i].enabled = value;
@@ -132,32 +133,38 @@ public class PlayerController : MonoBehaviour
     #region Input Field
     public void OnJump(InputAction.CallbackContext ctx)
     {
+        if (isPaused) return;
         Log("[PlayerController] OnJump");
         jumpComponent.HandleInput(ctx);
     }
     public void OnOpenPauseSetting(InputAction.CallbackContext ctx)
     {
+        if (isPaused) return;
         Log("[PlayerController] OnOpenPauseSetting");
-        //DisableAllComponent(false);
+        DisableAllComponent(false);
         pauseComponent.HandleInput(ctx);
     }
     public void OnSendDO(InputAction.CallbackContext ctx)
     {
+        if (isPaused) return;
         Log("[PlayerController] OnSendDO");
         sendNoteComponent.HandleInput(ctx, NoteID.DO);
     }
     public void OnSendRE(InputAction.CallbackContext ctx)
     {
+        if (isPaused) return;
         Log("[PlayerController] OnSendRE");
         sendNoteComponent.HandleInput(ctx, NoteID.RE);
     }
     public void OnSendMI(InputAction.CallbackContext ctx)
     {
+        if (isPaused) return;
         Log("[PlayerController] OnSendMI");
         sendNoteComponent.HandleInput(ctx, NoteID.MI);
     }
     public void OnSendFA(InputAction.CallbackContext ctx)
     {
+        if (isPaused) return;
         Log("[PlayerController] OnSendFA");
         sendNoteComponent.HandleInput(ctx, NoteID.FA);
     }
