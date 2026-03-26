@@ -8,7 +8,7 @@ public class PlayerBlackboard : MonoBehaviour
     public float GameChronometer { get; set; }
     public int PlayerDeaths { get; set; }
 
-    public bool enableVisualHelper { get; set; } = true;
+    public bool enableVisualHelper { get; set; } = false;
 
     [Header("Collect Delay")]
     private readonly List<IBBContributor> _contributors = new();
