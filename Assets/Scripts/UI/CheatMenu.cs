@@ -1,28 +1,38 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class CheatMenu : UI_Basic_Functions
 {
     [SerializeField] private GameObject cheatPanel;
     [SerializeField] private TextMeshProUGUI enableTextMesh1;
     [SerializeField] private TextMeshProUGUI enableTextMesh2;
 
-    bool enableHelper = true;
+    private bool enableHelper;
 
-    private void Awake()
+    private void Start()
     {
         enableHelper = PlayerBlackboard.Instance.enableVisualHelper;
-        ActiveVisibleNoteHelper();
+        ApplyVisualState();
     }
+
     public void OpenCheatPanel(bool value)
     {
         cheatPanel.SetActive(value);
     }
+
     public void ActiveVisibleNoteHelper()
     {
         enableHelper = !enableHelper;
+
         PlayerBlackboard.Instance.enableVisualHelper = enableHelper;
+
+        ApplyVisualState();
+    }
+
+    private void ApplyVisualState()
+    {
         EventBus.Publish(new ActiveVisibleNoteHelper(enableHelper));
+
         enableTextMesh1.enabled = !enableHelper;
         enableTextMesh2.enabled = enableHelper;
     }
@@ -31,6 +41,7 @@ public class CheatMenu : UI_Basic_Functions
 public struct ActiveVisibleNoteHelper
 {
     public bool isActive;
+
     public ActiveVisibleNoteHelper(bool value)
     {
         isActive = value;
