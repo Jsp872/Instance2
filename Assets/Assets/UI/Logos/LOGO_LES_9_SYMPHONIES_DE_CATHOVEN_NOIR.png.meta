@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 5095bfe7d9f3ebe42a91776fdf80773a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9119037634930191981
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_0
+  - first:
+      213: -7518519798929816085
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_1
+  - first:
+      213: -6925617206748096972
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_2
+  - first:
+      213: -8459048762803679480
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_3
+  - first:
+      213: -317460052330018130
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_4
+  - first:
+      213: -5082077123123536691
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_5
+  - first:
+      213: 8409750716134307023
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_6
+  - first:
+      213: 2533457606432607484
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_7
+  - first:
+      213: 4937536131526439061
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_8
+  - first:
+      213: 478124138886031464
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_9
+  - first:
+      213: -5231791629874214249
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_10
+  - first:
+      213: -1325161065959950715
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_11
+  - first:
+      213: -1460297117238485423
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_12
+  - first:
+      213: 5962572965446873004
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_13
+  - first:
+      213: -9032904745863186701
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_14
+  - first:
+      213: -5346099177486716344
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_15
+  - first:
+      213: -6963111967910138971
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_16
+  - first:
+      213: -8569762156546158634
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_17
+  - first:
+      213: 1580396298813730426
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_18
+  - first:
+      213: -8273447473053924275
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_19
+  - first:
+      213: 5849228046417709838
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_20
+  - first:
+      213: 339050526736644828
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_21
+  - first:
+      213: -6455204528077550422
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_22
+  - first:
+      213: 5090312947432133368
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_23
+  - first:
+      213: 5757874267667490592
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_24
+  - first:
+      213: 2312632687742019377
+    second: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_0
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1145
+        width: 374
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6eae6b0a645d8e70800000000000000
+      internalID: 9119037634930191981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_1
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1167
+        width: 479
+        height: 813
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be50c04e31ad8a790800000000000000
+      internalID: -7518519798929816085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_2
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 1501
+        width: 32
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436527d08d343ef90800000000000000
+      internalID: -6925617206748096972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1094
+        width: 101
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f016bd7fb6b9a80800000000000000
+      internalID: -8459048762803679480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1093
+        width: 101
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa0e7ea3c7289bf0800000000000000
+      internalID: -317460052330018130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_5
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1093
+        width: 130
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc151358c5d879b0800000000000000
+      internalID: -5082077123123536691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_6
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1167
+        width: 182
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc4b5c438bf65b470800000000000000
+      internalID: 8409750716134307023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_7
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 1168
+        width: 219
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc4dec2546a82320800000000000000
+      internalID: 2533457606432607484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_8
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 1167
+        width: 143
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5903a4193f6a58440800000000000000
+      internalID: 4937536131526439061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_9
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1167
+        width: 215
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86867d00f53a2a600800000000000000
+      internalID: 478124138886031464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_10
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 1168
+        width: 300
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a4c7a5b31f467b0800000000000000
+      internalID: -5231791629874214249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_11
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 1168
+        width: 127
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586774118051c9de0800000000000000
+      internalID: -1325161065959950715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_12
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 1167
+        width: 31
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e1974428bfbbbe0800000000000000
+      internalID: -1460297117238485423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_13
+      rect:
+        serializedVersion: 2
+        x: 2679
+        y: 1167
+        width: 150
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cafeec065805fb250800000000000000
+      internalID: 5962572965446873004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_14
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 1162
+        width: 201
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f672e4fdfca4a280800000000000000
+      internalID: -9032904745863186701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_15
+      rect:
+        serializedVersion: 2
+        x: 3110
+        y: 0
+        width: 1982
+        height: 1403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84275e77f17dec5b0800000000000000
+      internalID: -5346099177486716344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 838
+        width: 112
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5abe17dae8e0e5f90800000000000000
+      internalID: -6963111967910138971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_17
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 837
+        width: 102
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df0b7129b6121980800000000000000
+      internalID: -8569762156546158634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_18
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 595
+        width: 414
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e622b7f02bee510800000000000000
+      internalID: 1580396298813730426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_19
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 597
+        width: 432
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4484cc9b5fce2d80800000000000000
+      internalID: -8273447473053924275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_20
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 600
+        width: 237
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bcafceae1ac2150800000000000000
+      internalID: 5849228046417709838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_21
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 595
+        width: 314
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdafb0f58ac84b400800000000000000
+      internalID: 339050526736644828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_22
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 597
+        width: 438
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aacc17fcea18a66a0800000000000000
+      internalID: -6455204528077550422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_23
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 595
+        width: 285
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f29343f7ac64a640800000000000000
+      internalID: 5090312947432133368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_24
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 595
+        width: 219
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027eea1d32418ef40800000000000000
+      internalID: 5757874267667490592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_25
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 597
+        width: 185
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137e1d83d2f181020800000000000000
+      internalID: 2312632687742019377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_0: 9119037634930191981
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_1: -7518519798929816085
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_10: -5231791629874214249
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_11: -1325161065959950715
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_12: -1460297117238485423
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_13: 5962572965446873004
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_14: -9032904745863186701
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_15: -5346099177486716344
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_16: -6963111967910138971
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_17: -8569762156546158634
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_18: 1580396298813730426
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_19: -8273447473053924275
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_2: -6925617206748096972
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_20: 5849228046417709838
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_21: 339050526736644828
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_22: -6455204528077550422
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_23: 5090312947432133368
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_24: 5757874267667490592
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_25: 2312632687742019377
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_3: -8459048762803679480
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_4: -317460052330018130
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_5: -5082077123123536691
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_6: 8409750716134307023
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_7: 2533457606432607484
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_8: 4937536131526439061
+      LOGO_LES_9_SYMPHONIES_DE_CATHOVEN_NOIR_9: 478124138886031464
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
