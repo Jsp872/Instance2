@@ -18,6 +18,8 @@ public class GetPlayerInputKey : MonoBehaviour
         foreach (var action in map.actions)
         {
             string binding = action.GetBindingDisplayString(0);
+            binding = CleanBinding(binding);
+
             if (wishActionName == action.name)
             {
                 if(binding == "Espace")
@@ -30,6 +32,16 @@ public class GetPlayerInputKey : MonoBehaviour
                 return;
             }
         }
+    }
+
+    string CleanBinding(string binding)
+    {
+        int index = binding.IndexOf('(');
+        if (index > 0)
+        {
+            return binding.Substring(0, index).Trim();
+        }
+        return binding;
     }
 
     private void SetJumpImage(bool value)

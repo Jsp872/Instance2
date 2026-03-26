@@ -4,15 +4,24 @@ using UnityEngine;
 public class CheatMenu : UI_Basic_Functions
 {
     [SerializeField] private GameObject cheatPanel;
+
+    [Header("Enable Visual Helper")]
+    private bool enableHelper;
     [SerializeField] private TextMeshProUGUI enableTextMesh1;
     [SerializeField] private TextMeshProUGUI enableTextMesh2;
 
-    private bool enableHelper;
+    [Header("Change Note Order")]
+    private bool isInitialNoteOrder;
+    [SerializeField] private TextMeshProUGUI changeNotetext1;
+    [SerializeField] private TextMeshProUGUI changeNotetext2;
 
-    private void Start()
+    public void Start()
     {
+        print("Initialize cheat menu");
         enableHelper = PlayerBlackboard.Instance.enableVisualHelper;
-        ApplyVisualState();
+        isInitialNoteOrder = PlayerBlackboard.Instance.isInitialNoteOrder;
+        EnableHelperApplyVisualState();
+        ChangeNoteApplyVisualState();
     }
 
     public void OpenCheatPanel(bool value)
@@ -26,10 +35,23 @@ public class CheatMenu : UI_Basic_Functions
 
         PlayerBlackboard.Instance.enableVisualHelper = enableHelper;
 
-        ApplyVisualState();
+        EnableHelperApplyVisualState();
     }
 
-    private void ApplyVisualState()
+    public void ChangeNoteOrder()
+    {
+        isInitialNoteOrder = !isInitialNoteOrder;
+        PlayerBlackboard.Instance.isInitialNoteOrder = isInitialNoteOrder;
+        EventBus.Publish(new OnChangeNoteOrder());
+        ChangeNoteApplyVisualState();
+    }
+
+    private void ChangeNoteApplyVisualState()
+    {
+        changeNotetext1.enabled = !isInitialNoteOrder;
+        changeNotetext2.enabled = isInitialNoteOrder;
+    }
+    private void EnableHelperApplyVisualState()
     {
         EventBus.Publish(new ActiveVisibleNoteHelper(enableHelper));
 
@@ -47,3 +69,5 @@ public struct ActiveVisibleNoteHelper
         isActive = value;
     }
 }
+public struct OnChangeNoteOrder { }
+

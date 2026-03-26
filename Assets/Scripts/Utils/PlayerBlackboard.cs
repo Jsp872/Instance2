@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBlackboard : MonoBehaviour
 {
@@ -7,13 +8,15 @@ public class PlayerBlackboard : MonoBehaviour
 
     public float GameChronometer { get; set; }
     public int PlayerDeaths { get; set; }
-
     public bool enableVisualHelper { get; set; } = false;
+    public bool isInitialNoteOrder { get; set; } = true;
 
     [Header("Collect Delay")]
     private readonly List<IBBContributor> _contributors = new();
     [SerializeField] private float collectIntervalSeconds = 1f;
     private float _timer;
+
+    //private const string mainMenuScene = "MainMenu";
 
     private void Awake()
     {
@@ -28,6 +31,7 @@ public class PlayerBlackboard : MonoBehaviour
     }
     public void ResetAll()
     {
+        print("ResetAll param");
         GameChronometer = 0.0f;
         PlayerDeaths = 0;
     }

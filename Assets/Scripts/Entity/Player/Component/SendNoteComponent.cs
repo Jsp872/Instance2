@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 // Enumération représentant les différentes notes musicales pouvant être envoyées.
 public enum NoteID : byte
 {
-    DO = 0,
-    RE = 1,
-    MI = 2,
-    FA = 3,
+    DO = 0, //3
+    RE = 1, //2
+    MI = 2, //1
+    FA = 3, //0
     NONE = 255,
 }
 

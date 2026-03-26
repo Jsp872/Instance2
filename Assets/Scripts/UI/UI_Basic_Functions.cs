@@ -4,7 +4,18 @@ using UnityEngine.SceneManagement;
 public class UI_Basic_Functions : MonoBehaviour
 {
     private ScreenFade _screenFade;
+    private PlayerBlackboard bb;
 
+    private const string mainMenuSceneName = "MainMenu";
+    private PlayerBlackboard Blackboard
+    {
+        get
+        {
+            if (bb == null)
+                bb = PlayerBlackboard.Instance;
+            return bb;
+        }
+    }
     private ScreenFade ScreenFade
     {
         get
@@ -14,13 +25,14 @@ public class UI_Basic_Functions : MonoBehaviour
             return _screenFade;
         }
     }
-
     public virtual void OpenScene(string sceneName)
     {
-        if (ScreenFade == null)
+        if (ScreenFade == null) return;
+        if (SceneManager.GetActiveScene().name != mainMenuSceneName && Blackboard == null) return;
+
+        if (sceneName == mainMenuSceneName)
         {
-            Debug.LogError("ScreenFade introuvable dans la scène !", this);
-            return;
+            Blackboard.ResetAll();
         }
 
         ScreenFade.FadeOut(() => SceneManager.LoadScene(sceneName));

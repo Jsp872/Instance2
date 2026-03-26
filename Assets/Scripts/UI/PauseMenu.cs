@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : UI_Basic_Functions
 {
+
+    [SerializeField] private GameObject settingPanel;
+    [SerializeField] private GameObject helpsPanel;
     private void OnEnable()
     {
         SetTimePause();
@@ -11,6 +14,8 @@ public class PauseMenu : UI_Basic_Functions
     private void OnDisable()
     {
         SetTimeUnPause();
+        settingPanel.SetActive(false);
+        helpsPanel.SetActive(false);
     }
 
     public override void OpenScene(string sceneName)
