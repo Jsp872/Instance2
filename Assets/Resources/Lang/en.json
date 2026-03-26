@@ -33,11 +33,13 @@
   "NextLevel": "Next level",
   "Retry": "Retry",
   "Deaths": "Deaths",
-  "Cheats": "Cheats",
+  "Helps": "Helps",
   "Teleportation": "Teleportation",
   "ActivateCheat": "Activate cheat",
   "EnableHelper": "Enable Helper",
   "DisableHelper": "Disable Helper",
-  "Tutorial" : "Tutorial",
-  "Level1" : "Level 1"
+  "Tutorial": "Tutorial",
+  "Level1": "Level 1",
+  "SolfegeNoteMode": "Note order ; music theory",
+  "NormalNoteMode": "Note order ; Top to Bottom"
 }

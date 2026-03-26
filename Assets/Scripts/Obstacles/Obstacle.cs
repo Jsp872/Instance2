@@ -188,6 +188,7 @@ public abstract class Obstacle : MonoBehaviour
 
     protected virtual void UnlockedBehaviour()
     {
+        GetComponent<Collider2D>().enabled = false;
         enabled = false;
         EventBus.Publish(new ObstacleExitedView { obstacle = this });
     }

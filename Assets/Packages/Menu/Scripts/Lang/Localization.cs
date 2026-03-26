@@ -1,3 +1,4 @@
+using AYellowpaper.SerializedCollections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Lang
         [SerializeField] private TMP_Dropdown dropdown;
 
         public static event Action OnLanguageChanged;
-        
+
         private const string languageFolderPath = "Lang";
         private static Dictionary<string, string> texts = new();
         private readonly Dictionary<string, string> languageNames = new()
@@ -41,9 +42,9 @@ namespace Lang
                 Debug.LogError("Invalid language index");
                 return;
             }
-            
+
             LoadLanguage(index);
-        
+
             PlayerPrefs.SetInt("Language", index);
             OnLanguageChanged?.Invoke();
         }
@@ -52,29 +53,31 @@ namespace Lang
         {
             string languageCode = languageNames.ElementAt(index).Key;
             string fullPath = $"{languageFolderPath}/{languageCode}";
-            
+
             TextAsset textAsset = Resources.Load<TextAsset>(fullPath);
-            
+
             if (textAsset == null)
             {
                 Debug.LogError($"Language file not found in Resources at path: {fullPath}");
                 return;
             }
+
             texts = ConvertJsonToDictionary(textAsset.text);
+
             Resources.UnloadAsset(textAsset);
         }
-        
+
         public static string Read(string key)
         {
             return texts.TryGetValue(key, out string value) ? value : $"[MISSING:{key}]";
         }
-        
+
         private static Dictionary<string, string> ConvertJsonToDictionary(string json)
         {
             Dictionary<string, string> textDict = new();
             json = json.Trim().TrimStart('{').TrimEnd('}');
             string[] pairs = json.Split(',');
-            
+
             foreach (string pair in pairs)
             {
                 string[] keyValue = pair.Split(':');

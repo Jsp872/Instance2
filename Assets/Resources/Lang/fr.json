@@ -33,11 +33,13 @@
   "NextLevel": "Niveau suivant",
   "Retry": "Recommencer",
   "Deaths": "Morts",
-  "Cheats" : "Triches",
+  "Helps": "Aides",
   "Teleportation": "Teleportation",
   "ActivateCheat": "Activation de la triche",
   "EnableHelper": "Activer aide",
   "DisableHelper": "Désactiver aide",
-  "Tutorial" : "Tutoriel",
-  "Level1" : "Niveau 1"
+  "Tutorial": "Tutoriel",
+  "Level1": "Niveau 1",
+  "SolfegeNoteMode": "Ordre des notes ; solfège",
+  "NormalNoteMode": "Ordre des notes ; Haut en bas"
 }

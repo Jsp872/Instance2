@@ -15,9 +15,13 @@ public class Victory : UI_Basic_Functions
 
 
         float totalLevelTimer = PlayerBlackboard.Instance.GameChronometer;
-        int seconds = (int)totalLevelTimer;
+
+        int minutes = (int)(totalLevelTimer / 60f);
+        int seconds = (int)(totalLevelTimer % 60f);
         int milliseconds = Mathf.FloorToInt((totalLevelTimer * 100f) % 100f);
-        totalTimer_TEXT.text = $"{seconds}.{milliseconds:00}";
+        System.TimeSpan time = System.TimeSpan.FromSeconds(totalLevelTimer);
+
+        totalTimer_TEXT.text = $"{time.Minutes:00}:{time.Seconds:00}:{time.Milliseconds / 10:00}";
     }
 
 

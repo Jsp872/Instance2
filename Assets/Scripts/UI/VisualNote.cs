@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VisualNote : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class VisualNote : MonoBehaviour
     private int obstacleCount;
 
     private bool cheatHelperEnable = false;
+    private bool isInitialNoteOrder;
     private CanvasGroup canvasGroup;
 
     private void Awake()
@@ -34,24 +36,31 @@ public class VisualNote : MonoBehaviour
     private void Start()
     {
         cheatHelperEnable = PlayerBlackboard.Instance.enableVisualHelper;
+        isInitialNoteOrder = PlayerBlackboard.Instance.isInitialNoteOrder;
         UpdateVisibility();
+        if (!isInitialNoteOrder)
+        {
+        }
+        ChangeNoteOrderMode(new OnChangeNoteOrder());
     }
 
     private void OnEnable()
     {
         EventBus.Subscribe<ObstacleEnteredView>(OnNewObstacle);
         EventBus.Subscribe<ActiveVisibleNoteHelper>(EnableCheatHelperPanel);
+        EventBus.Subscribe<OnChangeNoteOrder>(ChangeNoteOrderMode);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<ObstacleEnteredView>(OnNewObstacle);
         EventBus.Unsubscribe<ActiveVisibleNoteHelper>(EnableCheatHelperPanel);
+        EventBus.Unsubscribe<OnChangeNoteOrder>(ChangeNoteOrderMode);
     }
 
     private void UpdateVisibility()
     {
-        if (obstacleCount < obstacleCountBeforeHiding)
+        if (obstacleCount - 1 < obstacleCountBeforeHiding)
             return;
 
         canvasGroup.Toggle(cheatHelperEnable);
@@ -81,6 +90,20 @@ public class VisualNote : MonoBehaviour
         UpdateVisibility();
 
         StartCoroutine(ProcessNotes(e));
+    }
+    private void ChangeNoteOrderMode(OnChangeNoteOrder callback)
+    {
+        noteRows.Reverse();
+        noteColorInRowOrder.Reverse();
+
+        isInitialNoteOrder = !isInitialNoteOrder;
+
+        for (int i = 0; i < noteRows.Count; i++)
+        {
+            noteRows[i].SetSiblingIndex(i);
+        }
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(layout);
     }
 
     private void OnBadNote()
@@ -118,7 +141,11 @@ public class VisualNote : MonoBehaviour
         {
             NoteID note = obstacle.sequenceCible[i];
 
-            RectTransform row = noteRows[(int)note];
+            int rightIndex = GetNoteIndex(note);
+            NoteID rightNote = (NoteID)rightIndex;
+
+            RectTransform row = noteRows[rightIndex];
+
             Note newNote = Instantiate(notePrefab, row);
 
             float distance = (obstacle.transform.position - playerMovement.transform.position).magnitude;
@@ -130,12 +157,22 @@ public class VisualNote : MonoBehaviour
                 Debug.Log($"[VisualNote] Speed: {speed:F2}");
 
             newNote.StartMove(speed, layout.rect.width);
-            newNote.SetSprite(noteColorInRowOrder[(int)note]);
+            newNote.SetSprite(noteColorInRowOrder[rightIndex]);
 
             notes.Add(newNote);
 
             if (i < obstacle.sequenceCible.Count - 1)
                 yield return new WaitForSeconds(obstacleCtx.noteIntervalSpeed);
         }
+    }
+
+    int GetNoteIndex(NoteID note)
+    {
+        if (note == NoteID.NONE)
+            return -1;
+
+        int index = (int)note;
+
+        return isInitialNoteOrder ? index : noteRows.Count - 1 - index;
     }
 }
